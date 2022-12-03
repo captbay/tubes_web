@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pembelian;
+use App\Models\User;
 use App\Models\Users;
 
 class UserController extends Controller
 {
     /**
-    * index
-    *
-    * @return void
-    */
+     * index
+     *
+     * @return void
+     */
     public function index()
     {
         //get posts
@@ -21,15 +22,15 @@ class UserController extends Controller
         return view('user.index', compact('user'));
     }
 
-        /**
-    * create
-    *
-    * @return void
-    */
+    /**
+     * create
+     *
+     * @return void
+     */
     public function create()
     {
         $user = User::get();
-        return view('user.create',compact('user'));
+        return view('user.create', compact('user'));
     }
 
     /**
@@ -54,17 +55,17 @@ class UserController extends Controller
             'gender' => 'required',
             'telepon' => 'required|regex:/^(08)[0-9]{4,5}$/',
             'alamat' => 'required',
-            ]);
-            
-            $user = User::where('id',$request->user)->first();
+        ]);
 
-            if ($request->gender == 'Pria')
+        $user = User::where('id', $request->user)->first();
+
+        if ($request->gender == 'Pria')
             $gender = 1;
-            else
-            $gender= 0;
+        else
+            $gender = 0;
 
         $user->update([
-           'name' => $request->name,
+            'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
             'tgl_lahir' => $request->tgl_lahir,
@@ -73,12 +74,12 @@ class UserController extends Controller
             'alamat' => $request->alamat,
             'image_user' => $request->image_user,
         ]);
-        
+
 
         //redirect to index
         return redirect()->route('user.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    
+
     /**
      * destroy
      *
@@ -89,18 +90,18 @@ class UserController extends Controller
     {
 
         //delete post
-        User::where('id',$id)->delete();
+        User::where('id', $id)->delete();
 
         //redirect to index
         return redirect()->route('user.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
-    
+
     /**
-    * store
-    *
-    * @param Request $request
-    * @return void
-    */
+     * store
+     *
+     * @param Request $request
+     * @return void
+     */
     public function store(Request $request)
     {
         //Validasi Formulir
@@ -112,14 +113,14 @@ class UserController extends Controller
             'gender' => 'required',
             'telepon' => 'required|regex:/^(08)[0-9]{4,5}$/',
             'alamat' => 'required',
-            ]);
+        ]);
 
-            $user = User::where('id',$request->user)->first();
-            
-            if ($request->gender == 'Pria')
+        $user = User::where('id', $request->user)->first();
+
+        if ($request->gender == 'Pria')
             $gender = 1;
-            else
-            $gender= 0;
+        else
+            $gender = 0;
 
         User::create([
             'name' => $request->name,
@@ -129,10 +130,9 @@ class UserController extends Controller
             'gender' => $gender,
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
-    ]);
+        ]);
 
-    //Redirect jika berhasil mengirim email
-    return redirect()->route('user.index')->with(['success' => 'Data Berhasil Disimpan!']);
-
+        //Redirect jika berhasil mengirim email
+        return redirect()->route('user.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }

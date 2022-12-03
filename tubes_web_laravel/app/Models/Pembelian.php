@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Pembelian extends Model
 {
     use HasFactory;
-     /**
-    * fillable
-    *
-    * @var array
-    */
+    /**
+     * fillable
+     *
+     * @var array
+     */
+    protected $table = "pembelians";
 
     protected $fillable = [
         'id_user',
@@ -22,19 +23,23 @@ class Pembelian extends Model
         'tgl_pembelian',
     ];
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsTo(User::class, 'id_user');
     }
-    
-    public function band(){
+
+    public function band()
+    {
         return $this->belongsTo(Band::class, 'id_band');
     }
-    
-    public function pesulap(){
+
+    public function pesulap()
+    {
         return $this->belongsTo(Pesulap::class, 'id_pesulap');
     }
 
-    public function komika(){
+    public function komika()
+    {
         return $this->belongsTo(Komika::class, 'id_komika');
     }
 }

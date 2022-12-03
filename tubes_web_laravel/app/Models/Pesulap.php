@@ -15,10 +15,10 @@ class Pesulap extends Model
      */
     protected $table = "pesulaps";
 
-    // public function pembelians()
-    // {
-    //     return $this->hasMany(Pembelian::class,  'id_pesulap', 'id_pesulap');
-    // }
+    public function pembelians()
+    {
+        return $this->hasMany(Pembelian::class,  'id_pesulap', 'id');
+    }
 
     protected $fillable = [
         'Nama',

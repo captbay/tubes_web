@@ -15,10 +15,10 @@ class Band extends Model
      */
     protected $table = "bands";
 
-    // public function pembelians()
-    // {
-    //     return $this->hasMany(Pembelian::class,  'id_band', 'id_band');
-    // }
+    public function pembelians()
+    {
+        return $this->hasMany(Pembelian::class,  'id_band', 'id');
+    }
 
     protected $fillable = [
         'Nama',

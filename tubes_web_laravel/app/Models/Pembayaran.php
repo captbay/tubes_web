@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Pembayaran extends Model
 {
     use HasFactory;
-     /**
-    * fillable
-    *
-    * @var array
-    */
+    /**
+     * fillable
+     *
+     * @var array
+     */
+    protected $table = "pembayarans";
 
     protected $fillable = [
         'id_user',
@@ -20,7 +21,8 @@ class Pembayaran extends Model
         'total_bayar',
     ];
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsTo(User::class, 'id_user');
     }
 }

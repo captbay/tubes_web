@@ -15,10 +15,10 @@ class Komika extends Model
      */
     protected $table = "komikas";
 
-    // public function pembelians()
-    // {
-    //     return $this->hasMany(Pembelian::class,  'id_komika', 'id_komika');
-    // }
+    public function pembelians()
+    {
+        return $this->hasMany(Pembelian::class,  'id_komika', 'id');
+    }
 
     protected $fillable = [
         'Nama',

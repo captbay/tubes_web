@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
+use App\Models\User;
 use App\Models\Users;
 
 class PembayaranController extends Controller
 {
     /**
-    * index
-    *
-    * @return void
-    */
+     * index
+     *
+     * @return void
+     */
     public function index()
     {
         //get posts
@@ -21,15 +22,15 @@ class PembayaranController extends Controller
         return view('pembayaran.index', compact('pembayaran'));
     }
 
-        /**
-    * create
-    *
-    * @return void
-    */
+    /**
+     * create
+     *
+     * @return void
+     */
     public function create()
     {
         $user = User::get();
-        return view('pembayaran.create',compact('user'));
+        return view('pembayaran.create', compact('user'));
     }
 
     /**
@@ -42,7 +43,7 @@ class PembayaranController extends Controller
     {
         $pembayaran = Pembayaran::find($id);
         $user = User::get();
-        return view('pembayaran.edit', compact('pembayaran','user'));
+        return view('pembayaran.edit', compact('pembayaran', 'user'));
     }
 
     public function update(Request $request, $id)
@@ -51,22 +52,22 @@ class PembayaranController extends Controller
             'id_user' => 'required',
             'metode_pembayaran' => 'required',
             'total_bayar' => 'required',
-            ]);
-            
-            $pembayaran = Pembayaran::find($id);
-            $user = User::where('id',$request->user)->first();
-        
+        ]);
+
+        $pembayaran = Pembayaran::find($id);
+        $user = User::where('id', $request->user)->first();
+
         $pembayaran->update([
             'id_user' => $user->id,
             'metode_pembayaran' => $request->metode_pembayaran,
             'total_bayar' => $request->total_bayar,
         ]);
-        
+
 
         //redirect to index
         return redirect()->route('pembayaran.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    
+
     /**
      * destroy
      *
@@ -77,18 +78,18 @@ class PembayaranController extends Controller
     {
 
         //delete post
-        Pembayaran::where('id',$id)->delete();
+        Pembayaran::where('id', $id)->delete();
 
         //redirect to index
         return redirect()->route('pembayaran.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
-    
+
     /**
-    * store
-    *
-    * @param Request $request
-    * @return void
-    */
+     * store
+     *
+     * @param Request $request
+     * @return void
+     */
     public function store(Request $request)
     {
         //Validasi Formulir
@@ -96,18 +97,16 @@ class PembayaranController extends Controller
             'id_user' => 'required',
             'metode_pembayaran' => 'required',
             'total_bayar' => 'required',
-            ]);
-            $user = User::where('id',$request->user)->first();
-    //Fungsi Simpan Data ke dalam Database
-    Pembayaran::create([
-        'id_user' => $user->id,
-        'metode_pembayaran' => $request->metode_pembayaran,
-        'total_bayar' => $request->total_bayar,
-    ]);
+        ]);
+        $user = User::where('id', $request->user)->first();
+        //Fungsi Simpan Data ke dalam Database
+        Pembayaran::create([
+            'id_user' => $user->id,
+            'metode_pembayaran' => $request->metode_pembayaran,
+            'total_bayar' => $request->total_bayar,
+        ]);
 
-    //Redirect jika berhasil mengirim email
-    return redirect()->route('pembayaran.index')->with(['success' => 'Data Berhasil Disimpan!']);
-
- 
+        //Redirect jika berhasil mengirim email
+        return redirect()->route('pembayaran.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }

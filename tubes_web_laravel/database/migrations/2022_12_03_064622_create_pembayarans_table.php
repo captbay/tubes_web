@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_user')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('metode_pembayaran');
             $table->float('total_bayar');
             $table->timestamps();

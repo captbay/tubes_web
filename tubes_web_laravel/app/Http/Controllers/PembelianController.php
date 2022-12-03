@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Band;
+use App\Models\Komika;
 use Illuminate\Http\Request;
 use App\Models\Pembelian;
+use App\Models\Pesulap;
+use App\Models\User;
 use App\Models\Users;
 
 class PembelianController extends Controller
 {
-     /**
-    * index
-    *
-    * @return void
-    */
+    /**
+     * index
+     *
+     * @return void
+     */
     public function index()
     {
         //get posts
@@ -21,15 +25,15 @@ class PembelianController extends Controller
         return view('pembelian.index', compact('pembelian'));
     }
 
-        /**
-    * create
-    *
-    * @return void
-    */
+    /**
+     * create
+     *
+     * @return void
+     */
     public function create()
     {
         $pembelian = Pembelian::get();
-        return view('pembelian.create',compact('pembelian'));
+        return view('pembelian.create', compact('pembelian'));
     }
 
     /**
@@ -48,13 +52,13 @@ class PembelianController extends Controller
     {
         $request->validate([
             'tgl_pembelian' => 'required',
-            ]);
-            
-            $pembelian = Pembelian::find($id);
-            $band = Band::where('id',$request->band)->first();
-            $komika = Komika::where('id',$request->komika)->first();
-            $pesulap = Pesulap::where('id',$request->pesulap)->first();
-            $user = User::where('id',$request->user)->first();
+        ]);
+
+        $pembelian = Pembelian::find($id);
+        $band = Band::where('id', $request->band)->first();
+        $komika = Komika::where('id', $request->komika)->first();
+        $pesulap = Pesulap::where('id', $request->pesulap)->first();
+        $user = User::where('id', $request->user)->first();
         $pembelian->update([
             'id_user' => $user->id,
             'id_band' => $band->id,
@@ -62,12 +66,12 @@ class PembelianController extends Controller
             'id_pesulap' => $pesulap->id,
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
-        
+
 
         //redirect to index
         return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    
+
     /**
      * destroy
      *
@@ -78,41 +82,40 @@ class PembelianController extends Controller
     {
 
         //delete post
-        Pembelian::where('id',$id)->delete();
+        Pembelian::where('id', $id)->delete();
 
         //redirect to index
         return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
-    
+
     /**
-    * store
-    *
-    * @param Request $request
-    * @return void
-    */
-    public function store(Request $request)
+     * store
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function store(Request $request, Int $id)
     {
         //Validasi Formulir
         $request->validate([
             'tgl_pembelian' => 'required',
-            ]);
-            
-            $pembelian = Pembelian::find($id);
-            $band = Band::where('id',$request->band)->first();
-            $komika = Komika::where('id',$request->komika)->first();
-            $pesulap = Pesulap::where('id',$request->pesulap)->first();
-            $user = User::where('id',$request->user)->first();
-    //Fungsi Simpan Data ke dalam Database
-    Pembelian::create([
-        'id_user' => $user->id,
-        'id_band' => $band->id,
-        'id_komika' => $komika->id,
-        'id_pesulap' => $pesulap->id,
-        'tgl_pembelian' => $request->tgl_pembelian,
-    ]);
+        ]);
 
-    //Redirect jika berhasil mengirim email
-    return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        $pembelian = Pembelian::find($id);
+        $band = Band::where('id', $request->band)->first();
+        $komika = Komika::where('id', $request->komika)->first();
+        $pesulap = Pesulap::where('id', $request->pesulap)->first();
+        $user = User::where('id', $request->user)->first();
+        //Fungsi Simpan Data ke dalam Database
+        Pembelian::create([
+            'id_user' => $user->id,
+            'id_band' => $band->id,
+            'id_komika' => $komika->id,
+            'id_pesulap' => $pesulap->id,
+            'tgl_pembelian' => $request->tgl_pembelian,
+        ]);
 
+        //Redirect jika berhasil mengirim email
+        return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }
