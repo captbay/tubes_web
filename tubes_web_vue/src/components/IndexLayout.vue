@@ -158,6 +158,7 @@
         margin: auto;
         padding-top: 12%;
     }
+    
 
     /* Style Footer */
     footer {
@@ -201,8 +202,5 @@
         background: #fe1e4f;
         color: #fff;
     }
-    .socials i {
-        font-size: 18px;
-        margin-right: 15px;
-    }
+    
 </style>
