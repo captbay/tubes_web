@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Pembelian::class,  'id_user', 'id');
     }
+
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class,  'id_user', 'id');
+    }
 }
