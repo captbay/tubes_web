@@ -1,13 +1,25 @@
 //import vue router 
 import { createRouter, createWebHistory } from 'vue-router'
 
-//define a routes 
+//define a routes
 const routes = [ 
-    {
+    { 
         path: '/',
-        name: 'beranda', 
-        component: () => import('@/components/IndexLayout.vue'),
-    }, 
+        name: 'index', 
+        component: () => import('@/components/IndexLayout.vue'), 
+        children:[
+            {
+                path: "/beranda", 
+                name: "beranda", 
+                component: () => import('@/views/berandaPage.vue'),
+            },
+            {
+                path: "/kontak", 
+                name: "kontak", 
+                component: () => import('@/views/kontakPage.vue'),
+            },
+        ],
+    },
 ]
 
 //create router 

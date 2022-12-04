@@ -23,31 +23,25 @@
     <link rel="icon" href="/public/favicon.ico" type="image/gif">
         
     <!-- Header -->
-    <head>
-        <nav>
-            <ul class="menu">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Daftar Band</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-                <li><a href="#">Bantuan</a></li>
-                <li><a href="#">Kontak</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
-    </head>
-    <!-- End Header -->
-    
-    <div class="banner">
-        <div class="wrapper">
-            <div class="content">
-                <h2>Cari Musisi dan Live Band Untuk Event Anda!</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, aliquam iure? Hic quisquam provident aut!</p>            
-            </div>
-        </div>
-    </div>
+    <header class="d-flex justify-content-center py-3 bg-dark">
+      <ul class="nav nav-pills">
+        <li class="nav-item"> 
+            <router-link :to="{name: 'beranda'}" class="nav-link">Beranda</router-link> 
+        </li> 
+        <li class="nav-item"><a href="#" class="nav-link">Daftar Band</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Tentang Kami</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Bantuan</a></li>
+        <li class="nav-item"> 
+            <router-link :to="{name: 'kontak'}" class="nav-link">Kontak</router-link> 
+        </li> 
+        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+      </ul>
+    </header>
 
+    <router-view></router-view>
+    
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
+    <footer class="text-center text-lg-start bg-dark text-muted">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
