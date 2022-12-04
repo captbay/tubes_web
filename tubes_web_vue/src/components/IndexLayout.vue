@@ -1,6 +1,29 @@
 <template>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Ajax -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Youtube Embed JavaScript -->
+    <link href="/js/youtube-play.js">
+
+    <!-- Default CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/public/favicon.ico" type="image/gif">
+        
     <!-- Header -->
-    <header>
+    <head>
         <nav>
             <ul class="menu">
                 <li><a href="#">Beranda</a></li>
@@ -11,7 +34,7 @@
                 <li><a href="#">Login</a></li>
             </ul>
         </nav>
-    </header>
+    </head>
     <!-- End Header -->
     
     <div class="banner">
@@ -24,41 +47,118 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-md-4">
-                    <div class="single-box">
-                        <h2>Social Media</h2>
-                    <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Youtube</a></li>
-                    </ul>
-                    </div>                    
-                </div>
-                <div class="col-6 col-md-4">
-                    <div class="single-box">
-                        <h2>Layanan Kami</h2>
-                    <ul>
-                        <li><a href="#">Band</a></li>
-                        <li><a href="#">Pesulap</a></li>
-                        <li><a href="#">Komika</a></li>
-                    </ul>
-                    </div>                    
-                </div>
-                <div class="col-6 col-md-4">
-                    <div class="single-box">
-                        <h2>Link Tambahan</h2>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
             </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Company name
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Our Services
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Band</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Stand Up</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Magician</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">About Us</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Support</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Contact</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="bi bi-house-door-fill"></i> New York, NY 10012, US</p>
+                        <p><i class="bi bi-envelope-fill"></i> info@example.com</p>
+                        <p><i class="bi bi-telephone-fill"></i> + 01 234 567 88</p>
+                        <p><i class="bi bi-telephone-fill"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Event.com</a>
         </div>
+        <!-- Copyright -->
     </footer>
-    <!-- End Footer -->
+    <!-- Footer -->
 </template>
 
 <style>
