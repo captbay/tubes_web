@@ -10,6 +10,12 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+    <!-- Vuetify -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/vue@3/dist/vue.global.js">
+    
     <!-- Ajax -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
@@ -29,8 +35,12 @@
             <router-link :to="{name: 'beranda'}" class="nav-link">Beranda</router-link> 
         </li> 
         <li class="nav-item"><a href="#" class="nav-link">Daftar Band</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Tentang Kami</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Bantuan</a></li>
+        <li class="nav-item">
+            <router-link :to="{name: 'tentangkami'}" class="nav-link">Tentang Kami</router-link>
+        </li>
+        <li class="nav-item">
+            <router-link :to="{name: 'bantuan'}" class="nav-link">Bantuan</router-link>
+        </li>
         <li class="nav-item"> 
             <router-link :to="{name: 'kontak'}" class="nav-link">Kontak</router-link> 
         </li> 
@@ -84,7 +94,7 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                     <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Company name
+                            <i class="fas fa-gem me-3"></i>AMP Group
                         </h6>
                         <p>
                             Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -148,7 +158,7 @@
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Event.com</a>
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ampgroup.com</a>
         </div>
         <!-- Copyright -->
     </footer>

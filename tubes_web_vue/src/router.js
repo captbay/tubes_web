@@ -14,6 +14,16 @@ const routes = [
                 component: () => import('@/views/berandaPage.vue'),
             },
             {
+                path: "/tentangkami", 
+                name: "tentangkami", 
+                component: () => import('@/views/aboutUsPage.vue'),
+            },
+            {
+                path: "/bantuan", 
+                name: "bantuan", 
+                component: () => import('@/views/helpPage.vue'),
+            },
+            {
                 path: "/kontak", 
                 name: "kontak", 
                 component: () => import('@/views/kontakPage.vue'),
