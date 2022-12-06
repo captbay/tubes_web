@@ -32,7 +32,7 @@
                             <textarea class="form-control" id="inputPesan" rows="5"></textarea>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                            <button type="submit" class="btn btn-primary text-light">Kirim Pesan</button>
                         </div>
                     </form>
                 </div>

@@ -28,6 +28,16 @@ const routes = [
                 name: "kontak", 
                 component: () => import('@/views/kontakPage.vue'),
             },
+            {
+                path: "/masuk", 
+                name: "masuk", 
+                component: () => import('@/views/masukPage.vue'),
+            },
+            {
+                path: "/masuk/daftar", 
+                name: "daftar", 
+                component: () => import('@/views/daftarPage.vue'),
+            },
         ],
     },
 ]

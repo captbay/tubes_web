@@ -32,19 +32,21 @@
     <header class="d-flex justify-content-center py-3 bg-dark">
       <ul class="nav nav-pills">
         <li class="nav-item"> 
-            <router-link :to="{name: 'beranda'}" class="nav-link">Beranda</router-link> 
+            <router-link :to="{name: 'beranda'}" class="nav-link text-light">Beranda</router-link> 
         </li> 
-        <li class="nav-item"><a href="#" class="nav-link">Daftar Band</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">Daftar Band</a></li>
         <li class="nav-item">
-            <router-link :to="{name: 'tentangkami'}" class="nav-link">Tentang Kami</router-link>
+            <router-link :to="{name: 'tentangkami'}" class="nav-link text-light">Tentang Kami</router-link>
         </li>
         <li class="nav-item">
-            <router-link :to="{name: 'bantuan'}" class="nav-link">Bantuan</router-link>
+            <router-link :to="{name: 'bantuan'}" class="nav-link text-light">Bantuan</router-link>
         </li>
         <li class="nav-item"> 
-            <router-link :to="{name: 'kontak'}" class="nav-link">Kontak</router-link> 
+            <router-link :to="{name: 'kontak'}" class="nav-link text-light">Kontak</router-link> 
         </li> 
-        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+        <li class="nav-item">
+            <router-link :to="{name: 'masuk'}" class="nav-link text-light">Masuk</router-link> 
+        </li> 
       </ul>
     </header>
 
