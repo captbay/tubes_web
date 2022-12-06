@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 class PesulapController extends Controller
 {
     /**
@@ -21,10 +23,37 @@ class PesulapController extends Controller
     public function index()
     {
         //get posts
-        $pesulap = Pesulap::latest()->paginate(5);
+        // $pesulap = Pesulap::latest()->paginate(5);
+        $pesulap = Pesulap::latest()->get();
         //render view with posts
-        return view('pesulap.index', compact('pesulap'));
+        // return view('pesulap.index', compact('pesulap'));
+
+        //make response JSON
+        return response()->json([
+            'success' => true,
+            'message' => 'List Data Pesulap',
+            'data'    => $pesulap
+        ], 200);
     }
+    /**
+     * show
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function show($id)
+    {
+        //find pesulap by ID
+        $pesulap = Pesulap::find($id);
+
+        //make response JSON
+        return response()->json([
+            'success' => true,
+            'message' => 'Detail Data Pesulap',
+            'data'    => $pesulap
+        ], 200);
+    }
+
     /**
      * create
      *
@@ -43,12 +72,17 @@ class PesulapController extends Controller
     public function store(Request $request)
     {
         //Validasi Formulir
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'Nama' => 'required',
             'Harga' => 'required|Integer',
             'Image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'Deskripsi' => 'required'
         ]);
+
+        //response error validation
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
 
         if ($request->hasFile('Image')) {
 
@@ -57,37 +91,57 @@ class PesulapController extends Controller
             $image->storeAs('public/pesulaps', $image->hashName());
 
             //update pesulap with new image
-            Pesulap::create([
+            $pesulap = Pesulap::create([
                 'Nama' => $request->Nama,
                 'Harga' => $request->Harga,
                 'Image' => $image->hashName(),
                 'Deskripsi' => $request->Deskripsi
             ]);
+
+            if ($pesulap) {
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Pesulap Created',
+                    'data'    => $pesulap
+                ], 201);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Pesulap Failed to Save',
+                    'data'    => $pesulap
+                ], 409);
+            }
         }
+        //data pesulap failed save to database
+        return response()->json([
+            'success' => false,
+            'message' => 'Pesulap Not Found',
+        ], 409);
 
-        try {
-            //Mengisi variabel yang akan ditampilkan pada view mail
-            // $content = [
-            //     'body' => $request->nama_pesulap,
-            //     'title' => 'Pesulap',
-            // ];
-            //Mengirim email ke emailtujuan@gmail.com
+        // try {
+        //     //Mengisi variabel yang akan ditampilkan pada view mail
+        //     // $content = [
+        //     //     'body' => $request->nama_pesulap,
+        //     //     'title' => 'Pesulap',
+        //     // ];
+        //     //Mengirim email ke emailtujuan@gmail.com
 
-            // FacadesMail::to('agespramana9@gmail.com')->send(new
-            //     PesulapMail($content));
+        //     // FacadesMail::to('agespramana9@gmail.com')->send(new
+        //     //     PesulapMail($content));
 
-            //Redirect jika berhasil mengirim email
-            return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Disimpan, email telah terkirim!']);
-        } catch (Exception $e) {
-            //Redirect jika gagal mengirim email
-            return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Disimpan, namun gagal mengirim email!']);
-        }
+        //     //Redirect jika berhasil mengirim email
+        //     return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Disimpan, email telah terkirim!']);
+        // } catch (Exception $e) {
+        //     //Redirect jika gagal mengirim email
+        //     return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Disimpan, namun gagal mengirim email!']);
+        // }
     }
 
     /**
      * edit
      *
-     * @param  mixed $post
+     * @param  mixed $pesulap
      * @return void
      */
     public function edit(Int $id)
@@ -107,20 +161,31 @@ class PesulapController extends Controller
      */
     public function update(Request $request, Int $id)
     {
+        $pesulap = Pesulap::find($id);
+        if (!$pesulap) {
+            //data pesulap not found
+            return response()->json([
+                'success' => false,
+                'message' => 'Pesulap Not Found',
+            ], 404);
+        }
         //validate form
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'Nama' => 'required',
             'Harga' => 'required|Integer',
             'Image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'Deskripsi' => 'required'
         ]);
+        //response error validation
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
 
-        $pesulap = Pesulap::find($id);
         // check if image is uploaded
-        if ($request->hasFile('Image')) {
+        if ($request->hasFile('Image') || $pesulap) {
 
             //upload new image
-            $image = $request->file('Image');
+            $image = $request->Image;
             $image->storeAs('public/pesulaps', $image->hashName());
 
             //delete old image
@@ -133,10 +198,22 @@ class PesulapController extends Controller
                 'Image' => $image->hashName(),
                 'Deskripsi' => $request->Deskripsi
             ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Pesulap Updated',
+                'data'    => $pesulap
+            ], 200);
         }
 
+        //data pesulap not found
+        return response()->json([
+            'success' => false,
+            'message' => 'Pesulap Not Found',
+        ], 404);
+
         //redirect to index
-        return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Diubah!']);
+        // return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
 
@@ -153,11 +230,26 @@ class PesulapController extends Controller
 
         $pesulap = Pesulap::find($id);
 
-        Storage::delete('public/pesulaps/' . $pesulap->Image);
-        //delete pesulap
-        $pesulap->delete();
+        if ($pesulap) {
+            //delete image
+            Storage::delete('public/pesulaps/' . $pesulap->Image);
+            //delete pesulap
+            $pesulap->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Pesulap Deleted',
+            ], 200);
+        }
+
+
+        //data pesulap not found
+        return response()->json([
+            'success' => false,
+            'message' => 'Pesulap Not Found',
+        ], 404);
 
         //redirect to index
-        return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        // return redirect()->route('pesulap.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

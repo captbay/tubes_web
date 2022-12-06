@@ -11,8 +11,9 @@ use Exception;
 // Storage
 use Illuminate\Support\Facades\Storage;
 
-
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Validator;
 
 class BandController extends Controller
 {
@@ -23,11 +24,39 @@ class BandController extends Controller
      */
     public function index()
     {
-        //get posts
-        $band = Band::latest()->paginate(5);
-        //render view with posts
-        return view('band.index', compact('band'));
+        //get bands
+        // $band = Band::latest()->paginate(5);
+        $band = Band::latest()->get();
+        //render view with bands
+        // return view('band.index', compact('band'));
+
+        //make response JSON
+        return response()->json([
+            'success' => true,
+            'message' => 'List Data Band',
+            'data'    => $band
+        ], 200);
     }
+
+    /**
+     * show
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function show($id)
+    {
+        //find band by ID
+        $band = Band::find($id);
+
+        //make response JSON
+        return response()->json([
+            'success' => true,
+            'message' => 'Detail Data Band',
+            'data'    => $band
+        ], 200);
+    }
+
     /**
      * create
      *
@@ -46,12 +75,17 @@ class BandController extends Controller
     public function store(Request $request)
     {
         //Validasi Formulir
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'Nama' => 'required',
             'Harga' => 'required|Integer',
             'Image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'Deskripsi' => 'required'
         ]);
+
+        //response error validation
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
 
         if ($request->hasFile('Image')) {
 
@@ -60,37 +94,58 @@ class BandController extends Controller
             $image->storeAs('public/bands', $image->hashName());
 
             //update band with new image
-            Band::create([
+            $band = Band::create([
                 'Nama' => $request->Nama,
                 'Harga' => $request->Harga,
                 'Image' => $image->hashName(),
                 'Deskripsi' => $request->Deskripsi
             ]);
+
+            if ($band) {
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Band Created',
+                    'data'    => $band
+                ], 201);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Band Failed to Save',
+                    'data'    => $band
+                ], 409);
+            }
         }
+        //data band failed save to database
+        return response()->json([
+            'success' => false,
+            'message' => 'Band Not Found',
+        ], 409);
 
-        try {
-            //Mengisi variabel yang akan ditampilkan pada view mail
-            // $content = [
-            //     'body' => $request->nama_band,
-            //     'title' => 'Band',
-            // ];
-            //Mengirim email ke emailtujuan@gmail.com
 
-            // FacadesMail::to('agespramana9@gmail.com')->send(new
-            //     BandMail($content));
+        // try {
+        //     //Mengisi variabel yang akan ditampilkan pada view mail
+        //     // $content = [
+        //     //     'body' => $request->nama_band,
+        //     //     'title' => 'Band',
+        //     // ];
+        //     //Mengirim email ke emailtujuan@gmail.com
 
-            //Redirect jika berhasil mengirim email
-            return redirect()->route('band.index')->with(['success' => 'Data Berhasil Disimpan, email telah terkirim!']);
-        } catch (Exception $e) {
-            //Redirect jika gagal mengirim email
-            return redirect()->route('band.index')->with(['success' => 'Data Berhasil Disimpan, namun gagal mengirim email!']);
-        }
+        //     // FacadesMail::to('agespramana9@gmail.com')->send(new
+        //     //     BandMail($content));
+
+        //     //Redirect jika berhasil mengirim email
+        //     return redirect()->route('band.index')->with(['success' => 'Data Berhasil Disimpan, email telah terkirim!']);
+        // } catch (Exception $e) {
+        //     //Redirect jika gagal mengirim email
+        //     return redirect()->route('band.index')->with(['success' => 'Data Berhasil Disimpan, namun gagal mengirim email!']);
+        // }
     }
 
     /**
      * edit
      *
-     * @param  mixed $post
+     * @param  mixed $band
      * @return void
      */
     public function edit(Int $id)
@@ -110,20 +165,33 @@ class BandController extends Controller
      */
     public function update(Request $request, Int $id)
     {
+        $band = Band::find($id);
+        if (!$band) {
+            //data band not found
+            return response()->json([
+                'success' => false,
+                'message' => 'Band Not Found',
+            ], 404);
+        }
         //validate form
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'Nama' => 'required',
             'Harga' => 'required|Integer',
             'Image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'Deskripsi' => 'required'
         ]);
 
-        $band = Band::find($id);
+        //response error validation
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
+
         // check if image is uploaded
-        if ($request->hasFile('Image')) {
+        if ($request->hasFile('Image') || $band) {
 
             //upload new image
-            $image = $request->file('Image');
+            $image = $request->Image;
             $image->storeAs('public/bands', $image->hashName());
 
             //delete old image
@@ -136,10 +204,22 @@ class BandController extends Controller
                 'Image' => $image->hashName(),
                 'Deskripsi' => $request->Deskripsi
             ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Band Updated',
+                'data'    => $band
+            ], 200);
         }
 
+        //data band not found
+        return response()->json([
+            'success' => false,
+            'message' => 'Band Not Found',
+        ], 404);
+
         //redirect to index
-        return redirect()->route('band.index')->with(['success' => 'Data Berhasil Diubah!']);
+        // return redirect()->route('band.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
 
@@ -156,12 +236,26 @@ class BandController extends Controller
 
         $band = Band::find($id);
 
-        //delete image
-        Storage::delete('public/bands/' . $band->Image);
-        //delete band
-        $band->delete();
+        if ($band) {
+            //delete image
+            Storage::delete('public/bands/' . $band->Image);
+            //delete band
+            $band->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Band Deleted',
+            ], 200);
+        }
+
+
+        //data band not found
+        return response()->json([
+            'success' => false,
+            'message' => 'Band Not Found',
+        ], 404);
 
         //redirect to index
-        return redirect()->route('band.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        // return redirect()->route('band.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

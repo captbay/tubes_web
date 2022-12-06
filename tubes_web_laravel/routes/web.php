@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::resource('/band', \App\Http\Controllers\BandController::class);
-Route::resource('/komika', \App\Http\Controllers\KomikaController::class);
-Route::resource('/pesulap', \App\Http\Controllers\PesulapController::class);
+// Route::resource('/band', \App\Http\Controllers\BandController::class);
+// Route::resource('/komika', \App\Http\Controllers\KomikaController::class);
+// Route::resource('/pesulap', \App\Http\Controllers\PesulapController::class);
