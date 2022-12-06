@@ -14,8 +14,8 @@ const routes = [
                 component: () => import('@/views/berandaPage.vue'),
             },
             {
-                path: "/tentangkami", 
-                name: "tentangkami", 
+                path: "/tentangKami", 
+                name: "tentangKami", 
                 component: () => import('@/views/aboutUsPage.vue'),
             },
             {

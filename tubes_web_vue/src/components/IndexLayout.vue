@@ -34,9 +34,22 @@
         <li class="nav-item"> 
             <router-link :to="{name: 'beranda'}" class="nav-link text-light">Beranda</router-link> 
         </li> 
-        <li class="nav-item"><a href="#" class="nav-link text-light">Daftar Band</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Daftar Band</a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li>
+                <router-link :to="{name: 'tentangKami'}" class="dropdown-item text-light">Band</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'tentangKami'}" class="dropdown-item text-light">Stand Up</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'tentangKami'}" class="dropdown-item text-light">Magician</router-link>
+            </li>
+          </ul>
+        </li>
         <li class="nav-item">
-            <router-link :to="{name: 'tentangkami'}" class="nav-link text-light">Tentang Kami</router-link>
+            <router-link :to="{name: 'tentangKami'}" class="nav-link text-light">Tentang Kami</router-link>
         </li>
         <li class="nav-item">
             <router-link :to="{name: 'bantuan'}" class="nav-link text-light">Bantuan</router-link>
@@ -264,7 +277,6 @@
         margin: auto;
         padding-top: 12%;
     }
-    
 
     /* Style Footer */
     footer {
