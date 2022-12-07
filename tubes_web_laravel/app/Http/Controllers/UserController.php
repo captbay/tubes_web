@@ -90,10 +90,10 @@ class UserController extends Controller
         }
 
         // check if image is uploaded
-        if ($request->hasFile('Image') || $user) {
+        if ($request->hasFile('image_user') || $user) {
 
             //upload new image
-            $image_user = $request->Image;
+            $image_user = $request->image_user;
             $image_user->storeAs('public/users', $image_user->hashName());
 
             //delete old image
@@ -135,7 +135,7 @@ class UserController extends Controller
 
         if ($user) {
             //delete image
-            Storage::delete('public/users/' . $user->Image_user);
+            Storage::delete('public/users/' . $user->image_user);
             //delete pesulap
             $user->delete();
 
