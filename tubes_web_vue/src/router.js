@@ -38,6 +38,16 @@ const routes = [
                 name: "daftar", 
                 component: () => import('@/views/daftarPage.vue'),
             },
+            {
+                path: "/pesulap", 
+                name: "pesulapIndex",  
+                component: () => import('@/views/Pesulap/indexPage.vue'),
+            },
+            {
+                path: "/pesulap/detailpesulap", 
+                name: "detailPesulap",   
+                component: () => import('@/views/Pesulap/detailPesulap.vue'),
+            },
         ],
     },
 ]
