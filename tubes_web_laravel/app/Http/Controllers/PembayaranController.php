@@ -95,8 +95,7 @@ class PembayaranController extends Controller
             'success' => true,
             'message' => 'Pembayaran Updated',
             'data'    => $pembayaran
-         ], 200);
-
+        ], 200);
     }
 
     /**
@@ -111,10 +110,10 @@ class PembayaranController extends Controller
         //delete post
         Pembayaran::where('id', $id)->delete();
 
-       return response()->json([
-                'success' => true,
-                'message' => 'Pembayaran Deleted',
-            ], 200);
+        return response()->json([
+            'success' => true,
+            'message' => 'Pembayaran Deleted',
+        ], 200);
     }
 
     /**
@@ -131,9 +130,10 @@ class PembayaranController extends Controller
             'metode_pembayaran' => 'required',
             'total_bayar' => 'required',
         ]);
-        $user = User::where('id', $request->user)->first();
+
+        $user = User::find($request->id_user);
         //Fungsi Simpan Data ke dalam Database
-        $pembayaran=Pembayaran::create([
+        $pembayaran = Pembayaran::create([
             'id_user' => $user->id,
             'metode_pembayaran' => $request->metode_pembayaran,
             'total_bayar' => $request->total_bayar,
