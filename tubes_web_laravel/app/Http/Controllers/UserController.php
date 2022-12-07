@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -74,7 +75,7 @@ class UserController extends Controller
             ], 404);
         }
 
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
@@ -83,22 +84,22 @@ class UserController extends Controller
             'telepon' => 'required|regex:/^(08)[0-9]{4,5}$/',
             'alamat' => 'required',
         ]);
-        
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
-            }
+        }
 
-         // check if image is uploaded
-         if ($request->hasFile('Image') || $user) {
+        // check if image is uploaded
+        if ($request->hasFile('Image') || $user) {
 
-             //upload new image
-             $image_user = $request->Image;
-             $image_user->storeAs('public/users', $image_user->hashName());
- 
-             //delete old image
-             Storage::delete('public/users/' . $user->image_user);
+            //upload new image
+            $image_user = $request->Image;
+            $image_user->storeAs('public/users', $image_user->hashName());
 
-             $user->update([
+            //delete old image
+            Storage::delete('public/users/' . $user->image_user);
+
+            $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => $request->password,
@@ -107,16 +108,15 @@ class UserController extends Controller
                 'telepon' => $request->telepon,
                 'alamat' => $request->alamat,
                 'image_user' => $request->image_user,
-             ]);
+            ]);
 
-             return response()->json([
+            return response()->json([
                 'success' => true,
                 'message' => 'User Updated',
                 'data'    => $user
-             ], 200);
-
+            ], 200);
         }
-       
+
         return response()->json([
             'success' => false,
             'message' => 'User Not Found',
@@ -162,7 +162,7 @@ class UserController extends Controller
     public function register(Request $request)
     {
         //Validasi Formulir
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
@@ -171,16 +171,16 @@ class UserController extends Controller
             'telepon' => 'required|regex:/^(08)[0-9]{4,5}$/',
             'alamat' => 'required',
         ]);
-        
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
-            }
+        }
 
         $user = User::where('id', $request->user)->first();
 
         $password = bcrypt($request->password);
 
-        $user= User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => $password,
@@ -215,7 +215,7 @@ class UserController extends Controller
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
-            }
+        }
 
         $user = User::where('email', $request->email)->first();
         if (!$user) {
@@ -232,7 +232,7 @@ class UserController extends Controller
             $_SESSION['user'] = $user;
 
             return response()->json([
-                'message' =>'Authenticated',
+                'message' => 'Authenticated',
                 'user' => $user,
                 'token_type' => 'Bearer',
                 'access_token' => $token
