@@ -68,6 +68,11 @@ const routes = [
                 name: "detailStandUp",   
                 component: () => import('@/views/StandUp/detailStandUp.vue'),
             },
+            {
+                path: "/keranjang", 
+                name: "keranjang",   
+                component: () => import('@/views/keranjangPage.vue'),
+            }
         ],
     },
 ]
