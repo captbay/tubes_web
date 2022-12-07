@@ -62,7 +62,7 @@
         </li> 
       </ul>
       <form class="d-flex">
-            <router-link :to="{name: 'masuk'}" class="justify-content-right bi bi-bag-plus-fill"></router-link> 
+            <router-link :to="{name: 'keranjang'}" class="justify-content-right bi bi-bag-plus-fill"></router-link> 
       </form>
       
     </header>
