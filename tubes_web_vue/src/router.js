@@ -48,6 +48,26 @@ const routes = [
                 name: "detailPesulap",   
                 component: () => import('@/views/Pesulap/detailPesulap.vue'),
             },
+            {
+                path: "/band", 
+                name: "band",  
+                component: () => import('@/views/Band/indexPage.vue'),
+            },
+            {
+                path: "/band/detailBand", 
+                name: "detailBand",   
+                component: () => import('@/views/Band/detailBand.vue'),
+            },
+            {
+                path: "/standUp", 
+                name: "standUp",  
+                component: () => import('@/views/StandUp/indexPage.vue'),
+            },
+            {
+                path: "/standUp/detailStandUp", 
+                name: "detailStandUp",   
+                component: () => import('@/views/StandUp/detailStandUp.vue'),
+            },
         ],
     },
 ]

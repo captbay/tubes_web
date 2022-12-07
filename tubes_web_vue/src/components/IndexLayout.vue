@@ -38,10 +38,10 @@
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Daftar Event</a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li>
-                <router-link :to="{name: 'tentangKami'}" class="dropdown-item text-light">Band</router-link>
+                <router-link :to="{name: 'band'}" class="dropdown-item text-light">Band</router-link>
             </li>
             <li>
-                <router-link :to="{name: 'kontak'}" class="dropdown-item text-light">Stand Up</router-link>
+                <router-link :to="{name: 'standUp'}" class="dropdown-item text-light">Stand Up</router-link>
             </li>
             <li>
                 <router-link :to="{name: 'pesulapIndex'}" class="dropdown-item text-light">Magician</router-link>
@@ -186,101 +186,7 @@
 
 <style>
     /* Style Header */
-    * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif;
-    }
-    nav {
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        min-height: 10vh;
-        background: #1d1d1d;
-    }
-
-    .menu {
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        justify-content: space-around;
-        width: 50%;
-    }
-    .menu li {
-        list-style: none;
-    }
-    .menu a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 15px;
-        padding: 30px;
-        font-weight: 600;
-        transition: .9s;
-    }
-    .menu a:hover {
-        letter-spacing: 2px;
-    }
-    .bar {
-        display: none;
-        cursor: pointer;
-    }
-    .bar div {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px;
-        transition: all .5s ease;
-    }
-    .nav-active {
-        transform: translateX(-100%);
-    }
-    .bar-active .bar-1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .bar-active .bar-2 {
-        opacity: 0;
-    }
-    .bar-active .bar-3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-    .banner {
-        height: 100vh;
-        background-size: cover;
-        background-position: center;
-    }
-    .content h2 {
-        font-family: alfa slab one;
-        color: #000000;
-        font-size: 60px;
-    }
-    .content p {
-        width: 50%;
-        color: rgba(0, 0, 0, 0.6);
-        line-height: 2;
-    }
-    .btn a {
-        text-decoration: none;
-        background: #ef0554;
-        padding: 15px 10px;
-        display: inline-block;
-        color: #fff;
-        margin-top: 15px;
-        border-radius: 50px;
-        width: 130px;
-        text-align: center;
-    }
-    .wrapper {
-        width: 1060px;
-        margin: auto;
-        padding-top: 12%;
-    }
+    
 
     /* Style Footer */
     footer {
