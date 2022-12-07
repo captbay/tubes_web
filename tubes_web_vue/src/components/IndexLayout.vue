@@ -35,16 +35,16 @@
             <router-link :to="{name: 'beranda'}" class="nav-link text-light">Beranda</router-link> 
         </li> 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Daftar Band</a>
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Daftar Event</a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li>
                 <router-link :to="{name: 'tentangKami'}" class="dropdown-item text-light">Band</router-link>
             </li>
             <li>
-                <router-link :to="{name: 'tentangKami'}" class="dropdown-item text-light">Stand Up</router-link>
+                <router-link :to="{name: 'kontak'}" class="dropdown-item text-light">Stand Up</router-link>
             </li>
             <li>
-                <router-link :to="{name: 'tentangKami'}" class="dropdown-item text-light">Magician</router-link>
+                <router-link :to="{name: 'pesulapIndex'}" class="dropdown-item text-light">Magician</router-link>
             </li>
           </ul>
         </li>
@@ -61,6 +61,10 @@
             <router-link :to="{name: 'masuk'}" class="nav-link text-light">Masuk</router-link> 
         </li> 
       </ul>
+      <form class="d-flex">
+            <router-link :to="{name: 'masuk'}" class="justify-content-right bi bi-bag-plus-fill"></router-link> 
+      </form>
+      
     </header>
 
     <router-view></router-view>
@@ -319,6 +323,21 @@
     #basic-addon2 {
         background: #fe1e4f;
         color: #fff;
+    }
+
+    .btn-bd-primary {
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet);
+        --bs-btn-border-color: var(--bd-violet);
+        --bs-btn-border-radius: .5rem;
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
+        --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+        --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
     }
     
 </style>
