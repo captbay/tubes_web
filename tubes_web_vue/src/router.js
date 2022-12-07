@@ -48,6 +48,11 @@ const routes = [
                 name: "detailPesulap",   
                 component: () => import('@/views/Pesulap/detailPesulap.vue'),
             },
+            {
+                path: "/keranjang", 
+                name: "keranjang",   
+                component: () => import('@/views/keranjangPage.vue'),
+            },
         ],
     },
 ]
