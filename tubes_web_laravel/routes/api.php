@@ -28,11 +28,38 @@ Route::apiResource(
     '/pesulaps',
     \App\Http\Controllers\PesulapController::class
 );
+Route::apiResource(
+    '/pembelians',
+    \App\Http\Controllers\PembelianController::class
+);
+Route::apiResource(
+    '/pembayarans',
+    \App\Http\Controllers\PembayaranController::class
+);
+Route::apiResource(
+    '/users',
+    \App\Http\Controllers\UserController::class
+);
 
-Route::post('bands/update/{id}', [BandController::class, 'update']);
-Route::post('pesulaps/update/{id}', [PesulapController::class, 'update']);
-Route::post('komikas/update/{id}', [KomikaController::class, 'update']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('pembelians/update/{id}', [PembelianController::class, 'update']);
+Route::post('pembayarans/update/{id}', [PembayaranController::class, 'update']);
+
+
+//user 
+Route::post('users/login', [UserController::class, 'login']);
+Route::post('users/register', [UserController::class, 'register']);
+
+Route::group(['middleware' => 'auth:api'], function () {
+    // user
+    Route::post('users/update/{id}', [UserController::class, 'update']);
+    Route::post('users/logout', [UserController::class, 'logout']);
+    // band
+    Route::post('bands/update/{id}', [BandController::class, 'update']);
+    // pesulap
+    Route::post('pesulaps/update/{id}', [PesulapController::class, 'update']);
+    //komika
+    Route::post('komikas/update/{id}', [KomikaController::class, 'update']);
+    //
+
 });

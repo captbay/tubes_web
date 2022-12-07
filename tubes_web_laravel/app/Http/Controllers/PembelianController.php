@@ -9,6 +9,7 @@ use App\Models\Pembelian;
 use App\Models\Pesulap;
 use App\Models\User;
 use App\Models\Users;
+use Illuminate\Support\Facades\Validator;
 
 class PembelianController extends Controller
 {
@@ -20,9 +21,13 @@ class PembelianController extends Controller
     public function index()
     {
         //get posts
-        $pembelian = Pembelian::with(['users'])->paginate(5);
+        $pembelian = Pembelian::latest()->get();
         //render view with posts
-        return view('pembelian.index', compact('pembelian'));
+        return response()->json([
+            'success' => true,
+            'message' => 'List Data Pembelian',
+            'data'    => $pembelian
+        ], 200);
     }
 
     /**
@@ -36,6 +41,15 @@ class PembelianController extends Controller
         return view('pembelian.create', compact('pembelian'));
     }
 
+    public function show($id)
+    {
+        $pembelian = Pembelian::find($id);
+        return response()->json([
+            'success' => true,
+            'message' => 'Detail Data Pembelian',
+            'data'    => $pembelian
+        ], 200);
+    }
     /**
      * edit
      *
@@ -50,10 +64,22 @@ class PembelianController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $pembelian = Pembelian::find($id);
+        if (!$pembelian) {
+            //data pesulap not found
+            return response()->json([
+                'success' => false,
+                'message' => 'Pembelian Not Found',
+            ], 404);
+        }
+
+        $validator = Validator::make($request->all(), [
             'tgl_pembelian' => 'required',
         ]);
-
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+        
         $pembelian = Pembelian::find($id);
         $band = Band::where('id', $request->band)->first();
         $komika = Komika::where('id', $request->komika)->first();
@@ -67,9 +93,12 @@ class PembelianController extends Controller
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
 
+        return response()->json([
+            'success' => true,
+            'message' => 'Pembelian Updated',
+            'data'    => $pembelian
+         ], 200);
 
-        //redirect to index
-        return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
@@ -85,7 +114,11 @@ class PembelianController extends Controller
         Pembelian::where('id', $id)->delete();
 
         //redirect to index
-        return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return response()->json([
+                'success' => true,
+                'message' => 'Pesulap Deleted',
+            ], 200);
+        
     }
 
     /**
@@ -97,7 +130,7 @@ class PembelianController extends Controller
     public function store(Request $request, Int $id)
     {
         //Validasi Formulir
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'tgl_pembelian' => 'required',
         ]);
 
@@ -106,8 +139,8 @@ class PembelianController extends Controller
         $komika = Komika::where('id', $request->komika)->first();
         $pesulap = Pesulap::where('id', $request->pesulap)->first();
         $user = User::where('id', $request->user)->first();
-        //Fungsi Simpan Data ke dalam Database
-        Pembelian::create([
+
+        $pembelian=Pembelian::create([
             'id_user' => $user->id,
             'id_band' => $band->id,
             'id_komika' => $komika->id,
@@ -116,6 +149,18 @@ class PembelianController extends Controller
         ]);
 
         //Redirect jika berhasil mengirim email
-        return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        if ($pembelian) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Pembelian Created',
+                'data'    => $pembelian
+            ], 201);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Pembelian Failed to Save',
+                'data'    => $pembelian
+            ], 409);
+        }
     }
 }
