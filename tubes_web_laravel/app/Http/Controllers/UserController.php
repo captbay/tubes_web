@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Pembelian;
 use App\Models\User;
 use App\Models\Users;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -17,9 +22,23 @@ class UserController extends Controller
     public function index()
     {
         //get posts
-        $user = User::with(['users'])->paginate(5);
+        $user = User::latest()->get();
         //render view with posts
-        return view('user.index', compact('user'));
+        return response()->json([
+            'success' => true,
+            'message' => 'List Data User',
+            'data'    => $user
+        ], 200);
+    }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+        return response()->json([
+            'success' => true,
+            'message' => 'Detail Data User',
+            'data'    => $user
+        ], 200);
     }
 
     /**
@@ -47,7 +66,16 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $user = User::where('id', $request->user)->first();
+        if (!$user) {
+            //data pesulap not found
+            return response()->json([
+                'success' => false,
+                'message' => 'User Not Found',
+            ], 404);
+        }
+
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
@@ -57,27 +85,42 @@ class UserController extends Controller
             'alamat' => 'required',
         ]);
 
-        $user = User::where('id', $request->user)->first();
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
 
-        if ($request->gender == 'Pria')
-            $gender = 1;
-        else
-            $gender = 0;
+        // check if image is uploaded
+        if ($request->hasFile('image_user') || $user) {
 
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-            'tgl_lahir' => $request->tgl_lahir,
-            'gender' => $gender,
-            'telepon' => $request->telepon,
-            'alamat' => $request->alamat,
-            'image_user' => $request->image_user,
-        ]);
+            //upload new image
+            $image_user = $request->image_user;
+            $image_user->storeAs('public/users', $image_user->hashName());
 
+            //delete old image
+            Storage::delete('public/users/' . $user->image_user);
 
-        //redirect to index
-        return redirect()->route('user.index')->with(['success' => 'Data Berhasil Diubah!']);
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+                'tgl_lahir' => $request->tgl_lahir,
+                'gender' => $request->gender,
+                'telepon' => $request->telepon,
+                'alamat' => $request->alamat,
+                'image_user' => $request->image_user,
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'User Updated',
+                'data'    => $user
+            ], 200);
+        }
+
+        return response()->json([
+            'success' => false,
+            'message' => 'User Not Found',
+        ], 404);
     }
 
     /**
@@ -88,12 +131,26 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        $user = User::find($id);
 
-        //delete post
-        User::where('id', $id)->delete();
+        if ($user) {
+            //delete image
+            Storage::delete('public/users/' . $user->image_user);
+            //delete pesulap
+            $user->delete();
 
-        //redirect to index
-        return redirect()->route('user.index')->with(['success' => 'Data Berhasil Dihapus!']);
+            return response()->json([
+                'success' => true,
+                'message' => 'User Deleted',
+            ], 200);
+        }
+
+
+        //data pesulap not found
+        return response()->json([
+            'success' => false,
+            'message' => 'User Not Found',
+        ], 404);
     }
 
     /**
@@ -102,10 +159,10 @@ class UserController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function register(Request $request)
     {
         //Validasi Formulir
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
@@ -115,24 +172,88 @@ class UserController extends Controller
             'alamat' => 'required',
         ]);
 
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
         $user = User::where('id', $request->user)->first();
 
-        if ($request->gender == 'Pria')
-            $gender = 1;
-        else
-            $gender = 0;
+        $password = bcrypt($request->password);
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => $password,
             'tgl_lahir' => $request->tgl_lahir,
-            'gender' => $gender,
+            'gender' => $request->gender,
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
+            'image_user' => $request->image_user,
         ]);
 
         //Redirect jika berhasil mengirim email
-        return redirect()->route('user.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        if ($user) {
+            return response()->json([
+                'success' => true,
+                'message' => 'User Created',
+                'data'    => $user
+            ], 201);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'User Failed to Save',
+                'data'    => $user
+            ], 409);
+        }
+    }
+
+    public function login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        $user = User::where('email', $request->email)->first();
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'User Not Found',
+            ], 404);
+        }
+        $token = $user->createToken('Authentication Token')->accessToken;
+
+        if (Hash::check($request->password, $user->password)) {
+            session_start();
+            $_SESSION['isLogin'] = true;
+            $_SESSION['user'] = $user;
+
+            return response()->json([
+                'message' => 'Authenticated',
+                'user' => $user,
+                'token_type' => 'Bearer',
+                'access_token' => $token
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Login Failed',
+            ], 409);
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $user = Auth::user()->token();
+        Session::flush();
+        Auth::logout();
+        $user->revoke();
+        return response()->json([
+            'success' => true,
+            'message' => 'Authenticated Logout',
+        ], 200);
     }
 }

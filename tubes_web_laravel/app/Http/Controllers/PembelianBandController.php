@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Band;
 use App\Models\Komika;
 use Illuminate\Http\Request;
-use App\Models\Pembelian;
+use App\Models\PembelianBand;
 use App\Models\Pesulap;
 use App\Models\User;
 use App\Models\Users;
+use Illuminate\Support\Facades\Validator;
 
-class PembelianController extends Controller
+class PembelianBandController extends Controller
 {
     /**
      * index
@@ -20,9 +21,14 @@ class PembelianController extends Controller
     public function index()
     {
         //get posts
-        $pembelian = Pembelian::with(['users'])->paginate(5);
+        $pembelian = PembelianBand::latest()->get();
+
         //render view with posts
-        return view('pembelian.index', compact('pembelian'));
+        return response()->json([
+            'success' => true,
+            'message' => 'List Data Pembelian',
+            'data'    => $pembelian
+        ], 200);
     }
 
     /**
@@ -32,10 +38,19 @@ class PembelianController extends Controller
      */
     public function create()
     {
-        $pembelian = Pembelian::get();
+        $pembelian = PembelianBand::get();
         return view('pembelian.create', compact('pembelian'));
     }
 
+    public function show($id)
+    {
+        $pembelian = PembelianBand::find($id);
+        return response()->json([
+            'success' => true,
+            'message' => 'Detail Data Pembelian',
+            'data'    => $pembelian
+        ], 200);
+    }
     /**
      * edit
      *
@@ -44,17 +59,26 @@ class PembelianController extends Controller
      */
     public function edit($id)
     {
-        $pembelian = Pembelian::find($id);
+        $pembelian = PembelianBand::find($id);
         return view('pembelian.edit', compact('pembelian'));
     }
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $pembelian = PembelianBand::find($id);
+        if (!$pembelian) {
+            //data pesulap not found
+            return response()->json([
+                'success' => false,
+                'message' => 'Pembelian Not Found',
+            ], 404);
+        }
+
+        $validator = Validator::make($request->all(), [
             'tgl_pembelian' => 'required',
         ]);
 
-        $pembelian = Pembelian::find($id);
+        $pembelian = PembelianBand::find($id);
         $band = Band::where('id', $request->band)->first();
         $komika = Komika::where('id', $request->komika)->first();
         $pesulap = Pesulap::where('id', $request->pesulap)->first();
@@ -67,9 +91,11 @@ class PembelianController extends Controller
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
 
-
-        //redirect to index
-        return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return response()->json([
+            'success' => true,
+            'message' => 'Pembelian Updated',
+            'data'    => $pembelian
+        ], 200);
     }
 
     /**
@@ -82,10 +108,13 @@ class PembelianController extends Controller
     {
 
         //delete post
-        Pembelian::where('id', $id)->delete();
+        PembelianBand::where('id', $id)->delete();
 
         //redirect to index
-        return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return response()->json([
+            'success' => true,
+            'message' => 'Pesulap Deleted',
+        ], 200);
     }
 
     /**
@@ -97,17 +126,17 @@ class PembelianController extends Controller
     public function store(Request $request, Int $id)
     {
         //Validasi Formulir
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'tgl_pembelian' => 'required',
         ]);
 
-        $pembelian = Pembelian::find($id);
+        $pembelian = PembelianBand::find($id);
         $band = Band::where('id', $request->band)->first();
         $komika = Komika::where('id', $request->komika)->first();
         $pesulap = Pesulap::where('id', $request->pesulap)->first();
         $user = User::where('id', $request->user)->first();
-        //Fungsi Simpan Data ke dalam Database
-        Pembelian::create([
+
+        $pembelian = PembelianBand::create([
             'id_user' => $user->id,
             'id_band' => $band->id,
             'id_komika' => $komika->id,
@@ -116,6 +145,18 @@ class PembelianController extends Controller
         ]);
 
         //Redirect jika berhasil mengirim email
-        return redirect()->route('pembelian.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        if ($pembelian) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Pembelian Created',
+                'data'    => $pembelian
+            ], 201);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Pembelian Failed to Save',
+                'data'    => $pembelian
+            ], 409);
+        }
     }
 }

@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pembelians', function (Blueprint $table) {
+        Schema::create('pembelian_komikas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('id_band')->constrained('bands')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('id_pesulap')->constrained('pesulaps')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('id_komika')->constrained('komikas')->onUpdate('cascade')->onDelete('cascade');
             $table->date('tgl_pembelian');
             $table->timestamps();
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembelians');
+        Schema::dropIfExists('pembelian_komikas');
     }
 };

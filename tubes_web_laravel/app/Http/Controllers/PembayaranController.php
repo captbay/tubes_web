@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pembayaran;
 use App\Models\User;
 use App\Models\Users;
+use Illuminate\Support\Facades\Validator;
 
 class PembayaranController extends Controller
 {
@@ -17,9 +18,23 @@ class PembayaranController extends Controller
     public function index()
     {
         //get posts
-        $pembayaran = Pembayaran::with(['users'])->paginate(5);
+        $pembayaran = Pembayaran::latest()->get();
         //render view with posts
-        return view('pembayaran.index', compact('pembayaran'));
+        return response()->json([
+            'success' => true,
+            'message' => 'List Data Pembayaran',
+            'data'    => $pembayaran
+        ], 200);
+    }
+
+    public function show($id)
+    {
+        $pembayaran = Pembayaran::find($id);
+        return response()->json([
+            'success' => true,
+            'message' => 'Detail Data Pembayaran',
+            'data'    => $pembayaran
+        ], 200);
     }
 
     /**
@@ -48,11 +63,24 @@ class PembayaranController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $pembayaran = Pembayaran::find($id);
+        if (!$pembayaran) {
+            //data pesulap not found
+            return response()->json([
+                'success' => false,
+                'message' => 'Pembayaran Not Found',
+            ], 404);
+        }
+
+        $validator = Validator::make($request->all(), [
             'id_user' => 'required',
             'metode_pembayaran' => 'required',
             'total_bayar' => 'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
 
         $pembayaran = Pembayaran::find($id);
         $user = User::where('id', $request->user)->first();
@@ -63,9 +91,12 @@ class PembayaranController extends Controller
             'total_bayar' => $request->total_bayar,
         ]);
 
+        return response()->json([
+            'success' => true,
+            'message' => 'Pembayaran Updated',
+            'data'    => $pembayaran
+         ], 200);
 
-        //redirect to index
-        return redirect()->route('pembayaran.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
@@ -80,8 +111,10 @@ class PembayaranController extends Controller
         //delete post
         Pembayaran::where('id', $id)->delete();
 
-        //redirect to index
-        return redirect()->route('pembayaran.index')->with(['success' => 'Data Berhasil Dihapus!']);
+       return response()->json([
+                'success' => true,
+                'message' => 'Pembayaran Deleted',
+            ], 200);
     }
 
     /**
@@ -93,20 +126,32 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         //Validasi Formulir
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'id_user' => 'required',
             'metode_pembayaran' => 'required',
             'total_bayar' => 'required',
         ]);
         $user = User::where('id', $request->user)->first();
         //Fungsi Simpan Data ke dalam Database
-        Pembayaran::create([
+        $pembayaran=Pembayaran::create([
             'id_user' => $user->id,
             'metode_pembayaran' => $request->metode_pembayaran,
             'total_bayar' => $request->total_bayar,
         ]);
 
         //Redirect jika berhasil mengirim email
-        return redirect()->route('pembayaran.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        if ($pembayaran) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Pembayaran Created',
+                'data'    => $pembayaran
+            ], 201);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Pembayaran Failed to Save',
+                'data'    => $pembayaran
+            ], 409);
+        }
     }
 }

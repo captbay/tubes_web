@@ -16,23 +16,57 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource(
-    '/bands',
-    \App\Http\Controllers\BandController::class
-);
-Route::apiResource(
-    '/komikas',
-    \App\Http\Controllers\KomikaController::class
-);
-Route::apiResource(
-    '/pesulaps',
-    \App\Http\Controllers\PesulapController::class
-);
 
-Route::post('bands/update/{id}', [BandController::class, 'update']);
-Route::post('pesulaps/update/{id}', [PesulapController::class, 'update']);
-Route::post('komikas/update/{id}', [KomikaController::class, 'update']);
+// Route::apiResource(
+//     '/pembelians',
+//     \App\Http\Controllers\PembelianController::class
+// );
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+// Route::post('pembelians/update/{id}', [PembelianController::class, 'update']);
+
+
+
+//user 
+Route::post('users/login', [UserController::class, 'login']);
+Route::post('users/register', [UserController::class, 'register']);
+
+Route::group(['middleware' => 'auth:api'], function () {
+    // user
+    Route::apiResource(
+        '/users',
+        \App\Http\Controllers\UserController::class
+    );
+    Route::post('users/update/{id}', [UserController::class, 'update']);
+    Route::post('users/logout', [UserController::class, 'logout']);
+    //pembelian belum jadi ada 3
+    ////////
+    ////
+    ////
+    // band
+    Route::apiResource(
+        '/bands',
+        \App\Http\Controllers\BandController::class
+    );
+
+    Route::post('bands/update/{id}', [BandController::class, 'update']);
+    // pesulap
+    Route::apiResource(
+        '/pesulaps',
+        \App\Http\Controllers\PesulapController::class
+    );
+    Route::post('pesulaps/update/{id}', [PesulapController::class, 'update']);
+    //komika
+    Route::apiResource(
+        '/komikas',
+        \App\Http\Controllers\KomikaController::class
+    );
+    Route::post('komikas/update/{id}', [KomikaController::class, 'update']);
+    //pembayaran
+    Route::apiResource(
+        '/pembayarans',
+        \App\Http\Controllers\PembayaranController::class
+    );
+    Route::post('pembayarans/update/{id}', [PembayaranController::class, 'update']);
 });
