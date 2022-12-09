@@ -28,44 +28,49 @@
     <!-- Favicon -->
     <link rel="icon" href="/public/favicon.ico" type="image/gif">
         
-    <!-- Header -->
-    <header class="d-flex justify-content-center py-3 bg-dark">
-      <ul class="nav nav-pills">
-        <li class="nav-item"> 
-            <router-link :to="{name: 'beranda'}" class="nav-link text-light">Beranda</router-link> 
-        </li> 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Daftar Event</a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li>
-                <router-link :to="{name: 'band'}" class="dropdown-item text-light">Band</router-link>
-            </li>
-            <li>
-                <router-link :to="{name: 'standUp'}" class="dropdown-item text-light">Stand Up</router-link>
-            </li>
-            <li>
-                <router-link :to="{name: 'pesulapIndex'}" class="dropdown-item text-light">Magician</router-link>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-            <router-link :to="{name: 'tentangKami'}" class="nav-link text-light">Tentang Kami</router-link>
-        </li>
-        <li class="nav-item">
-            <router-link :to="{name: 'bantuan'}" class="nav-link text-light">Bantuan</router-link>
-        </li>
-        <li class="nav-item"> 
-            <router-link :to="{name: 'kontak'}" class="nav-link text-light">Kontak</router-link> 
-        </li> 
-        <li class="nav-item">
-            <router-link :to="{name: 'masuk'}" class="nav-link text-light">Masuk</router-link> 
-        </li> 
-      </ul>
-      <form class="d-flex">
-            <router-link :to="{name: 'keranjang'}" class="justify-content-right bi bi-bag-plus-fill"></router-link> 
-      </form>
-      
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-light" href="favicon.ico">Tubes</a>
+                <button class="navbar-toggler text-light navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+                </button>
+                <div class="navbar-collapse collapse show" id="navbarResponsive" style="">
+                <ul class="navbar-nav mx-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                        <router-link :to="{name: 'beranda'}" class="nav-link text-light">Beranda</router-link>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Daftar Event</a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li>
+                                <router-link :to="{name: 'band'}" class="dropdown-item text-light">Band</router-link>
+                            </li>
+                            <li>
+                                <router-link :to="{name: 'standUp'}" class="dropdown-item text-light">Stand Up</router-link>
+                            </li>
+                            <li>
+                                <router-link :to="{name: 'pesulapIndex'}" class="dropdown-item text-light">Magician</router-link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <router-link :to="{name: 'tentangKami'}" class="nav-link text-light">Tentang Kami</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link :to="{name: 'bantuan'}" class="nav-link text-light">Bantuan</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link :to="{name: 'kontak'}" class="nav-link text-light">Kontak</router-link>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <router-link :to="{name: 'masuk'}" class="me-3 me-lg-0 bi bi-box-arrow-in-right"></router-link> 
+                    <router-link :to="{name: 'keranjang'}" class="bi bi-bag-plus-fill"></router-link> 
+                </form>       
+            </div>
+        </div>
+    </nav>
 
     <router-view></router-view>
     
@@ -185,65 +190,5 @@
 </template>
 
 <style>
-    /* Style Header */
-    
 
-    /* Style Footer */
-    footer {
-	background: #1d1d1d;
-	padding: 86px 0;
-    }
-    .single-content {
-        text-align: center;
-        padding: 115px 0;
-    }
-    .single-box p {
-        color: #fff;
-        line-height: 1.9;
-    }
-    .single-box h3 {
-        font-size: 16px;
-        font-weight: 700;
-        color: #fff;
-    }
-    .single-box .card-area i {
-        color: #ffffff;
-        font-size: 20px;
-        margin-right: 10px;
-    }
-    .single-box ul {
-        list-style: none;
-        padding: 0;
-    }
-    .single-box ul li a {
-        text-decoration: none;
-        color: #fff;
-        line-height: 2.5;
-        font-weight: 100;
-    }
-    .single-box h2 {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 700;
-    }
-    #basic-addon2 {
-        background: #fe1e4f;
-        color: #fff;
-    }
-
-    .btn-bd-primary {
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet);
-        --bs-btn-border-color: var(--bd-violet);
-        --bs-btn-border-radius: .5rem;
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)};
-        --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
-        --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
-    }
-    
 </style>

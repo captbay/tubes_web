@@ -1,14 +1,36 @@
 <template>
+    <!-- Header -->
+    <div class="bg-image" style="
+        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/012.webp');
+        height: 85vh;
+      ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-center text-white">
+                    <h2>Temui Band-Band Keren Kami!</h2>
+                    <h4>
+                        Akordmusic Production selalu memastikan band dengan kualitas 
+                        terjamin dan Anda pasti mendapatkan kualitas band terbaik di 
+                        Bali. Kita juga memiliki banyak pilihan band yang tersedia 
+                        dengan gaya band nya masing-masing sesuai kebutuhan Anda. Jadi, 
+                        Anda bisa memilih band dengan kebutuhan yang Anda inginkan.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
     <div class="container">
         <div class="row my-5 pt-5">
-            <p class="header1 text-center">FAQ</p>
+            <h1 class="header1 text-center">FAQ</h1>
             <p class="body1 text-center">
                 Beberapa pertanyaan yang sering ditanya oleh para customer tercinta kita
             </p>
         </div>
 
         <div class="row mb-5">
-            <p class="text-center header3">Penampilan</p>
+            <h3 class="text-center header3">Penampilan</h3>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -71,7 +93,7 @@
         </div>
 
         <div class="row mb-5">
-            <p class="text-center header3">Booking Band atau Artist</p>
+            <h3 class="text-center header3">Booking Band atau Artist</h3>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTen">
@@ -137,7 +159,7 @@
         </div>
 
         <div class="row mb-5 pb-5">
-            <p class="text-center header3">The Venue</p>
+            <h3 class="text-center header3">The Venue</h3>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading13">
