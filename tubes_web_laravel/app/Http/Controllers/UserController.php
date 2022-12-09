@@ -66,7 +66,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = User::where('id', $request->user)->first();
+        $user = User::find($id);
         if (!$user) {
             //data pesulap not found
             return response()->json([
@@ -227,9 +227,6 @@ class UserController extends Controller
         $token = $user->createToken('Authentication Token')->accessToken;
 
         if (Hash::check($request->password, $user->password)) {
-            session_start();
-            $_SESSION['isLogin'] = true;
-            $_SESSION['user'] = $user;
 
             return response()->json([
                 'message' => 'Authenticated',
