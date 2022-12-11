@@ -122,7 +122,7 @@ class PembelianKomikaController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request, Int $id)
+    public function store(Request $request)
     {
         //Validasi Formulir
         $validator = Validator::make($request->all(), [
@@ -133,7 +133,6 @@ class PembelianKomikaController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $pembelian = PembelianKomika::find($id);
         $komika = Komika::where('id', $request->komika)->first();
         $user = User::where('id', $request->user)->first();
         //Fungsi Simpan Data ke dalam Database

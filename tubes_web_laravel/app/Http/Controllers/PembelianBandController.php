@@ -120,7 +120,7 @@ class PembelianBandController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request, Int $id)
+    public function store(Request $request)
     {
         //Validasi Formulir
         $validator = Validator::make($request->all(), [
@@ -130,8 +130,7 @@ class PembelianBandController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
-        
-        $pembelian = PembelianBand::find($id);
+
         $band = Band::where('id', $request->band)->first();
         $user = User::where('id', $request->user)->first();
 

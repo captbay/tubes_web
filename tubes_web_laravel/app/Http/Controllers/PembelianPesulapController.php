@@ -123,7 +123,7 @@ class PembelianPesulapController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request, Int $id)
+    public function store(Request $request)
     {
         //Validasi Formulir
         $validator = Validator::make($request->all(), [
@@ -134,7 +134,6 @@ class PembelianPesulapController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $pembelian = PembelianPesulap::find($id);
         $pesulap = Pesulap::where('id', $request->pesulap)->first();
         $user = User::where('id', $request->user)->first();
         //Fungsi Simpan Data ke dalam Database
