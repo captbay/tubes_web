@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth:api'], function () {
         '/users',
         \App\Http\Controllers\UserController::class
     );
-    Route::put('users/update/{id}', [UserController::class, 'update']);
+    Route::post('users/update/{id}', [UserController::class, 'update']);
     Route::post('users/logout', [UserController::class, 'logout']);
     //pembelian belum jadi ada 3
     ////////
@@ -50,23 +50,23 @@ Route::group(['middleware' => 'auth:api'], function () {
         \App\Http\Controllers\BandController::class
     );
 
-    Route::put('bands/update/{id}', [BandController::class, 'update']);
+    Route::post('bands/update/{id}', [BandController::class, 'update']);
     // pesulap
     Route::apiResource(
         '/pesulaps',
         \App\Http\Controllers\PesulapController::class
     );
-    Route::put('pesulaps/update/{id}', [PesulapController::class, 'update']);
+    Route::post('pesulaps/update/{id}', [PesulapController::class, 'update']);
     //komika
     Route::apiResource(
         '/komikas',
         \App\Http\Controllers\KomikaController::class
     );
-    Route::put('komikas/update/{id}', [KomikaController::class, 'update']);
+    Route::post('komikas/update/{id}', [KomikaController::class, 'update']);
     //pembayaran
     Route::apiResource(
         '/pembayarans',
         \App\Http\Controllers\PembayaranController::class
     );
-    Route::put('pembayarans/update/{id}', [PembayaranController::class, 'update']);
+    Route::post('pembayarans/update/{id}', [PembayaranController::class, 'update']);
 });
