@@ -17,7 +17,6 @@ class PembelianPesulap extends Model
 
     protected $fillable = [
         'id_user',
-        'id_pesulap',
         'tgl_pembelian',
     ];
 

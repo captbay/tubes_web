@@ -17,7 +17,6 @@ class PembelianBand extends Model
 
     protected $fillable = [
         'id_user',
-        'id_band',
         'tgl_pembelian',
     ];
 

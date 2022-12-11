@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pembelian;
 use App\Models\User;
-use App\Models\Users;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+
 
 class UserController extends Controller
 {
@@ -188,7 +187,8 @@ class UserController extends Controller
             'gender' => $request->gender,
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
-            'image_user' => $request->image_user,
+            'image_user' => "",
+
         ]);
 
         //Redirect jika berhasil mengirim email

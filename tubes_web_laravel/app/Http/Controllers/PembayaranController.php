@@ -77,9 +77,7 @@ class PembayaranController extends Controller
             'total_bayar' => 'required',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
-        }
+        
 
         $pembayaran = Pembayaran::find($id);
         $user = User::where('id', $request->user)->first();

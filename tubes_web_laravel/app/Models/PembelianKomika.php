@@ -17,7 +17,6 @@ class PembelianKomika extends Model
 
     protected $fillable = [
         'id_user',
-        'id_komika',
         'tgl_pembelian',
     ];
 
