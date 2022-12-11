@@ -19,9 +19,13 @@ class PembelianPesulapController extends Controller
     public function index()
     {
         //get posts
-        $pembelian = PembelianPesulap::with(['users'])->paginate(5);
+        $pembelian = PembelianPesulap::latest()->get();
         //render view with posts
-        return view('pembelian.index', compact('pembelian'));
+        return response()->json([
+            'success' => true,
+            'message' => 'List Data Pembelian',
+            'data'    => $pembelian
+        ], 200);
     }
 
     /**

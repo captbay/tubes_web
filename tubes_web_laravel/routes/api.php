@@ -40,10 +40,28 @@ Route::group(['middleware' => 'auth:api'], function () {
     );
     Route::post('users/update/{id}', [UserController::class, 'update']);
     Route::post('users/logout', [UserController::class, 'logout']);
-    //pembelian belum jadi ada 3
-    ////////
-    ////
-    ////
+
+    //pembelian pesulap
+    Route::apiResource(
+        '/pembelianpesulaps',
+        \App\Http\Controllers\PembelianPesulapController::class
+    );
+    Route::post('pembelianpesulaps/update/{id}', [PembelianPesulapController::class, 'update']);
+
+    //pembelian komika
+    Route::apiResource(
+        '/pembeliankomikas',
+        \App\Http\Controllers\PembelianKomikaController::class
+    );
+    Route::post('pembeliankomikas/update/{id}', [PembelianKomikaController::class, 'update']);
+
+    //pembelian band
+    Route::apiResource(
+        '/pembelianbands',
+        \App\Http\Controllers\PembelianBandController::class
+    );
+    Route::post('pembelianbands/update/{id}', [PembelianBandController::class, 'update']);
+
     // band
     Route::apiResource(
         '/bands',
@@ -51,18 +69,21 @@ Route::group(['middleware' => 'auth:api'], function () {
     );
 
     Route::post('bands/update/{id}', [BandController::class, 'update']);
+
     // pesulap
     Route::apiResource(
         '/pesulaps',
         \App\Http\Controllers\PesulapController::class
     );
     Route::post('pesulaps/update/{id}', [PesulapController::class, 'update']);
+
     //komika
     Route::apiResource(
         '/komikas',
         \App\Http\Controllers\KomikaController::class
     );
     Route::post('komikas/update/{id}', [KomikaController::class, 'update']);
+
     //pembayaran
     Route::apiResource(
         '/pembayarans',
