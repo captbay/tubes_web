@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Band;
-use App\Models\Komika;
 use Illuminate\Http\Request;
 use App\Models\PembelianBand;
-use App\Models\Pesulap;
 use App\Models\User;
-use App\Models\Users;
 use Illuminate\Support\Facades\Validator;
 
 class PembelianBandController extends Controller
@@ -78,16 +75,16 @@ class PembelianBandController extends Controller
             'tgl_pembelian' => 'required',
         ]);
 
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
         $pembelian = PembelianBand::find($id);
         $band = Band::where('id', $request->band)->first();
-        $komika = Komika::where('id', $request->komika)->first();
-        $pesulap = Pesulap::where('id', $request->pesulap)->first();
         $user = User::where('id', $request->user)->first();
         $pembelian->update([
             'id_user' => $user->id,
             'id_band' => $band->id,
-            'id_komika' => $komika->id,
-            'id_pesulap' => $pesulap->id,
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
 
@@ -130,17 +127,17 @@ class PembelianBandController extends Controller
             'tgl_pembelian' => 'required',
         ]);
 
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+        
         $pembelian = PembelianBand::find($id);
         $band = Band::where('id', $request->band)->first();
-        $komika = Komika::where('id', $request->komika)->first();
-        $pesulap = Pesulap::where('id', $request->pesulap)->first();
         $user = User::where('id', $request->user)->first();
 
         $pembelian = PembelianBand::create([
             'id_user' => $user->id,
             'id_band' => $band->id,
-            'id_komika' => $komika->id,
-            'id_pesulap' => $pesulap->id,
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
 
