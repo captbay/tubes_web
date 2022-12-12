@@ -46,21 +46,21 @@ Route::group(['middleware' => 'auth:api'], function () {
         '/pembelianpesulaps',
         \App\Http\Controllers\PembelianPesulapController::class
     );
-    Route::post('pembelianpesulaps/update/{id}', [PembelianPesulapController::class, 'update']);
+    // Route::post('pembelianpesulaps/update/{id}', [PembelianPesulapController::class, 'update']);
 
     //pembelian komika
     Route::apiResource(
         '/pembeliankomikas',
         \App\Http\Controllers\PembelianKomikaController::class
     );
-    Route::post('pembeliankomikas/update/{id}', [PembelianKomikaController::class, 'update']);
+    // Route::post('pembeliankomikas/update/{id}', [PembelianKomikaController::class, 'update']);
 
     //pembelian band
     Route::apiResource(
         '/pembelianbands',
         \App\Http\Controllers\PembelianBandController::class
     );
-    Route::post('pembelianbands/update/{id}', [PembelianBandController::class, 'update']);
+    // Route::post('pembelianbands/update/{id}', [PembelianBandController::class, 'update']);
 
     // band
     Route::apiResource(
@@ -89,5 +89,5 @@ Route::group(['middleware' => 'auth:api'], function () {
         '/pembayarans',
         \App\Http\Controllers\PembayaranController::class
     );
-    Route::post('pembayarans/update/{id}', [PembayaranController::class, 'update']);
+    // Route::post('pembayarans/update/{id}', [PembayaranController::class, 'update']);
 });
