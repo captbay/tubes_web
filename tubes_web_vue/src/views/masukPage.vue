@@ -1,4 +1,18 @@
 <template>
+    <!-- Header -->
+    <div class="bg-image" style="
+        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/012.webp');
+        height: 85vh;
+      ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-center text-white">
+                    <h2>AMP Group</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container mt-5 mb-5">
         <div class="card mx-4 mx-md-5 shadow-5-strong" style="
         background: hsla(0, 0%, 100%, 0.8);

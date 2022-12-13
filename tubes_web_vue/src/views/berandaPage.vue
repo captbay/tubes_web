@@ -79,7 +79,7 @@
                 <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
                     entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                <a class="btn btn-success btn-xl" href="#about">Find Out More</a>
             </div>
         </div>
     </div>
@@ -178,7 +178,7 @@
                 <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
                     entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                <a class="btn btn-success btn-xl" href="#about">Find Out More</a>
             </div>
         </div>
     </div>
@@ -215,7 +215,7 @@
                         Kemudihan booking dan transaksi
                     </p>
                 </div>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                <a class="btn btn-success btn-xl" href="#about">Find Out More</a>
                 <p></p>
             </div>
         </div>

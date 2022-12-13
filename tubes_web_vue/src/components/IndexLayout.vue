@@ -151,16 +151,16 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Our Services
+                            Layanan kami
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Band</a>
+                            <router-link :to="{ name: 'band' }" class="nav-link text-light">Band</router-link>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Stand Up</a>
+                            <router-link :to="{ name: 'standUp' }" class="nav-link text-light">Stand Up</router-link>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Magician</a>
+                            <router-link :to="{ name: 'pesulapIndex' }" class="nav-link text-light">Pesulap</router-link>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -169,16 +169,16 @@
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Useful links
+                            Link
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">About Us</a>
+                            <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">Tentang Kami</router-link>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Support</a>
+                            <router-link :to="{ name: 'bantuan' }" class="nav-link text-light">Bantuan</router-link>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Contact</a>
+                            <router-link :to="{ name: 'kontak' }" class="nav-link text-light">Kontak</router-link>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -186,9 +186,9 @@
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><i class="bi bi-house-door-fill"></i> New York, NY 10012, US</p>
-                        <p><i class="bi bi-envelope-fill"></i> info@example.com</p>
+                        <h6 class="text-uppercase fw-bold mb-4">Kontak</h6>
+                        <p><i class="bi bi-house-door-fill"></i> Yogyakarta, Babarsari 55281, Indonesia</p>
+                        <p><i class="bi bi-envelope-fill"></i> ampgroup@gmail.com</p>
                         <p><i class="bi bi-telephone-fill"></i> + 01 234 567 88</p>
                         <p><i class="bi bi-telephone-fill"></i> + 01 234 567 89</p>
                     </div>
