@@ -75,7 +75,7 @@
                             </div>
 
                             <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary text-light">Daftar</button>
+                            <button type="submit" class="btn btn-success text-light">Daftar</button>
                             <p></p>
                         </form>
                     </div>

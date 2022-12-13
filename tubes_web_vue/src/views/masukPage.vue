@@ -38,14 +38,14 @@
                             </div>
 
                             <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary text-light">Masuk</button>
+                            <button type="submit" class="btn btn-success text-light">Masuk</button>
                             <p></p>
                             <p></p>
 
                             <div class="d-flex align-items-center justify-content-center pb-4">
                                 <p class="mb-0 me-2">Belum punya akun?</p>
                                 <router-link :to="{ name: 'daftar' }" class="nav-link text-light"><button
-                                        class="btn btn-primary">Daftar</button></router-link>
+                                        class="btn btn-success">Daftar</button></router-link>
                             </div>
                         </form>
                     </div>

@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">More</a></div>
+                                <div class="text-center"><a class="btn btn-outline-success mt-auto"><router-link :to="{ name: 'detailBand' }" class="dropdown-item">More</router-link></a></div>
                             </div>
                         </div>
                     </div>
@@ -40,8 +40,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
-                                src="https://cdn.antaranews.com/cache/730x487/2020/10/02/e9018782-0ef5-446e-83d0-3db221524a96.jpg"
-                                alt="...">
+                            src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Band 2</h5>
@@ -52,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">More</a></div>
+                                <div class="text-center"><a class="btn btn-outline-success mt-auto"><router-link :to="{ name: 'detailBand' }" class="dropdown-item">More</router-link></a></div>
                             </div>
                         </div>
                     </div>
@@ -60,8 +59,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
-                                src="https://telltaletv.com/wp-content/uploads/2018/01/The-Magicians-Season-3-Episode-3_NUP_179567_0093-730x487.jpg"
-                                alt="...">
+                                src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Band 3</h5>
@@ -72,8 +70,8 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">More</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0">
+                                <div class="text-center"><a class="btn btn-outline-success mt-auto"><router-link :to="{ name: 'detailBand' }" class="dropdown-item">More</router-link></a></div>
                             </div>
                         </div>
                     </div>

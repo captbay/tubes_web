@@ -19,9 +19,7 @@
                                     Aliquet diam sit a volutpat.
                                 </p>
                                 <div class="button">
-                                    <a href="/bookingband/<?= $band['slug']; ?>" class="btn btn-primary">
-                                        Book Now
-                                    </a>
+                                    <a class="btn btn-success mt-auto"><router-link :to="{ name: 'detailStandUp' }" class="dropdown-item">Book Now</router-link></a>
                                 </div>
                             </div>
                         </div>
