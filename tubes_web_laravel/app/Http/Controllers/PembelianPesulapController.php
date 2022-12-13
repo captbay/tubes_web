@@ -134,8 +134,8 @@ class PembelianPesulapController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $pesulap = Pesulap::where('id', $request->pesulap)->first();
-        $user = User::where('id', $request->user)->first();
+        $pesulap = Pesulap::where('id', $request->id_pesulap)->first();
+        $user = User::where('id', $request->id_user)->first();
         //Fungsi Simpan Data ke dalam Database
         $pembelian = PembelianPesulap::create([
             'id_user' => $user->id,
