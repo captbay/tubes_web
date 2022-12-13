@@ -28,7 +28,10 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
-                    <td>nama</td>
+                    <td>
+                        <button class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-fill"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -61,7 +64,10 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
-                    <td>nama</td>
+                    <td>
+                        <button class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-fill"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -94,7 +100,10 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
-                    <td>nama</td>
+                    <td>
+                        <button class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-fill"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>
+                    </td>
                 </tr>
             </tbody>
         </table>

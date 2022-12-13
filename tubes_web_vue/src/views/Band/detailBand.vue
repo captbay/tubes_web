@@ -6,7 +6,8 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img src="/asset/<?= $band['header_img']; ?>" class="img-fluid rounded-start" alt="...">
+                            <img class="img-fluid rounded-start"
+                                src="https://akordmusic.com/asset/example1.jpg" alt="...">
                         </div>
                         <div class="col-md-7 align-self-center">
                             <div class="card-body p-5">
@@ -46,43 +47,6 @@
                     Enim egestas nibh magna amet. Lectus donec morbi laoreet id egestas leo, fringilla. Platea interdum consequat eget etiam aenean dictum. 
                     Vulputate dignissim eget at dictumst ante at in lectus.
                 </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Youtube Section -->
-    <div class="container">
-        <div class="row youtube-card">
-            <div class="col mt-5 mb-5 pt-5 pb-5">
-                <div class="card">
-                    <div class="row g-0">
-                        <div class="col-md-7">
-                            <div class="ratio ratio-16x9">
-                                <iframe class="rounded-start youtube-play" src="<?= $youtube[0]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <!-- img-fluid rounded-start -->
-                        </div>
-                        <div class="col-md-5 align-self-center">
-                            <div class="card-body p-5">
-                                    <div class="card mb-3 youtube-sub-card">
-                                        <div class="row g-0 justify-content-between youtube-button" data-vidurl="<?= $youtube[$y]; ?>?autoplay=1">
-                                            <div class="col-10">
-                                                <div class="card-body">
-                                                    <p class="card-text body1"></p>
-                                                    <p class="card-text body2"></p>
-                                                </div>
-                                            </div>
-                                            <div class="col-1 align-self-center me-3">
-                                                <div class="card-body">
-                                                    <i class="bi bi-play-fill"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
