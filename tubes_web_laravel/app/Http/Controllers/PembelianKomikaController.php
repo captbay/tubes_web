@@ -133,8 +133,8 @@ class PembelianKomikaController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $komika = Komika::where('id', $request->komika)->first();
-        $user = User::where('id', $request->user)->first();
+        $komika = Komika::where('id', $request->id_komika)->first();
+        $user = User::where('id', $request->id_user)->first();
         //Fungsi Simpan Data ke dalam Database
         $pembelian = PembelianKomika::create([
             'id_user' => $user->id,

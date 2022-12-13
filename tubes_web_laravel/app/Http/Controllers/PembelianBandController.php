@@ -131,8 +131,8 @@ class PembelianBandController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $band = Band::where('id', $request->band)->first();
-        $user = User::where('id', $request->user)->first();
+        $band = Band::where('id', $request->id_band)->first();
+        $user = User::where('id', $request->id_user)->first();
 
         $pembelian = PembelianBand::create([
             'id_user' => $user->id,
