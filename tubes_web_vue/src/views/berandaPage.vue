@@ -76,8 +76,8 @@
                 <h1 class="text-dark font-weight-bold">Biografi</h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
-                <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music, 
-                    entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band. 
+                <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
+                    entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
                 <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
             </div>
@@ -93,21 +93,27 @@
                 <h1 class="text-dark font-weight-bold">List Event Terbaik Kami</h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
-                <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan band dengan kualitas terjamin dan Anda
-                    pasti mendapatkan kualitas band terbaik di Bali. Kita juga memiliki banyak pilihan band yang tersedia
-                    dengan gaya band nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih band dengan kebutuhan
+                <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan band dengan kualitas terjamin dan
+                    Anda
+                    pasti mendapatkan kualitas band terbaik di Bali. Kita juga memiliki banyak pilihan band yang
+                    tersedia
+                    dengan gaya band nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih band dengan
+                    kebutuhan
                     yang Anda inginkan.</p>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
+                            <img class="card-img-top"
+                                src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Band 1</h5>
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus suspendisse 
-                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam vulputate
+                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
+                                    suspendisse
+                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
+                                    vulputate
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -118,12 +124,16 @@
 
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="https://cdn.antaranews.com/cache/730x487/2020/10/02/e9018782-0ef5-446e-83d0-3db221524a96.jpg" alt="...">
+                            <img class="card-img-top"
+                                src="https://cdn.antaranews.com/cache/730x487/2020/10/02/e9018782-0ef5-446e-83d0-3db221524a96.jpg"
+                                alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Komika A</h5>
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus suspendisse 
-                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam vulputate
+                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
+                                    suspendisse
+                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
+                                    vulputate
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -134,12 +144,16 @@
 
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="https://telltaletv.com/wp-content/uploads/2018/01/The-Magicians-Season-3-Episode-3_NUP_179567_0093-730x487.jpg" alt="...">
+                            <img class="card-img-top"
+                                src="https://telltaletv.com/wp-content/uploads/2018/01/The-Magicians-Season-3-Episode-3_NUP_179567_0093-730x487.jpg"
+                                alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Magician C</h5>
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus suspendisse 
-                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam vulputate
+                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
+                                    suspendisse
+                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
+                                    vulputate
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -161,8 +175,8 @@
                 <h1 class="text-dark font-weight-bold">Ide & Berita</h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
-                <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music, 
-                    entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band. 
+                <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
+                    entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
                 <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
             </div>
@@ -201,7 +215,8 @@
                         Kemudihan booking dan transaksi
                     </p>
                 </div>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a><p></p>
+                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                <p></p>
             </div>
         </div>
     </div>
