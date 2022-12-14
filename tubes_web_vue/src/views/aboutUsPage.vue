@@ -1,9 +1,6 @@
 <template>
     <!-- Header -->
-    <div class="bg-image" style="
-        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/012.webp');
-        height: 85vh;
-      ">
+    <div class="bg-image1">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-center text-white">
@@ -72,3 +69,10 @@
     </section>
     <div class="p-5"></div>
 </template>
+
+<style>
+    .bg-image1 {
+        background-image: url('../assets/bgband.jpg');
+        background-size: cover;
+    }
+</style>

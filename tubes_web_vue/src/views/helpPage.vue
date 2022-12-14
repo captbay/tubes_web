@@ -1,19 +1,15 @@
 <template>
     <!-- Header -->
-    <div class="bg-image" style="
-        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/012.webp');
-        height: 85vh;
-      ">
+    <div class="bg-image2">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-center text-white">
-                    <h2>Temui Band-Band Keren Kami!</h2>
+                    <h2>Temui Event-Event Keren Kami!</h2>
                     <h4>
-                        Akordmusic Production selalu memastikan band dengan kualitas 
-                        terjamin dan Anda pasti mendapatkan kualitas band terbaik di 
-                        Bali. Kita juga memiliki banyak pilihan band yang tersedia 
-                        dengan gaya band nya masing-masing sesuai kebutuhan Anda. Jadi, 
-                        Anda bisa memilih band dengan kebutuhan yang Anda inginkan.
+                        Kami selalu memastikan event dengan kualitas 
+                        terjamin dan Anda pasti mendapatkan kualitas event terbaik di 
+                        Indonesia. Kita juga memiliki banyak pilihan event yang tersedia 
+                        sesuai kebutuhan Anda. Jadi, Anda bisa memilih event dengan kebutuhan yang Anda inginkan.
                     </h4>
                 </div>
             </div>
@@ -219,3 +215,10 @@
         </div>
     </div>
 </template>
+
+<style>
+    .bg-image2 {
+        background-image: url('../assets/bgkomika.jpg');
+        background-size: cover;
+    }
+</style>

@@ -1,66 +1,8 @@
 <template>
     <div class="p-0"></div>
-    <!-- carousel -->
-    <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active"
-                aria-current="true"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item">
-                <img src="https://img.freepik.com/free-photo/large-group-fans-with-arms-raised-having-fun-music-concert-night_637285-584.jpg?w=900&t=st=1670587213~exp=1670587813~hmac=b6ef281482ff9ede0b0ed687db2428df70fee627a1f5f4b9e54b752339e48e62"
-                    style="width:100%;height:600px;">
-    
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Band</h1>
-                        <p>Some representative placeholder content for the first slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn More</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://img.freepik.com/free-photo/close-up-microphone-concert-stage-with-beautiful-lighting_169016-11074.jpg?w=996&t=st=1670608458~exp=1670609058~hmac=a7d377da64c3e2f572a04f76b53462f459b0ce58d674d5ca7d08d7f839a429fc"
-                    style="width:100%;height:600px;">
-    
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Stand Up</h1>
-                        <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item active">
-                <img src="https://img.freepik.com/free-photo/rows-red-seats-theater_53876-64711.jpg?w=900&t=st=1670608626~exp=1670609226~hmac=aaacb30331ce12421d3778dab70f05a5a6b4e2718564284fec2e97560e74e522"
-                    style="width:100%;height:600px;">
-    
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Magician</h1>
-                        <p>Some representative placeholder content for the third slide of this carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn More</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div> -->
 
     <!-- Header -->
-    <div class="bg-image" style="
-        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/012.webp');
-        height: 85vh;
-      ">
+    <div class="bg-image">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <h1 class="text-white mb-0">Cari Band, Komika dan Live Band Untuk Event Anda!</h1>
@@ -79,7 +21,11 @@
                 <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
                     entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
-                <a class="btn btn-success btn-xl" href="#about">Find Out More</a>
+                    <router-link :to="{ name: 'tentangKami' }" class="nav-link">
+                        <button class="btn btn-success">
+                            Find Out More
+                        </button>
+                    </router-link>
             </div>
         </div>
     </div>
@@ -178,7 +124,11 @@
                 <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
                     entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
-                <a class="btn btn-success btn-xl" href="#about">Find Out More</a>
+                    <router-link :to="{ name: 'kontak' }" class="nav-link">
+                        <button class="btn btn-success">
+                            Find Out More
+                        </button>
+                    </router-link>
             </div>
         </div>
     </div>
@@ -215,9 +165,20 @@
                         Kemudihan booking dan transaksi
                     </p>
                 </div>
-                <a class="btn btn-success btn-xl" href="#about">Find Out More</a>
+                <router-link :to="{ name: 'bantuan' }" class="nav-link">
+                        <button class="btn btn-success">
+                            Find Out More
+                        </button>
+                </router-link>
                 <p></p>
             </div>
         </div>
     </div>
 </template>
+
+<style>
+    .bg-image {
+        background-image: url('../assets/event.png');
+        background-size: cover;
+    }
+</style>
