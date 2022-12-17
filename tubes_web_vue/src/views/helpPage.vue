@@ -5,10 +5,10 @@
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-center text-white">
                     <h2>Temui Event-Event Keren Kami!</h2>
-                    <h4>
-                        Kami selalu memastikan event dengan kualitas 
-                        terjamin dan Anda pasti mendapatkan kualitas event terbaik di 
-                        Indonesia. Kita juga memiliki banyak pilihan event yang tersedia 
+                    <h4 class="p-5">
+                        Kami selalu memastikan event dengan kualitas
+                        terjamin dan Anda pasti mendapatkan kualitas event terbaik di
+                        Indonesia. Kita juga memiliki banyak pilihan event yang tersedia
                         sesuai kebutuhan Anda. Jadi, Anda bisa memilih event dengan kebutuhan yang Anda inginkan.
                     </h4>
                 </div>
@@ -217,8 +217,8 @@
 </template>
 
 <style>
-    .bg-image2 {
-        background-image: url('../assets/bgkomika.jpg');
-        background-size: cover;
-    }
+.bg-image2 {
+    background-image: url('../assets/bgkomika.jpg');
+    background-size: cover;
+}
 </style>

@@ -11,8 +11,7 @@
     </div>
 
     <!-- Biografi -->
-    <div class="p-5"></div>
-    <div class="container-fluid bg-white">
+    <div class="container-fluid bg-white p-5">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
                 <h1 class="text-dark font-weight-bold">Biografi</h1>
@@ -21,19 +20,18 @@
                 <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
                     entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
-                    <router-link :to="{ name: 'tentangKami' }" class="nav-link">
-                        <button class="btn btn-success">
-                            Find Out More
-                        </button>
-                    </router-link>
+                <router-link :to="{ name: 'tentangKami' }" class="nav-link">
+                    <button class="btn btn-success">
+                        Find Out More
+                    </button>
+                </router-link>
             </div>
         </div>
     </div>
 
 
     <!-- List Event -->
-    <div class="p-5"></div>
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-light p-5">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
                 <h1 class="text-dark font-weight-bold">List Event Terbaik Kami</h1>
@@ -55,7 +53,7 @@
                                 src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">Band 1</h5>
+                                    <h5 class="fw-bolder">Daftar Band</h5>
                                     Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
                                     suspendisse
                                     felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
@@ -63,7 +61,11 @@
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-success mt-auto" href="#">More</a></div>
+                                <div class="text-center">
+                                    <router-link :to="{ name: 'band' }" class="nav-link">
+                                        <a class="btn btn-outline-success mt-auto" href="#">More</a>
+                                    </router-link>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +77,7 @@
                                 alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">Komika A</h5>
+                                    <h5 class="fw-bolder">Daftar Komika</h5>
                                     Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
                                     suspendisse
                                     felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
@@ -83,7 +85,11 @@
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-success mt-auto" href="#">More</a></div>
+                                <div class="text-center">
+                                    <router-link :to="{ name: 'standUp' }" class="nav-link">
+                                        <a class="btn btn-outline-success mt-auto" href="#">More</a>
+                                    </router-link>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -95,7 +101,7 @@
                                 alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">Magician C</h5>
+                                    <h5 class="fw-bolder">Daftar Magician</h5>
                                     Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
                                     suspendisse
                                     felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
@@ -104,7 +110,11 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-success mt-auto" href="#">More</a></div>
+                                <div class="text-center">
+                                    <router-link :to="{ name: 'pesulapIndex' }" class="nav-link">
+                                        <a class="btn btn-outline-success mt-auto" href="#">More</a>
+                                    </router-link>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,29 +123,27 @@
         </div>
     </div>
 
-    <!-- Ide & Berita -->
-    <div class="p-5"></div>
-    <div class="container-fluid bg-white">
+    <!-- Kontak -->
+    <div class="container-fluid bg-white p-5">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
-                <h1 class="text-dark font-weight-bold">Ide & Berita</h1>
+                <h1 class="text-dark font-weight-bold">Kontak</h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <p class="text-white-75 mb-5">Kami adalah agensi musik yang menyediakan wadah untuk live music,
                     entertainment, musisi untuk setiap kesempatan. Dari musisi café, live wedding band hingga jazz band.
                     Kami pun telah memilih talenta terbaik dibidangnya.</p>
-                    <router-link :to="{ name: 'kontak' }" class="nav-link">
-                        <button class="btn btn-success">
-                            Find Out More
-                        </button>
-                    </router-link>
+                <router-link :to="{ name: 'kontak' }" class="nav-link">
+                    <button class="btn btn-success">
+                        Hubungi Kami
+                    </button>
+                </router-link>
             </div>
         </div>
     </div>
 
     <!-- Kenapa Kami? -->
-    <div class="p-5"></div>
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-light p-5">
         <div class="container bg-light">
             <div class="col-lg-12 align-self-end">
                 <h1 class="text-dark font-weight-bold">Kenapa Harus Layanan Kami?</h1>
@@ -165,10 +173,10 @@
                         Kemudihan booking dan transaksi
                     </p>
                 </div>
-                <router-link :to="{ name: 'bantuan' }" class="nav-link">
-                        <button class="btn btn-success">
-                            Find Out More
-                        </button>
+                <router-link :to="{ name: 'tentangKami' }" class="nav-link">
+                    <button class="btn btn-success">
+                        Kenali Kami
+                    </button>
                 </router-link>
                 <p></p>
             </div>
@@ -176,9 +184,64 @@
     </div>
 </template>
 
+<!-- <script>
+import axios from "axios";
+import { onMounted, ref } from "vue";
+
+export default {
+    setup() {
+
+        //reactive state
+        let bands = ref([]);
+        let komikas = ref([]);
+        let pesulaps = ref([]);
+        //mounted
+        onMounted(() => {
+            //get API from Laravel Backend
+            axios
+                .get("http://localhost:8000/api/bands")
+                .then((response) => {
+                    //assign state posts with response data
+                    bands.value = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+            axios
+                .get("http://localhost:8000/api/pesulaps")
+                .then((response) => {
+                    //assign state posts with response data
+                    pesulaps.value = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+            axios
+                .get("http://localhost:8000/api/komikas")
+                .then((response) => {
+                    //assign state posts with response data
+                    komikas.value = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+
+        })
+
+
+        //return
+        return {
+            bands,
+            komikas,
+            pesulaps
+        }
+    },
+};
+</script> -->
+
 <style>
-    .bg-image {
-        background-image: url('../assets/event.png');
-        background-size: cover;
-    }
+.bg-image {
+    background-image: url('../assets/event.png');
+    background-size: cover;
+}
 </style>

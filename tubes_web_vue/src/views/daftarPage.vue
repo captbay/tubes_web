@@ -130,7 +130,7 @@ export default {
             }).then(() => {
                 toaster.show(`Berhasil di Buat`, {
                     type: "success",
-                    position: "top-right",
+                    position: "bottom-right",
                     duration: 3000,
                 });
                 //redirect ke post index
