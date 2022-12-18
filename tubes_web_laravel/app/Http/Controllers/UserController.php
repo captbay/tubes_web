@@ -167,7 +167,7 @@ class UserController extends Controller
             'password' => 'required',
             'tgl_lahir' => 'required',
             'gender' => 'required',
-            'telepon' => 'required|regex:/^(08)[0-9]{4,5}$/',
+            'telepon' => 'required|regex:/^(0)8[1-9][0-9]{6,9}$/',
             'alamat' => 'required',
         ]);
 

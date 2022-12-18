@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->date('tgl_lahir');
             $table->boolean('gender');
-            $table->integer('telepon');
+            $table->string('telepon');
             $table->string('alamat');
             $table->string('image_user');
             $table->rememberToken();
