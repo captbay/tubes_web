@@ -87,7 +87,7 @@
 <script>
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import axios from "axios";
+import axios from "../axios";
 import { createToaster } from "@meforma/vue-toaster";
 
 export default {
@@ -119,7 +119,7 @@ export default {
             let gender = user.gender;
             let telepon = user.telepon;
             let alamat = user.alamat;
-            axios.post("http://localhost:8000/api/users/register", {
+            axios.post("users/register", {
                 name: name,
                 email: email,
                 password: password,

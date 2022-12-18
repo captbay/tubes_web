@@ -5,15 +5,35 @@ import { createRouter, createWebHistory } from "vue-router";
 //define a routes
 const routes = [
   {
+    path: "/masuk",
+    name: "masuk",
+    component: () => import("@/views/masukPage.vue"),
+    props: true,
+    meta: {
+      requiresVisitor: true,
+      layout: "landing",
+    },
+  },
+  {
+    path: "/daftar",
+    name: "daftar",
+    component: () => import("@/views/daftarPage.vue"),
+    props: true,
+    meta: {
+      requiresVisitor: true,
+      layout: "landing",
+    },
+  },
+  {
     path: "/",
     name: "index",
     component: () => import("@/components/IndexLayout.vue"),
+    props: true,
+    meta: {
+      requiresAuth: true,
+      layout: "default",
+    },
     children: [
-      {
-        path: "/",
-        name: "root",
-        component: () => import("@/views/berandaPage.vue"),
-      },
       {
         path: "/beranda",
         name: "beranda",
@@ -35,14 +55,9 @@ const routes = [
         component: () => import("@/views/kontakPage.vue"),
       },
       {
-        path: "/masuk",
-        name: "masuk",
-        component: () => import("@/views/masukPage.vue"),
-      },
-      {
-        path: "/masuk/daftar",
-        name: "daftar",
-        component: () => import("@/views/daftarPage.vue"),
+        path: "/profile",
+        name: "profile",
+        component: () => import("@/views/profilePage.vue"),
       },
       {
         path: "/pesulap",
@@ -93,7 +108,26 @@ const router = createRouter({
 //   // tambahkan meta ini
 //   requiresAuth: true,
 // },
-
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    var token = localStorage.getItem("token");
+    if (!token) {
+      next({
+        path: "/masuk",
+      });
+    } else {
+      next();
+    }
+  } else if (to.matched.some((record) => record.meta.requiresVisitor)) {
+    if (token) {
+      next({
+        path: "/",
+      });
+    } else {
+      next();
+    }
+  }
+});
 // router.beforeEach((to, from, next) => {
 //   if (to.matched.some((record) => record.meta.requiresAuth)) {
 //     if (store.getters.isLoggedIn) {

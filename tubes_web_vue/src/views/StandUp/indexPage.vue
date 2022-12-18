@@ -87,3 +87,37 @@
         </div>
     </div>
 </template>
+
+<script>
+import axios from "../../axios";
+import { onMounted, ref } from "vue";
+// import { createToaster } from "@meforma/vue-toaster";
+
+export default {
+    setup() {
+        // const toaster = createToaster({ /* options */ });
+        //reactive state
+        let bands = ref([]);
+        // let index = null
+        //mounted
+        onMounted(() => {
+            //get API from Laravel Backend
+            axios
+                .get("bands")
+                .then((response) => {
+                    //assign state posts with response data
+                    bands.value = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+
+        })
+
+        //return
+        return {
+            bands
+        }
+    },
+};
+</script>

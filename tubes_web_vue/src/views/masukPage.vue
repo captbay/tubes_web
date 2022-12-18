@@ -49,7 +49,7 @@
 <script>
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import axios from "axios";
+import axios from "../axios";
 import { createToaster } from "@meforma/vue-toaster";
 
 export default {
@@ -71,15 +71,21 @@ export default {
         function store() {
             let email = user.email;
             let password = user.password;
-            axios.post("http://localhost:8000/api/users/login", {
+            axios.post("users/login", {
                 email: email,
                 password: password
-            }).then(() => {
+            }).then((response) => {
+
                 toaster.show(`Berhasil Login`, {
                     type: "success",
                     position: "bottom-right",
                     duration: 3000,
                 });
+                localStorage.setItem('token', response.data.access_token);
+                localStorage.setItem('token_type', response.data.token_type);
+                localStorage.setItem('id_user', response.data.user.id);
+
+
                 //redirect ke post index
                 router.push({
                     name: "beranda",
@@ -88,6 +94,7 @@ export default {
                 //assign state validation with error
                 validation.value = error.response.data;
             });
+
         }
         //return
         return {

@@ -34,7 +34,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top text-light">
         <div class="container-fluid pt-1 pb-1">
-            <a class="navbar-brand fw-bold text-light logo ms-5" href="/">
+            <a class="navbar-brand fw-bold text-light logo ms-5" href="/beranda">
                 <img src="../assets/logo.png" alt="" style="width: 60px; height: 60px;">
             </a>
             <button class="navbar-toggler text-light me-5 navbar-toggler-icon" type="button" data-bs-toggle="collapse"
@@ -75,10 +75,10 @@
                     </li>
                 </ul>
                 <div class="d-flex my-2 my-lg-0 ">
-                    <router-link :to="{ name: 'masuk' }" class="nav-link">
+                    <router-link :to="{ name: 'profile' }" class="nav-link">
                         <button class="btn btn-success">
-                            <i class="bi bi-box-arrow-in-right text-light"></i>
-                            Login
+                            <i class="bi bi-person-fill text-light"></i>
+                            Profile
                         </button>
                     </router-link>
                     <router-link :to="{ name: 'keranjang' }" class="nav-link px-2">
@@ -160,7 +160,8 @@
                             <router-link :to="{ name: 'standUp' }" class="nav-link text-light">Stand Up</router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'pesulapIndex' }" class="nav-link text-light">Pesulap</router-link>
+                            <router-link :to="{ name: 'pesulapIndex' }"
+                                class="nav-link text-light">Pesulap</router-link>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -172,7 +173,8 @@
                             Link
                         </h6>
                         <p>
-                            <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">Tentang Kami</router-link>
+                            <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">Tentang
+                                Kami</router-link>
                         </p>
                         <p>
                             <router-link :to="{ name: 'bantuan' }" class="nav-link text-light">Bantuan</router-link>
@@ -208,6 +210,19 @@
     </footer>
     <!-- Footer -->
 </template>
+
+<script>
+export default {
+    setup() {
+        let token = localStorage.getItem("token");
+        // console.log(token);
+        //return
+        return {
+            token,
+        }
+    },
+}
+</script>
 
 <style>
 

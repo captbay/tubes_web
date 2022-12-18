@@ -17,80 +17,67 @@
                         kebutuhan
                         yang Anda inginkan.</p>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top"
-                                    src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <h5 class="fw-bolder">Band 1</h5>
-                                        Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis
-                                        tellus
-                                        suspendisse
-                                        felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis
-                                        etiam
-                                        vulputate
+                <div v-for="(band, index) in bands" :key="index">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="" alt="...">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">{{ band.Nama }}</h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-outline-success mt-auto"><router-link
-                                                :to="{ name: 'detailBand' }"
-                                                class="dropdown-item">More</router-link></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top"
-                                    src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <h5 class="fw-bolder">Band 2</h5>
-                                        Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis
-                                        tellus
-                                        suspendisse
-                                        felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis
-                                        etiam
-                                        vulputate
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-success mt-auto">
+                                                <router-link :to="{ name: 'detailBand', params: { id: band.id }, }"
+                                                    class="dropdown-item">Lebih detail</router-link>
+                                            </a></div>
                                     </div>
-                                </div>
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-outline-success mt-auto"><router-link
-                                                :to="{ name: 'detailBand' }"
-                                                class="dropdown-item">More</router-link></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top"
-                                    src="https://cdn.antaranews.com/cache/730x487/2022/09/30/KOTAK_0316.jpg" alt="...">
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <h5 class="fw-bolder">Band 3</h5>
-                                        Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis
-                                        tellus
-                                        suspendisse
-                                        felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis
-                                        etiam
-                                        vulputate
-                                    </div>
-                                </div>
-                                <!-- Product actions-->
-                                <div class="card-footer p-4 pt-0 border-top-0">
-                                    <div class="text-center"><a class="btn btn-outline-success mt-auto"><router-link
-                                                :to="{ name: 'detailBand' }"
-                                                class="dropdown-item">More</router-link></a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </body>
 </template>
+
+<script>
+import axios from "../../axios";
+import { onMounted, ref } from "vue";
+// import { createToaster } from "@meforma/vue-toaster";
+
+export default {
+    async created() {
+
+    },
+    setup() {
+        // const toaster = createToaster({ /* options */ });
+        //reactive state
+        let bands = ref([]);
+        // let index = null
+        //mounted
+        onMounted(() => {
+            //get API from Laravel Backend
+            axios
+                .get("bands")
+                .then((response) => {
+                    //assign state posts with response data
+                    bands.value = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+
+        })
+
+        //return
+        return {
+            bands
+        }
+    },
+};
+</script>
