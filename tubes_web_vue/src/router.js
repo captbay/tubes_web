@@ -32,10 +32,11 @@ const routes = [
     meta: {
       requiresAuth: true,
       layout: "default",
+      reload: true,
     },
     children: [
       {
-        path: "/beranda",
+        path: "/",
         name: "beranda",
         component: () => import("@/views/berandaPage.vue"),
       },
@@ -119,6 +120,9 @@ router.beforeEach((to, from, next) => {
       next();
     }
   } else if (to.matched.some((record) => record.meta.requiresVisitor)) {
+    // if (to.currentRoute.meta.reload == true) {
+    //   window.location.reload();
+    // }
     if (token) {
       next({
         path: "/",

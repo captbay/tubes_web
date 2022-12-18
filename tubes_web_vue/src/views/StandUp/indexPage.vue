@@ -6,11 +6,13 @@
                 <h1 class="text-dark font-weight-bold">List Komika Terbaik Kami</h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
-                <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan band dengan kualitas terjamin dan
+                <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan stand up dengan kualitas terjamin
+                    dan
                     Anda
-                    pasti mendapatkan kualitas band terbaik di Bali. Kita juga memiliki banyak pilihan band yang
+                    pasti mendapatkan kualitas stand up terbaik di Bali. Kita juga memiliki banyak pilihan stand up yang
                     tersedia
-                    dengan gaya band nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih band dengan
+                    dengan gaya stand up nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih stand up
+                    dengan
                     kebutuhan
                     yang Anda inginkan.</p>
             </div>
@@ -89,24 +91,26 @@
 </template>
 
 <script>
-import axios from "../../axios";
+import axios from "axios";
 import { onMounted, ref } from "vue";
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
     setup() {
+        axios.defaults.headers.common["Authorization"] =
+            localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         // const toaster = createToaster({ /* options */ });
         //reactive state
-        let bands = ref([]);
+        let komikas = ref([]);
         // let index = null
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("bands")
+                .get("komikas")
                 .then((response) => {
                     //assign state posts with response data
-                    bands.value = response.data.data;
+                    komikas.value = response.data.data;
                 })
                 .catch((error) => {
                     console.log(error.response.data);
@@ -116,7 +120,7 @@ export default {
 
         //return
         return {
-            bands
+            komikas
         }
     },
 };

@@ -46,17 +46,16 @@
 </template>
 
 <script>
-import axios from "../../axios";
+import axios from "axios";
 import { onMounted, ref } from "vue";
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
-    async created() {
-
-    },
     setup() {
         // const toaster = createToaster({ /* options */ });
         //reactive state
+        axios.defaults.headers.common["Authorization"] =
+            localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         let bands = ref([]);
         // let index = null
         //mounted

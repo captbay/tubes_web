@@ -5,7 +5,9 @@
     <div class="bg-image">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
-                <h1 class="text-white mb-0">Cari Band, Komika dan Live Band Untuk Event Anda!</h1>
+                <h1 class="text-white mb-0">Hi {{ users.name }}, Silahkan cari Band, Komika dan Live Band Untuk Event
+                    Anda!
+                </h1>
             </div>
         </div>
     </div>
@@ -184,43 +186,25 @@
     </div>
 </template>
 
-<!-- <script>
+<script>
 import axios from "axios";
 import { onMounted, ref } from "vue";
 
 export default {
     setup() {
-
+        axios.defaults.headers.common["Authorization"] =
+            localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         //reactive state
-        let bands = ref([]);
-        let komikas = ref([]);
-        let pesulaps = ref([]);
+        let users = ref([]);
+        let id_user = localStorage.getItem("id_user");
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("http://localhost:8000/api/bands")
+                .get("users/" + id_user + "")
                 .then((response) => {
                     //assign state posts with response data
-                    bands.value = response.data.data;
-                })
-                .catch((error) => {
-                    console.log(error.response.data);
-                });
-            axios
-                .get("http://localhost:8000/api/pesulaps")
-                .then((response) => {
-                    //assign state posts with response data
-                    pesulaps.value = response.data.data;
-                })
-                .catch((error) => {
-                    console.log(error.response.data);
-                });
-            axios
-                .get("http://localhost:8000/api/komikas")
-                .then((response) => {
-                    //assign state posts with response data
-                    komikas.value = response.data.data;
+                    users.value = response.data.data;
                 })
                 .catch((error) => {
                     console.log(error.response.data);
@@ -231,13 +215,11 @@ export default {
 
         //return
         return {
-            bands,
-            komikas,
-            pesulaps
+            users,
         }
     },
 };
-</script> -->
+</script>
 
 <style>
 .bg-image {

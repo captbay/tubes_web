@@ -49,7 +49,7 @@
 <script>
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import axios from "../axios";
+import axios from "axios";
 import { createToaster } from "@meforma/vue-toaster";
 
 export default {
@@ -88,7 +88,7 @@ export default {
 
                 //redirect ke post index
                 router.push({
-                    name: "beranda",
+                    path: "/",
                 });
             }).catch((error) => {
                 //assign state validation with error

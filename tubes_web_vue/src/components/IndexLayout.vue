@@ -34,7 +34,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top text-light">
         <div class="container-fluid pt-1 pb-1">
-            <a class="navbar-brand fw-bold text-light logo ms-5" href="/beranda">
+            <a class="navbar-brand fw-bold text-light logo ms-5" href="/">
                 <img src="../assets/logo.png" alt="" style="width: 60px; height: 60px;">
             </a>
             <button class="navbar-toggler text-light me-5 navbar-toggler-icon" type="button" data-bs-toggle="collapse"
@@ -78,7 +78,7 @@
                     <router-link :to="{ name: 'profile' }" class="nav-link">
                         <button class="btn btn-success">
                             <i class="bi bi-person-fill text-light"></i>
-                            Profile
+                            {{ users.name }}
                         </button>
                     </router-link>
                     <router-link :to="{ name: 'keranjang' }" class="nav-link px-2">
@@ -212,16 +212,38 @@
 </template>
 
 <script>
+import axios from "axios";
+import { onMounted, ref } from "vue";
+
 export default {
     setup() {
-        let token = localStorage.getItem("token");
-        // console.log(token);
+        axios.defaults.headers.common["Authorization"] =
+            localStorage.getItem("token_type") + " " + localStorage.getItem("token");
+        //reactive state
+        let users = ref([]);
+        let id_user = localStorage.getItem("id_user");
+        //mounted
+        onMounted(() => {
+            //get API from Laravel Backend
+            axios
+                .get("users/" + id_user + "")
+                .then((response) => {
+                    //assign state posts with response data
+                    users.value = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+
+        })
+
+
         //return
         return {
-            token,
+            users,
         }
     },
-}
+};
 </script>
 
 <style>

@@ -8,12 +8,15 @@
                     <h1 class="text-dark font-weight-bold">List Pesulap Terbaik Kami</h1>
                 </div>
                 <div class="col-lg-10 align-self-baseline">
-                    <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan band dengan kualitas terjamin
+                    <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan pesulap dengan kualitas
+                        terjamin
                         dan
                         Anda
-                        pasti mendapatkan kualitas band terbaik di Bali. Kita juga memiliki banyak pilihan band yang
+                        pasti mendapatkan kualitas pesulap terbaik di Bali. Kita juga memiliki banyak pilihan pesulap
+                        yang
                         tersedia
-                        dengan gaya band nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih band dengan
+                        dengan gaya pesulap nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih pesulap
+                        dengan
                         kebutuhan
                         yang Anda inginkan.</p>
                 </div>
@@ -99,24 +102,26 @@
 </template>
 
 <script>
-import axios from "../../axios";
+import axios from "axios";
 import { onMounted, ref } from "vue";
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
     setup() {
+        axios.defaults.headers.common["Authorization"] =
+            localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         // const toaster = createToaster({ /* options */ });
         //reactive state
-        let bands = ref([]);
+        let pesulaps = ref([]);
         // let index = null
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("bands")
+                .get("pesulaps")
                 .then((response) => {
                     //assign state posts with response data
-                    bands.value = response.data.data;
+                    pesulaps.value = response.data.data;
                 })
                 .catch((error) => {
                     console.log(error.response.data);
@@ -126,7 +131,7 @@ export default {
 
         //return
         return {
-            bands
+            pesulaps
         }
     },
 };

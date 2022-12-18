@@ -87,7 +87,7 @@
 <script>
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import axios from "../axios";
+import axios from "axios";
 import { createToaster } from "@meforma/vue-toaster";
 
 export default {
