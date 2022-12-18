@@ -1,86 +1,91 @@
 <template>
-    <div class="p-5"></div>
+    <div class="img">
+        <div class="p-5"></div>
 
-    <div class="container mt-5 mb-5">
-        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        <div class="container mt-5 w-75  justivy-content-center">
+            <div class="card mx-4 mx-md-5 shadow-5-strong" style="
         margin-top: -100px;
-        background: hsla(0, 0%, 100%, 0.8);
+        background: hsla(0, 0%, 100%, 0.5);
         backdrop-filter: blur(30px);
     ">
 
-            <div class="card-body py-5 px-md-5">
+                <div class="card-body py-5 px-md-5">
 
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="fw-bold mb-5">DAFTAR</h2>
-                        <form @submit.prevent="store">
-                            <div class="form-outline mb-4">
-                                <label for="inputNama" class="form-label">Nama</label>
-                                <input type="text" class="form-control" id="inputNama" v-model="user.name">
-                                <!-- validation -->
-                                <div v-if="validation.name" class="mt-2 alert alert-danger">
-                                    {{ validation.name[0] }}
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="fw-bold mb-5 text-light">Buat Akun</h2>
+                            <form @submit.prevent="store">
+                                <div class="form-outline mb-4">
+                                    <label for="inputNama" class="form-label text-light">Nama</label>
+                                    <input type="text" class="form-control" id="inputNama" v-model="user.name">
+                                    <!-- validation -->
+                                    <div v-if="validation.name" class="mt-2 alert alert-danger">
+                                        {{ validation.name[0] }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label for="inputEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="inputEmail" v-model="user.email">
-                                <!-- validation -->
-                                <div v-if="validation.email" class="mt-2 alert alert-danger">
-                                    {{ validation.email[0] }}
+                                <div class="form-outline mb-4">
+                                    <label for="inputEmail" class="form-label text-light">Email</label>
+                                    <input type="text" class="form-control" id="inputEmail" v-model="user.email">
+                                    <!-- validation -->
+                                    <div v-if="validation.email" class="mt-2 alert alert-danger">
+                                        {{ validation.email[0] }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label for="inputpass" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="inputpass" v-model="user.password">
-                                <!-- validation -->
-                                <div v-if="validation.password" class="mt-2 alert alert-danger">
-                                    {{ validation.password[0] }}
+                                <div class="form-outline mb-4">
+                                    <label for="inputpass" class="form-label text-light">Password</label>
+                                    <input type="password" class="form-control" id="inputpass" v-model="user.password">
+                                    <!-- validation -->
+                                    <div v-if="validation.password" class="mt-2 alert alert-danger">
+                                        {{ validation.password[0] }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label for="inputTanggalLahir" class="form-label">Tanggal Lahir</label>
-                                <input type="date" class="form-control" id="inputTanggalLahir" v-model="user.tgl_lahir">
-                                <!-- validation -->
-                                <div v-if="validation.tgl_lahir" class="mt-2 alert alert-danger">
-                                    {{ validation.tgl_lahir[0] }}
+                                <div class="form-outline mb-4">
+                                    <label for="inputTanggalLahir" class="form-label text-light">Tanggal Lahir</label>
+                                    <input type="date" class="form-control" id="inputTanggalLahir"
+                                        v-model="user.tgl_lahir">
+                                    <!-- validation -->
+                                    <div v-if="validation.tgl_lahir" class="mt-2 alert alert-danger">
+                                        {{ validation.tgl_lahir[0] }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label for="inputGender" class="form-label">Gender</label>
-                                <select class="form-control" id="inputGender" v-model="user.gender">
-                                    <option value="1">Laki-laki</option>
-                                    <option value="0">Perempuan</option>
-                                </select>
-                                <!-- validation -->
-                                <div v-if="validation.gender" class="mt-2 alert alert-danger">
-                                    {{ validation.gender[0] }}
+                                <div class="form-outline mb-4">
+                                    <label for="inputGender" class="form-label text-light">Gender</label>
+                                    <select class="form-control" id="inputGender" v-model="user.gender">
+                                        <option value="1">Laki-laki</option>
+                                        <option value="0">Perempuan</option>
+                                    </select>
+                                    <!-- validation -->
+                                    <div v-if="validation.gender" class="mt-2 alert alert-danger">
+                                        {{ validation.gender[0] }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label for="inputNoHP" class="form-label">No HP</label>
-                                <input type="text" class="form-control" id="inputNoHP" v-model="user.telepon">
-                                <!-- validation -->
-                                <div v-if="validation.telepon" class="mt-2 alert alert-danger">
-                                    {{ validation.telepon[0] }}
+                                <div class="form-outline mb-4">
+                                    <label for="inputNoHP" class="form-label text-light">No HP</label>
+                                    <input type="text" class="form-control" id="inputNoHP" v-model="user.telepon">
+                                    <!-- validation -->
+                                    <div v-if="validation.telepon" class="mt-2 alert alert-danger">
+                                        {{ validation.telepon[0] }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label for="inputAlamat" class="form-label">Alamat</label>
-                                <input type="text" class="form-control" id="inputAlamat" v-model="user.alamat">
-                                <!-- validation -->
-                                <div v-if="validation.alamat" class="mt-2 alert alert-danger">
-                                    {{ validation.alamat[0] }}
+                                <div class="form-outline mb-4">
+                                    <label for="inputAlamat" class="form-label text-light">Alamat</label>
+                                    <input type="text" class="form-control" id="inputAlamat" v-model="user.alamat">
+                                    <!-- validation -->
+                                    <div v-if="validation.alamat" class="mt-2 alert alert-danger">
+                                        {{ validation.alamat[0] }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-success text-light">Daftar</button>
-                            <p></p>
-                        </form>
+                                <!-- Submit button -->
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="submit" class="btn btn-success text-light">Daftar</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="p-5"></div>
         </div>
     </div>
 </template>
@@ -153,3 +158,11 @@ export default {
     },
 };
 </script>
+
+<style>
+.img {
+    background-image: url('../assets/bgregis.jpg');
+    background-size: cover;
+    height: fit-content;
+}
+</style>

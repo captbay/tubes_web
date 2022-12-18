@@ -1,50 +1,64 @@
 <template>
-    <div class="container mt-5 mb-5">
-        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
-        background: hsla(0, 0%, 100%, 0.8);
-        backdrop-filter: blur(30px);
-        ">
-
-            <div class="card-body py-5 px-md-5">
-
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="fw-bold mb-5">LOGIN</h2>
-                        <form @submit.prevent="store">
-                            <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <label for="inputEmail" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="inputEmail" v-model="user.email">
-                                <!-- validation -->
-                                <div v-if="validation.email" class="mt-2 alert alert-danger">
-                                    {{ validation.email[0] }}
-                                </div>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label for="inputpass" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="inputpass" v-model="user.password">
-                                <!-- validation -->
-                                <div v-if="validation.password" class="mt-2 alert alert-danger">
-                                    {{ validation.password[0] }}
-                                </div>
-                            </div>
-
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-success text-light">Masuk</button>
-                            <p></p>
-                            <p></p>
-
-                            <div class="d-flex align-items-center justify-content-center pb-4">
-                                <p class="mb-0 me-2">Belum punya akun?</p>
-                                <router-link :to="{ name: 'daftar' }" class="nav-link text-light"><button
-                                        class="btn btn-success">Daftar</button></router-link>
-                            </div>
-                        </form>
+        <div class="img">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section"></h2>
                     </div>
                 </div>
+                <!-- <div class="card card-form mt-2 mb-4 bg-opacity-50"> -->
+                    <div class="row justify-content-center mt-5">
+                    <div class="col-md-6 col-lg-4 mt-5">
+                        <div class="login-wrap p-0">
+                            <h3 class="mb-4 text-center text-light">Punya akun?</h3>
+                            <form @submit.prevent="store">
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" class="form-control" placeholder="Email" id="inputEmail"
+                                        v-model="user.email">
+                                    <!-- validation -->
+                                    <div v-if="validation.email" class="mt-2 alert alert-danger">
+                                        {{ validation.email[0] }}
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="password" class="form-control" placeholder="Password" id="inputpass"
+                                        v-model="user.password">
+                                        <span
+                                            toggle="#password-field"
+                                            class="fa fa-fw fa-eye field-icon toggle-password"
+                                        ></span>
+                                    <!-- validation -->
+                                    <div v-if="validation.password" class="mt-2 alert alert-danger">
+                                        {{ validation.password[0] }}
+                                    </div>
+                                </div>
+
+                                <!-- Submit button -->
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-success submit px-3">
+                                        Masuk
+                                    </button>
+                                </div>
+                                <p></p>
+                                <p></p>
+
+                                <p class="w-100 text-center text-light">&mdash; Atau Mendaftar &mdash;</p>
+                                <div class="form-group">
+                                    <router-link :to="{ name: 'daftar' }" class="nav-link text-light">
+                                        <button type="submit" class="form-control btn btn-success submit px-3">
+                                            Daftar
+                                        </button>
+                                    </router-link>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                <!-- </div> -->
+                </div>
+                
             </div>
         </div>
-    </div>
 </template>
 <script>
 import { reactive, ref } from "vue";
@@ -107,3 +121,11 @@ export default {
     },
 };
 </script>
+
+<style>
+.img {
+    background-image: url('../assets/event.png');
+    background-size: cover;
+    height: 100vh;
+}
+</style>

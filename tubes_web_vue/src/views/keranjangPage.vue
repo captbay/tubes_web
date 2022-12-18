@@ -6,9 +6,10 @@
         <table class="table table-striped table-bordered mt-4">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">NAMA DEPARTEMEN</th>
-                    <th scope="col">NAMA MANAGER</th>
-                    <th scope="col">JUMLAH PEGAWAI</th>
+                    <th scope="col">NAMA</th>
+                    <th scope="col">HARGA</th>
+                    <th scope="col">GAMBAR</th>
+                    <th scope="col">DESKRIPSI</th>
                     <th scope="col">AKSI</th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     </td>
                 </tr> -->
                 <tr>
+                    <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
@@ -42,9 +44,10 @@
         <table class="table table-striped table-bordered mt-4">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">NAMA DEPARTEMEN</th>
-                    <th scope="col">NAMA MANAGER</th>
-                    <th scope="col">JUMLAH PEGAWAI</th>
+                    <th scope="col">NAMA</th>
+                    <th scope="col">HARGA</th>
+                    <th scope="col">GAMBAR</th>
+                    <th scope="col">DESKRIPSI</th>
                     <th scope="col">AKSI</th>
                 </tr>
             </thead>
@@ -61,6 +64,7 @@
                     </td>
                 </tr> -->
                 <tr>
+                    <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
@@ -78,9 +82,10 @@
         <table class="table table-striped table-bordered mt-4">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">NAMA DEPARTEMEN</th>
-                    <th scope="col">NAMA MANAGER</th>
-                    <th scope="col">JUMLAH PEGAWAI</th>
+                    <th scope="col">NAMA</th>
+                    <th scope="col">HARGA</th>
+                    <th scope="col">GAMBAR</th>
+                    <th scope="col">DESKRIPSI</th>
                     <th scope="col">AKSI</th>
                 </tr>
             </thead>
@@ -97,6 +102,7 @@
                     </td>
                 </tr> -->
                 <tr>
+                    <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
                     <td>nama</td>
