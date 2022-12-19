@@ -8,14 +8,10 @@
                     <h1 class="text-dark font-weight-bold">List Band Terbaik Kami</h1>
                 </div>
                 <div class="col-lg-10 align-self-baseline">
-                    <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan band dengan kualitas terjamin
-                        dan
-                        Anda
-                        pasti mendapatkan kualitas band terbaik di Bali. Kita juga memiliki banyak pilihan band yang
-                        tersedia
-                        dengan gaya band nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih band dengan
-                        kebutuhan
-                        yang Anda inginkan.</p>
+                    <p class="text-white-75 mb-1">
+                        AMP Group menyediakan berbagai macam Band yang bisa kalian pilih
+                        sesuai dengan selera dan kebutuhan kalian. Sesuaikan genre dan musik
+                        yang kalian mau untuk memeriahkan acara kalian.</p>
                 </div>
                 <div v-for="(band, index) in bands" :key="index">
                     <div class="container">

@@ -7,9 +7,9 @@
                     <h2>Temui Event-Event Keren Kami!</h2>
                     <h4 class="p-5">
                         Kami selalu memastikan event dengan kualitas
-                        terjamin dan Anda pasti mendapatkan kualitas event terbaik di
+                        terjamin dan anda pasti mendapatkan kualitas event terbaik di
                         Indonesia. Kita juga memiliki banyak pilihan event yang tersedia
-                        sesuai kebutuhan Anda. Jadi, Anda bisa memilih event dengan kebutuhan yang Anda inginkan.
+                        sesuai kebutuhan anda. Jadi, anda bisa memilih event dengan kebutuhan yang Anda inginkan.
                     </h4>
                 </div>
             </div>

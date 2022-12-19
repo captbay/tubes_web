@@ -6,30 +6,24 @@
                 <h1 class="text-dark font-weight-bold">List Komika Terbaik Kami</h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
-                <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan stand up dengan kualitas terjamin
-                    dan
-                    Anda
-                    pasti mendapatkan kualitas stand up terbaik di Bali. Kita juga memiliki banyak pilihan stand up yang
-                    tersedia
-                    dengan gaya stand up nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih stand up
-                    dengan
-                    kebutuhan
-                    yang Anda inginkan.</p>
+                <p class="text-white-75 mb-1">
+                    AMP Group menyediakan berbagai macam Komika yang bisa kalian pilih
+                    sesuai dengan selera dan kebutuhan kalian. Kami memastikan stand up 
+                    dengan kualitas terjamin dan anda pasti mendapatkan kualitas stand up 
+                    terbaik disini. Kami juga memiliki banyak pilihan Komika yang tersedia 
+                    dengan gaya stand up nya masing-masing sesuai kebutuhan anda.</p>
             </div>
-            <div class="container">
+            <div class="container p-3">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
-                                src="https://cdn.antaranews.com/cache/730x487/2020/10/02/e9018782-0ef5-446e-83d0-3db221524a96.jpg"
-                                alt="...">
+                                src="../../assets/contohKomika.jpg" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">Komika 1</h5>
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
-                                    suspendisse
-                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
-                                    vulputate
+                                    <h5 class="fw-bolder">Pandji Pragiwaksono</h5>
+                                    Pandji Pragiwaksono adalah seorang aktor, pelawak tunggal, pembawa acara, 
+                                    penyiar radio, penulis, rapper, youtuber dan sutradara Indonesia.
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -43,15 +37,12 @@
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
-                                src="https://cdn.antaranews.com/cache/730x487/2020/10/02/e9018782-0ef5-446e-83d0-3db221524a96.jpg"
-                                alt="...">
+                                src="../../assets/contohKomika3.jpg" style="height: 75mm;" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">Komika 2</h5>
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
-                                    suspendisse
-                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
-                                    vulputate
+                                    <h5 class="fw-bolder">Rigen Rakelna</h5>
+                                    Rigen Rakelna atau Rigen adalah seorang pelawak tunggal dan aktor berkebangsaan Indonesia.
+                                    Sekarang ia bersama dengan teman Komika lainnya membentuk group lawak bernama GJLS
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -65,15 +56,12 @@
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
-                                src="https://cdn.antaranews.com/cache/730x487/2020/10/02/e9018782-0ef5-446e-83d0-3db221524a96.jpg"
-                                alt="...">
+                                src="../../assets/contohKomika2.jpg" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <h5 class="fw-bolder">Komika 3</h5>
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis tellus
-                                    suspendisse
-                                    felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis etiam
-                                    vulputate
+                                    <h5 class="fw-bolder">Raditya Dika</h5>
+                                    Radity Dika adalah seorang komedian, penulis, sutradara, produser, penulis skenario, 
+                                    pebisnis, YouTuber, dan aktor Indonesia.
                                 </div>
                             </div>
                             <!-- Product actions-->

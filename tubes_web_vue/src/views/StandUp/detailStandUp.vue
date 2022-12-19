@@ -6,18 +6,17 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img class="img-fluid rounded-start" src="https://akordmusic.com/asset/example1.jpg"
-                                alt="...">
+                            <img class="img-fluid rounded-start" src="../../assets/contohKomika.jpg" alt="...">
                         </div>
                         <div class="col-md-7 align-self-center">
                             <div class="card-body p-5">
-                                <p class="card-title h1">Komika</p>
+                                <p class="card-title h1">Pandji Pragiwaksono</p>
                                 <p class="card-title h3">Rp 2.000.000,-</p>
                                 <p class="card-text body1">
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Semper duis tellus suspendisse felis, odio vitae ultrices quam placerat.
-                                    Est nisl massa placerat facilisis etiam vulputate interdum ridiculus at.
-                                    Aliquet diam sit a volutpat.
+                                    Ingin mendengarkan stand up comedy dengan pembawaan story telling? 
+                                    Pandji Pragiwaksono jawabannya. Selain membuat kalian tertawa ia juga akan
+                                    membuat kalian nyaman dengan mendengarkan cerita stand up nya, membuat 
+                                    acara kalian menjadi lebih terhibur.
                                 </p>
                                 <div class="button">
                                     <a class="btn btn-success mt-auto"><router-link :to="{ name: 'detailStandUp' }"
@@ -39,18 +38,11 @@
                     Biografi
                 </p>
                 <p class="body1 text-center mt-5 mb-md-5">
-                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit.
-                    Tincidunt erat velit sodales gravida ullamcorper ultrices enim mattis sed.
-                    Nibh ut est sagittis in non eget ultrices interdum. Enim egestas nibh magna amet.
-                    Lectus donec morbi laoreet id egestas leo, fringilla. Platea interdum consequat eget etiam aenean
-                    dictum.
-                    Vulputate dignissim eget at dictumst ante at in lectus. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.
-                    Tincidunt erat velit sodales gravida ullamcorper ultrices enim mattis sed. Nibh ut est sagittis in
-                    non eget ultrices interdum.
-                    Enim egestas nibh magna amet. Lectus donec morbi laoreet id egestas leo, fringilla. Platea interdum
-                    consequat eget etiam aenean dictum.
-                    Vulputate dignissim eget at dictumst ante at in lectus.
+                    Memulai karirnya sebagai seorang pelawak tunggal pada tahun 2010. Diawali dari 
+                    Twivate Concert pertama yang ia lakukan di bulan April, Pandji akhirnya memantapkan 
+                    niatnya untuk membangun awareness masyarakat tentang pelawak tunggal ini sendiri. Sampai
+                    sekarang Pandji sudah melaksanakan berbagai tour yang mulai dari lokal bahkan sampai dunia 
+                    membuat kualitasnya sudah tidak perlu diragukan lagi dalam dunia stand up comedy.
                 </p>
             </div>
         </div>

@@ -8,34 +8,23 @@
                     <h1 class="text-dark font-weight-bold">List Pesulap Terbaik Kami</h1>
                 </div>
                 <div class="col-lg-10 align-self-baseline">
-                    <p class="text-white-75 mb-1">Akordmusic Production selalu memastikan pesulap dengan kualitas
-                        terjamin
-                        dan
-                        Anda
-                        pasti mendapatkan kualitas pesulap terbaik di Bali. Kita juga memiliki banyak pilihan pesulap
-                        yang
-                        tersedia
-                        dengan gaya pesulap nya masing-masing sesuai kebutuhan Anda. Jadi, Anda bisa memilih pesulap
-                        dengan
-                        kebutuhan
-                        yang Anda inginkan.</p>
+                    <p class="text-white-75 mb-1">
+                        AMP Group menyediakan berbagai macam Pesulap yang bisa kalian pilih
+                        sesuai dengan selera dan kebutuhan kalian. Mulai dari yang biasa saja sampai dengan
+                        yang ekstrim ada ditempat kami. Jadi, silahkan memilih pesulap sesuai 
+                        dengan kebutuhan yang anda inginkan.</p>
                 </div>
-                <div class="container">
+                <div class="container p-3">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
                                 <img class="card-img-top"
-                                    src="https://telltaletv.com/wp-content/uploads/2018/01/The-Magicians-Season-3-Episode-3_NUP_179567_0093-730x487.jpg"
-                                    alt="...">
+                                    src="../../assets/contohPesulap.jpg" style="height: 75mm;" alt="...">
                                 <div class="card-body p-4">
                                     <div class="text-center">
-                                        <h5 class="fw-bolder">Pesulap 1</h5>
-                                        Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis
-                                        tellus
-                                        suspendisse
-                                        felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis
-                                        etiam
-                                        vulputate
+                                        <h5 class="fw-bolder">Demian Aditya</h5>
+                                        Aditya Prambudhi adalah seorang pesulap berkebangsaan Indonesia. Ia juga lebih 
+                                        dikenal dengan sebutan Demian Sang Illusionist melalui acara yang dibawakan di televisi.
                                     </div>
                                 </div>
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -49,17 +38,12 @@
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
                                 <img class="card-img-top"
-                                    src="https://telltaletv.com/wp-content/uploads/2018/01/The-Magicians-Season-3-Episode-3_NUP_179567_0093-730x487.jpg"
-                                    alt="...">
+                                    src="../../assets/contohPesulap2.jpg" style="height: 75mm;" alt="...">
                                 <div class="card-body p-4">
                                     <div class="text-center">
-                                        <h5 class="fw-bolder">Pesulap 2</h5>
-                                        Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis
-                                        tellus
-                                        suspendisse
-                                        felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis
-                                        etiam
-                                        vulputate
+                                        <h5 class="fw-bolder">Marcel Radhival</h5>
+                                        Marcel Radhival, atau yang lebih dikenal dengan nama panggung Pesulap Merah 
+                                        yang bernama asli Haris Setianto adalah seorang pesulap dan YouTuber berkebangsaan Indonesia.
                                     </div>
                                 </div>
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -73,17 +57,13 @@
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
                                 <img class="card-img-top"
-                                    src="https://telltaletv.com/wp-content/uploads/2018/01/The-Magicians-Season-3-Episode-3_NUP_179567_0093-730x487.jpg"
-                                    alt="...">
+                                    src="../../assets/contohPesulap3.jpg" style="height: 75mm;" alt="...">
                                 <div class="card-body p-4">
                                     <div class="text-center">
-                                        <h5 class="fw-bolder">Pesulap 3</h5>
-                                        Akordkustik ipsum dolor sit amet, consectetur adipiscing elit. Semper duis
-                                        tellus
-                                        suspendisse
-                                        felis, odio vitae ultrices quam placerat. Est nisl massa placerat facilisis
-                                        etiam
-                                        vulputate
+                                        <h5 class="fw-bolder">Limbad</h5>
+                                        Salim Babad, yang dikenal sebagai Limbad adalah seorang pesulap dan aktor berkebangsaan Indonesia. 
+                                        Popularitasnya semakin menanjak semenjak ia dinobatkan sebagai Master Magician dalam acara 
+                                        The Master yang ditayangkan oleh RCTI.
                                     </div>
                                 </div>
                                 <!-- Product actions-->

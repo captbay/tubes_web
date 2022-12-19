@@ -6,18 +6,16 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img class="img-fluid rounded-start" src="https://akordmusic.com/asset/example1.jpg"
+                            <img class="img-fluid rounded-start" src="../../assets/contohPesulap.jpg"
                                 alt="...">
                         </div>
                         <div class="col-md-7 align-self-center">
                             <div class="card-body p-5">
-                                <p class="card-title h1">Magician</p>
+                                <p class="card-title h1">Demian Aditya</p>
                                 <p class="card-title h3">Rp 2.000.000,-</p>
                                 <p class="card-text body1">
-                                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Semper duis tellus suspendisse felis, odio vitae ultrices quam placerat.
-                                    Est nisl massa placerat facilisis etiam vulputate interdum ridiculus at.
-                                    Aliquet diam sit a volutpat.
+                                    Pertunjukan dari pesulap ini pasti akan
+                                    membuat acara kalian semakin seru dan menegangkan tentunya.
                                 </p>
                                 <div class="button">
                                     <a class="btn btn-success mt-auto"><router-link :to="{ name: 'detailPesulap' }"
@@ -39,18 +37,13 @@
                     Biografi
                 </p>
                 <p class="body1 text-center mt-5 mb-md-5">
-                    Akordkustik ipsum dolor sit amet, consectetur adipiscing elit.
-                    Tincidunt erat velit sodales gravida ullamcorper ultrices enim mattis sed.
-                    Nibh ut est sagittis in non eget ultrices interdum. Enim egestas nibh magna amet.
-                    Lectus donec morbi laoreet id egestas leo, fringilla. Platea interdum consequat eget etiam aenean
-                    dictum.
-                    Vulputate dignissim eget at dictumst ante at in lectus. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.
-                    Tincidunt erat velit sodales gravida ullamcorper ultrices enim mattis sed. Nibh ut est sagittis in
-                    non eget ultrices interdum.
-                    Enim egestas nibh magna amet. Lectus donec morbi laoreet id egestas leo, fringilla. Platea interdum
-                    consequat eget etiam aenean dictum.
-                    Vulputate dignissim eget at dictumst ante at in lectus.
+                    Demian mulai menggeluti dunia sulap semenjak umur 10 tahun secara otodidak. Awal 
+                    kariernya pada tahun 2002 adalah dengan mengikuti sebuah kompetisi pemilihan Abang 
+                    dan None Kep. Seribu & Jakarta dan berhasil memenangi dua gelar yaitu sebagai Abang 
+                    Persahabatan 2002 dan Abang Favorit 2002. Pada awal 2007 Demian membintangi acara tv 
+                    pertamanya yang menggunakan namanya sendiri berjudul Demian Sang Illusionist, tayang selama 
+                    hampir dua tahun di ANTV. Di Tahun 2017 Demian mengikuti salah satu acara terbaik di America 
+                    yaitu America’s Got Talent dan memainkan ilusi-ilusi terbaiknya. 
                 </p>
             </div>
         </div>
