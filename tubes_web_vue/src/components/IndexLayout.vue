@@ -54,12 +54,11 @@
                                 <router-link :to="{ name: 'band' }" class="dropdown-item text-light">Band</router-link>
                             </li>
                             <li>
-                                <router-link :to="{ name: 'standUp' }" class="dropdown-item text-light">Stand
-                                    Up</router-link>
+                                <router-link :to="{ name: 'standUp' }" class="dropdown-item text-light">Stand Up</router-link>
                             </li>
                             <li>
                                 <router-link :to="{ name: 'pesulapIndex' }"
-                                    class="dropdown-item text-light">Magician</router-link>
+                                    class="dropdown-item text-light">Pesulap</router-link>
                             </li>
                         </ul>
                     </li>
@@ -141,8 +140,11 @@
                             <i class="fas fa-gem me-3"></i>AMP Group
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
+                            Akordmusic Production Group adalah penyelenggara acara yang menyediakan 
+                            berbagai macam event yang anda butuhkan. Dari event band, pertunjukan stand up comedy,
+                            serta pertunjukan sulap yang siap menghibur anda. Kami memastikan
+                            talenta yang dipilih merupakan yang terbaik dibidangnya agar dapat memeriahkan
+                            event anda.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -190,7 +192,7 @@
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Kontak</h6>
                         <p><i class="bi bi-house-door-fill"></i> Yogyakarta, Babarsari 55281, Indonesia</p>
-                        <p><i class="bi bi-envelope-fill"></i> ampgroup@gmail.com</p>
+                        <p><i class="bi bi-envelope-fill"></i> akordmusicproduction@gmail.com</p>
                         <p><i class="bi bi-telephone-fill"></i> + 01 234 567 88</p>
                         <p><i class="bi bi-telephone-fill"></i> + 01 234 567 89</p>
                     </div>
