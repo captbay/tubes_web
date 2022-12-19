@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
+use App\Http\Requests\UserLoginRequest;
+use App\Http\Requests\UserRegisterRequest;
+use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
 {
@@ -190,6 +192,7 @@ class UserController extends Controller
             'image_user' => "",
 
         ]);
+        event(new Registered($user));
 
         //Redirect jika berhasil mengirim email
         if ($user) {
@@ -227,7 +230,12 @@ class UserController extends Controller
         $token = $user->createToken('Authentication Token')->accessToken;
 
         if (Hash::check($request->password, $user->password)) {
-
+            if (!$user->hasVerifiedEmail()) {
+                return response([
+                    'message' => 'Email Not Verified',
+                    'data' => null
+                ], 401);
+            }
             return response()->json([
                 'message' => 'Authenticated',
                 'user' => $user,
