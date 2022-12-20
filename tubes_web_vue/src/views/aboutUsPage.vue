@@ -6,11 +6,11 @@
                 <div class="text-center text-white">
                     <h2><strong>AMP Group</strong></h2>
                     <h4 class="p-3"><strong>
-                        Kami adalah penyelenggara acara yang menyediakan berbagai macam
-                        event yang anda butuhkan. Dari event band, pertunjukan stand up comedy, 
-                        serta pertunjukan sulap yang siap menghibur anda. Kami pun telah 
-                        memilih talenta terbaik dibidangnya.
-                    </strong></h4>
+                            Kami adalah penyelenggara acara yang menyediakan berbagai macam
+                            event yang anda butuhkan. Dari event band, pertunjukan stand up comedy,
+                            serta pertunjukan sulap yang siap menghibur anda. Kami pun telah
+                            memilih talenta terbaik dibidangnya.
+                        </strong></h4>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                         <p>
                             Kehadiran kami disini sebagai agen hiburan satu atap dengan menyediakan
                             berbagai macam acara hiburan yang dapat menghibur event anda.
-                            Mulai dari penyanyi solo, duokustik, triokustik hingga format full band. 
+                            Mulai dari penyanyi solo, duokustik, triokustik hingga format full band.
                             Selain itu, juga tersedia komika-komika dan pesulap dengan berbagai jenis
                             keahlian untuk memenuhi semua kebutuhan anda. Pengalaman yang kami miliki
                             di industri acara, siap untuk membantu anda di setiap langkah</p>
@@ -71,58 +71,62 @@
         </div>
     </section>
 
-    <!-- <div class="container bg-light">
-        <h1 class="text-center p-5"><strong>Developer</strong></h1>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="">
-                    <img class="img-dev" src="../assets/contohBand.jpg" alt="...">
-                    <h5 class="text-center">Sarah W.</h5>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="">
-                    <img class="img-dev" src="../assets/contohBand.jpg" alt="...">
-                    <h5 class="text-center">Sarah W.</h5>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <div class="container px-5 p-5 bg-light">
-        <h1 class="text-center p-5"><strong>Developer</strong></h1>
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-0">                        
-                        <div class="img-dev"></div>
-                        <h2 class="text-center"><strong>Developer</strong></h2>
-                        <h4 class="text-center text-muted">Full Stack</h4>
+    <div class="container px-5 p-5 text-center">
+        <div class="row gx-5 align-items-center">
+            <h1 class="text-center p-5"><strong>Developer</strong></h1>
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <d1 class="fw-bolder">I PUTU AGESTYA PRAMANA</d1>
+                            </div>
+                            <p>200710994</p>
+                            <p>FullStack</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-0">                        
-                        <div class="img-dev"></div>
-                        <h2 class="text-center"><strong>Developer</strong></h2>
-                        <h4 class="text-center text-muted">Full Stack</h4>
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <d1 class="fw-bolder">THEODORUS ADIYATMA SUHARGO</d1>
+                            </div>
+                            <p>200710692</p>
+                            <p>FullStack</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-0">                        
-                        <div class="img-dev"></div>
-                        <h2 class="text-center"><strong>Developer</strong></h2>
-                        <h4 class="text-center text-muted">Backend</h4>
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <d1 class="fw-bolder">REYNALD MICHAEL HENA</d1>
+                            </div>
+                            <p>200710846</p>
+                            <p>FrontEnd</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-0">                        
-                        <div class="img-dev">
-                            <h2 class="text-center"><strong>Developer</strong></h2>
-                            <h4 class="text-center text-muted">Frontend</h4>
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <d1 class="fw-bolder">IMMANUEL ARVELLIAN PUTRA</d1>
+                            </div>
+                            <p>200710905</p>
+                            <p>FrontEnd</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
     <div class="p-5"></div>
 </template>
 
@@ -138,6 +142,6 @@
 }
 
 body {
-  font-family: 'Poppins' !important;
+    font-family: 'Poppins' !important;
 }
 </style>
