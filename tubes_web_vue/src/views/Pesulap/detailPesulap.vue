@@ -17,10 +17,10 @@
                                     Pertunjukan dari pesulap {{ pesulaps.Nama }} ini pasti akan
                                     membuat acara kalian semakin seru dan menegangkan tentunya.
                                 </p>
-                                <div class="button">
-                                    <a class="btn btn-success mt-auto"><router-link :to="{ name: 'detailPesulap' }"
-                                        class="dropdown-item"><strong>Book Now</strong></router-link></a>
-                                </div>
+                                <button type="button" class="button btn btn-success mt-auto text-white"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Masukan Ke Keranjang
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -48,13 +48,47 @@
             </div>
         </div>
     </div>
+
+
+    <!-- modal -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Silahkan masukan Tanggal Pesanan Anda</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form @submit.prevent="store">
+                        <div class="form-outline mb-4">
+                            <label for="inputTanggalLahir" class="form-label">Tanggal Pesanan</label>
+                            <input type="date" class="form-control" id="inputTanggalLahir"
+                                v-model="pembelian.tgl_pembelian_passing" />
+                            <!-- validation -->
+                            <div v-if="validation.tgl_pembelian" class="mt-2 alert alert-danger">
+                                {{ validation.tgl_pembelian[0] }}
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                            <button type="button submit" class="btn btn-primary">Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 import axios from "axios";
+import { reactive } from "vue";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-
+import { createToaster } from "@meforma/vue-toaster";
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
@@ -76,6 +110,14 @@ export default {
         //vue route
         // const router = useRouter();
         const route = useRoute();
+
+        //pembelian
+        const pembelian = reactive({
+            tgl_pembelian_passing: "",
+        });
+        const validation = ref([]);
+        const toaster = createToaster({ /* options */ });
+
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
@@ -89,7 +131,26 @@ export default {
                     console.log(error.response.data);
                 });
 
-        })
+        });
+
+        function store() {
+            let tgl_pembelian = pembelian.tgl_pembelian_passing;
+            axios.post("pembelianpesulaps/store/" + localStorage.getItem("id_user") + "/" + route.params.id + "", {
+                tgl_pembelian: tgl_pembelian
+            }).then(() => {
+
+                toaster.show(`Berhasil Tambah ke Keranjang`, {
+                    type: "success",
+                    position: "bottom-right",
+                    duration: 3000,
+                });
+
+            }).catch((error) => {
+                //assign state validation with error
+                validation.value = error.response.data;
+            });
+
+        }
 
 
         //return
@@ -97,6 +158,9 @@ export default {
             pesulaps,
             url,
             bandsurl,
+            validation,
+            pembelian,
+            store,
         }
     },
 };
