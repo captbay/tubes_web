@@ -22,7 +22,9 @@
                                         style="max-height: 200px;">
                                     <div class="card-body p-4">
                                         <div class="text-center">
-                                            <h3 class="fw-bolder">{{ band.Nama }}</h3>
+                                            <h2 class="fw-bolder">{{ band.Nama }}</h2>
+                                            <h5 class="">{{ band.Deskripsi }}</h5>
+                                            <p class="">Rp {{ formatPrice(band.Harga) }}</p>
                                         </div>
                                     </div>
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -48,6 +50,12 @@ import { onMounted, ref } from "vue";
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
+    methods: {
+        formatPrice(value) {
+            let val = (value / 1).toFixed(2).replace('.', ',')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
+    },
     setup() {
         // const toaster = createToaster({ /* options */ });
         //reactive state

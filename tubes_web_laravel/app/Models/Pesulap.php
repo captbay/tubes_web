@@ -15,9 +15,9 @@ class Pesulap extends Model
      */
     protected $table = "pesulaps";
 
-    public function pembelians()
+    public function pembelianpesulaps()
     {
-        return $this->hasMany(Pembelian::class,  'id_pesulap', 'id');
+        return $this->hasMany(PembelianPesulap::class,  'id_pesulap', 'id');
     }
 
     protected $fillable = [

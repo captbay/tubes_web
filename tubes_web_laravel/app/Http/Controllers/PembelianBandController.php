@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\PembelianBand;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Carbon;
 
 class PembelianBandController extends Controller
 {
@@ -18,7 +19,7 @@ class PembelianBandController extends Controller
     public function index()
     {
         //get posts
-        $pembelian = PembelianBand::latest()->get();
+        $pembelian = PembelianBand::with(['bands'])->get();
 
         //render view with posts
         return response()->json([
@@ -62,6 +63,13 @@ class PembelianBandController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'tgl_pembelian' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
         $pembelian = PembelianBand::find($id);
         if (!$pembelian) {
             //data pesulap not found
@@ -71,20 +79,16 @@ class PembelianBandController extends Controller
             ], 404);
         }
 
-        $validator = Validator::make($request->all(), [
-            'tgl_pembelian' => 'required',
-        ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
-        }
 
-        $pembelian = PembelianBand::find($id);
-        $band = Band::where('id', $request->band)->first();
-        $user = User::where('id', $request->user)->first();
+
+
+        // $pembelian = PembelianBand::find($id);
+        // $band = Band::where('id', $request->band)->first();
+        // $user = User::where('id', $request->user)->first();
         $pembelian->update([
-            'id_user' => $user->id,
-            'id_band' => $band->id,
+            // 'id_user' => $user->id,
+            // 'id_band' => $band->id,
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
 
@@ -120,19 +124,20 @@ class PembelianBandController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(Request $request,  $id_user, $id_product)
     {
         //Validasi Formulir
         $validator = Validator::make($request->all(), [
             'tgl_pembelian' => 'required',
         ]);
 
+        // $tgl_pembelian = now()->format('Y-m-d');
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
-
-        $band = Band::where('id', $request->id_band)->first();
-        $user = User::where('id', $request->id_user)->first();
+        $band = Band::find($id_product);
+        $user = User::find($id_user);
 
         $pembelian = PembelianBand::create([
             'id_user' => $user->id,

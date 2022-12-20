@@ -5,9 +5,9 @@
     <div class="bg-image">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
-                <h1 class="text-white mb-0 text-center"><strong>Hi {{ users.name }}
-                <h1><strong>cari Band, Komika dan Pesulap Untuk Event Anda!</strong></h1>
-                </strong></h1>
+                <h1 class="text-white mb-0 text-center"><strong>Hi, {{ users.name }}
+                        <h1><strong>cari Band, Komika dan Pesulap Untuk Event Anda!</strong></h1>
+                    </strong></h1>
             </div>
         </div>
     </div>
@@ -20,14 +20,14 @@
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <p class="text-white-75 mb-5">
-                    Akordmusic Production Group adalah penyelenggara acara yang menyediakan 
-                    berbagai macam event yang anda butuhkan. Dari event band, pertunjukan stand up comedy, 
-                    serta pertunjukan sulap yang siap menghibur anda. Kami memastikan talenta yang dipilih 
+                    Akordmusic Production Group adalah penyelenggara acara yang menyediakan
+                    berbagai macam event yang anda butuhkan. Dari event band, pertunjukan stand up comedy,
+                    serta pertunjukan sulap yang siap menghibur anda. Kami memastikan talenta yang dipilih
                     merupakan yang terbaik dibidangnya agar dapat memeriahkan event anda.</p>
                 <router-link :to="{ name: 'tentangKami' }" class="nav-link">
                     <button class="btn-more"><strong>
-                        Lebih Banyak
-                    </strong></button>
+                            Lebih Banyak
+                        </strong></button>
                 </router-link>
             </div>
         </div>
@@ -42,17 +42,16 @@
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <p class="text-white-75 mb-1">
-                    Akordmusic Production selalu memastikan Band, Komika, dan Pesulap dengan kualitas terjamin 
-                    dan kami memastikan anda mendapatkan kualitas terbaik di sini. Kami juga memiliki banyak pilihan 
-                    Band, Komika, dan Pesulap yang tersedia dengan gayanya masing-masing sesuai kebutuhan anda. 
+                    Akordmusic Production selalu memastikan Band, Komika, dan Pesulap dengan kualitas terjamin
+                    dan kami memastikan anda mendapatkan kualitas terbaik di sini. Kami juga memiliki banyak pilihan
+                    Band, Komika, dan Pesulap yang tersedia dengan gayanya masing-masing sesuai kebutuhan anda.
                     Jadi, anda bisa memilih mereka sesuai dengan yang anda inginkan.</p>
             </div>
             <div class="container p-3">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                src="../assets/contohBand.jpg" style="height:75mm;" alt="...">
+                            <img class="card-img-top" src="../assets/contohBand.jpg" style="height:75mm;" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Daftar Band</h5>
@@ -72,8 +71,7 @@
 
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                src="../assets/contohKomika.jpg" style="height:75mm;" alt="...">
+                            <img class="card-img-top" src="../assets/contohKomika.jpg" style="height:75mm;" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Daftar Komika</h5>
@@ -93,8 +91,7 @@
 
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                src="../assets/contohPesulap.jpg" style="height:75mm;" alt="...">
+                            <img class="card-img-top" src="../assets/contohPesulap.jpg" style="height:75mm;" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Daftar Pesulap</h5>
@@ -125,13 +122,13 @@
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <p class="text-white-75 mb-5">
-                    Kami adalah agensi yang selalu menerima masukan dan kritikan untuk berubah 
+                    Kami adalah agensi yang selalu menerima masukan dan kritikan untuk berubah
                     menjadi agensi yang lebih baik untu kedepannya. Maka dari itu, jangan ragu
                     untuk terhubung dengan kami</p>
                 <router-link :to="{ name: 'kontak' }" class="nav-link">
                     <button class="btn-more"><strong>
-                        Hubungi Kami
-                    </strong></button>
+                            Hubungi Kami
+                        </strong></button>
                 </router-link>
             </div>
         </div>
@@ -170,8 +167,8 @@
                 </div>
                 <router-link :to="{ name: 'tentangKami' }" class="nav-link">
                     <button class="btn-more"><strong>
-                        Kenali Kami
-                    </strong></button>
+                            Kenali Kami
+                        </strong></button>
                 </router-link>
                 <p></p>
             </div>
@@ -220,12 +217,11 @@ export default {
     background-size: cover;
 }
 
-.btn-more{
+.btn-more {
     background-color: #157347;
     color: white;
-    border-radius: 10rem; 
-    width: 4.5cm; 
+    border-radius: 10rem;
+    width: 4.5cm;
     height: 1.5cm;
 }
-
 </style>

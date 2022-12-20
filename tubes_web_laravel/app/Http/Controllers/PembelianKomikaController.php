@@ -18,7 +18,7 @@ class PembelianKomikaController extends Controller
     public function index()
     {
         //get posts
-        $pembelian = PembelianKomika::latest()->get();
+        $pembelian = PembelianKomika::with(['komikas'])->get();
         //render view with posts
         return response()->json([
             'success' => true,
@@ -63,6 +63,13 @@ class PembelianKomikaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'tgl_pembelian' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
         $pembelian = PembelianKomika::find($id);
         if (!$pembelian) {
             //data pesulap not found
@@ -72,20 +79,15 @@ class PembelianKomikaController extends Controller
             ], 404);
         }
 
-        $validator = Validator::make($request->all(), [
-            'tgl_pembelian' => 'required',
-        ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
-        }
 
-        $pembelian = PembelianKomika::find($id);
-        $komika = Komika::where('id', $request->komika)->first();
-        $user = User::where('id', $request->user)->first();
+
+        // $pembelian = PembelianKomika::find($id);
+        // $komika = Komika::where('id', $request->komika)->first();
+        // $user = User::where('id', $request->user)->first();
         $pembelian->update([
-            'id_user' => $user->id,
-            'id_komika' => $komika->id,
+            // 'id_user' => $user->id,
+            // 'id_komika' => $komika->id,
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
 
@@ -122,9 +124,9 @@ class PembelianKomikaController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(Request $request,  $id_user, $id_product)
     {
-        //Validasi Formulir
+        // Validasi Formulir
         $validator = Validator::make($request->all(), [
             'tgl_pembelian' => 'required',
         ]);
@@ -133,8 +135,8 @@ class PembelianKomikaController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $komika = Komika::where('id', $request->id_komika)->first();
-        $user = User::where('id', $request->id_user)->first();
+        $komika = Komika::find($id_product);
+        $user = User::find($id_user);
         //Fungsi Simpan Data ke dalam Database
         $pembelian = PembelianKomika::create([
             'id_user' => $user->id,

@@ -22,12 +22,15 @@
                                         style="max-height: 200px;">
                                     <div class="card-body p-4">
                                         <div class="text-center">
-                                            <h3 class="fw-bolder">{{ pesulap.Nama }}</h3>
+                                            <h2 class="fw-bolder">{{ pesulap.Nama }}</h2>
+                                            <h5 class="">{{ pesulap.Deskripsi }}</h5>
+                                            <p class="">Rp {{ formatPrice(pesulap.Harga) }}</p>
                                         </div>
                                     </div>
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><a class="btn btn-outline-success mt-auto">
-                                                <router-link :to="{ name: 'detailPesulap', params: { id: pesulap.id }, }"
+                                                <router-link
+                                                    :to="{ name: 'detailPesulap', params: { id: pesulap.id }, }"
                                                     class="dropdown-item">Lebih detail</router-link>
                                             </a></div>
                                     </div>
@@ -48,6 +51,12 @@ import { onMounted, ref } from "vue";
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
+    methods: {
+        formatPrice(value) {
+            let val = (value / 1).toFixed(2).replace('.', ',')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
+    },
     setup() {
         // const toaster = createToaster({ /* options */ });
         //reactive state

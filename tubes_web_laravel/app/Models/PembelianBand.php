@@ -26,7 +26,7 @@ class PembelianBand extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    public function band()
+    public function bands()
     {
         return $this->belongsTo(Band::class, 'id_band');
     }

@@ -26,7 +26,7 @@ class PembelianPesulap extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    public function pesulap()
+    public function pesulaps()
     {
         return $this->belongsTo(Pesulap::class, 'id_pesulap');
     }

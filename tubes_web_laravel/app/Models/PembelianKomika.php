@@ -26,7 +26,7 @@ class PembelianKomika extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    public function komika()
+    public function komikas()
     {
         return $this->belongsTo(Komika::class, 'id_komika');
     }

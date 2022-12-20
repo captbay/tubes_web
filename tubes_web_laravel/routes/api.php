@@ -56,21 +56,21 @@ Route::group(['middleware' => 'auth:api'], function () {
         '/pembelianpesulaps',
         \App\Http\Controllers\PembelianPesulapController::class
     );
-    // Route::post('pembelianpesulaps/update/{id}', [PembelianPesulapController::class, 'update']);
+    Route::post('pembelianpesulaps/store/{id_user}/{id_product}', [PembelianPesulapController::class, 'store']);
 
     //pembelian komika
     Route::apiResource(
         '/pembeliankomikas',
         \App\Http\Controllers\PembelianKomikaController::class
     );
-    // Route::post('pembeliankomikas/update/{id}', [PembelianKomikaController::class, 'update']);
+    Route::post('pembeliankomikas/store/{id_user}/{id_product}', [PembelianKomikaController::class, 'store']);
 
     //pembelian band
     Route::apiResource(
         '/pembelianbands',
         \App\Http\Controllers\PembelianBandController::class
     );
-    // Route::post('pembelianbands/update/{id}', [PembelianBandController::class, 'update']);
+    Route::post('pembelianbands/store/{id_user}/{id_product}', [PembelianBandController::class, 'store']);
 
     // band
     Route::apiResource(

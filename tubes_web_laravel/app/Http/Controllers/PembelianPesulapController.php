@@ -19,7 +19,7 @@ class PembelianPesulapController extends Controller
     public function index()
     {
         //get posts
-        $pembelian = PembelianPesulap::latest()->get();
+        $pembelian = PembelianPesulap::with(['pesulaps'])->get();
         //render view with posts
         return response()->json([
             'success' => true,
@@ -63,6 +63,13 @@ class PembelianPesulapController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'tgl_pembelian' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
         $pembelian = PembelianPesulap::find($id);
         if (!$pembelian) {
             //data pesulap not found
@@ -72,20 +79,16 @@ class PembelianPesulapController extends Controller
             ], 404);
         }
 
-        $validator = Validator::make($request->all(), [
-            'tgl_pembelian' => 'required',
-        ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
-        }
 
-        $pembelian = PembelianPesulap::find($id);
-        $pesulap = Pesulap::where('id', $request->pesulap)->first();
-        $user = User::where('id', $request->user)->first();
+
+
+        // $pembelian = PembelianPesulap::find($id);
+        // $pesulap = Pesulap::where('id', $request->pesulap)->first();
+        // $user = User::where('id', $request->user)->first();
         $pembelian->update([
-            'id_user' => $user->id,
-            'id_pesulap' => $pesulap->id,
+            // 'id_user' => $user->id,
+            // 'id_pesulap' => $pesulap->id,
             'tgl_pembelian' => $request->tgl_pembelian,
         ]);
 
@@ -123,7 +126,7 @@ class PembelianPesulapController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(Request $request,  $id_user, $id_product)
     {
         //Validasi Formulir
         $validator = Validator::make($request->all(), [
@@ -134,8 +137,9 @@ class PembelianPesulapController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $pesulap = Pesulap::where('id', $request->id_pesulap)->first();
-        $user = User::where('id', $request->id_user)->first();
+        $pesulap = Pesulap::find($id_product);
+        $user = User::find($id_user);
+
         //Fungsi Simpan Data ke dalam Database
         $pembelian = PembelianPesulap::create([
             'id_user' => $user->id,
