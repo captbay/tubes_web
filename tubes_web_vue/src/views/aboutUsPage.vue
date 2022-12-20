@@ -20,6 +20,11 @@
     <section id="scroll">
         <div class="container px-5 p-5">
             <div class="row gx-5 align-items-center">
+                <!-- <div class="col-lg-6 order-lg-1">
+                    <div class="container bg-white">
+
+                    </div>
+                </div> -->
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-0">
                         <h2 class="display-4">Tentang Kami</h2>
@@ -29,7 +34,7 @@
                             Mulai dari penyanyi solo, duokustik, triokustik hingga format full band. 
                             Selain itu, juga tersedia komika-komika dan pesulap dengan berbagai jenis
                             keahlian untuk memenuhi semua kebutuhan anda. Pengalaman yang kami miliki
-                            di industri acara, siap untuk membantu anda di setiap Langkah</p>
+                            di industri acara, siap untuk membantu anda di setiap langkah</p>
                     </div>
                 </div>
             </div>
