@@ -4,13 +4,13 @@
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-center text-white">
-                    <h2>Temui Event-Event Keren Kami!</h2>
-                    <h4 class="p-5">
+                    <h2><strong>Temui Event-Event Keren Kami!</strong></h2>
+                    <h4 class="p-3"><strong>
                         Kami selalu memastikan event dengan kualitas
                         terjamin dan anda pasti mendapatkan kualitas event terbaik di
                         Indonesia. Kita juga memiliki banyak pilihan event yang tersedia
                         sesuai kebutuhan anda. Jadi, anda bisa memilih event dengan kebutuhan yang Anda inginkan.
-                    </h4>
+                    </strong></h4>
                 </div>
             </div>
         </div>
@@ -19,14 +19,14 @@
     <!-- FAQ -->
     <div class="container">
         <div class="row my-5 pt-5">
-            <h1 class="header1 text-center">FAQ</h1>
+            <h1 class="header1 text-center"><strong>FAQ</strong></h1>
             <p class="body1 text-center">
                 Beberapa pertanyaan yang sering ditanya oleh para customer tercinta kita
             </p>
         </div>
 
         <div class="row mb-5">
-            <h3 class="text-center header3">Penampilan</h3>
+            <h3 class="text-center header3"><strong>Penampilan</strong></h3>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -89,7 +89,7 @@
         </div>
 
         <div class="row mb-5">
-            <h3 class="text-center header3">Booking Band atau Artist</h3>
+            <h3 class="text-center header3"><strong>Booking Band atau Artist</strong></h3>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTen">
@@ -155,7 +155,7 @@
         </div>
 
         <div class="row mb-5 pb-5">
-            <h3 class="text-center header3">The Venue</h3>
+            <h3 class="text-center header3"><strong>The Venue</strong></h3>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading13">
@@ -220,5 +220,9 @@
 .bg-image2 {
     background-image: url('../assets/bgkomika.jpg');
     background-size: cover;
+}
+
+body {
+  font-family: 'Poppins' !important;
 }
 </style>

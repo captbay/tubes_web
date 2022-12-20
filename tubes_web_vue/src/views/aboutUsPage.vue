@@ -4,13 +4,13 @@
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-center text-white">
-                    <h2>AMP Group</h2>
-                    <h4 class="p-5">
+                    <h2><strong>AMP Group</strong></h2>
+                    <h4 class="p-3"><strong>
                         Kami adalah penyelenggara acara yang menyediakan berbagai macam
                         event yang anda butuhkan. Dari event band, pertunjukan stand up comedy, 
                         serta pertunjukan sulap yang siap menghibur anda. Kami pun telah 
                         memilih talenta terbaik dibidangnya.
-                    </h4>
+                    </strong></h4>
                 </div>
             </div>
         </div>
@@ -27,7 +27,8 @@
                 </div> -->
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-0">
-                        <h2 class="display-4">Tentang Kami</h2>
+                        <h1 class="text-dark"><strong>Tentang Kami</strong></h1>
+                        <div class="p-3"></div>
                         <p>
                             Kehadiran kami disini sebagai agen hiburan satu atap dengan menyediakan
                             berbagai macam acara hiburan yang dapat menghibur event anda.
@@ -47,7 +48,8 @@
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
                     <div class="p-0">
-                        <h2 class="display-4">Apa Yang Kami Berikan ?</h2>
+                        <h1 class="text-dark"><strong>Apa Yang Kami Berikan ?</strong></h1>
+                        <div class="p-3"></div>
                         <p>
                             Kami memahami bahwa kebutuhan setiap orang berbeda-beda.
                             Kami mewakili berbagai pilihan band fungsi di setiap genre,
@@ -75,5 +77,9 @@
 .bg-image1 {
     background-image: url('../assets/bgband.jpg');
     background-size: cover;
+}
+
+body {
+  font-family: 'Poppins' !important;
 }
 </style>

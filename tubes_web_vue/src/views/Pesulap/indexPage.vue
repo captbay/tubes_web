@@ -5,7 +5,7 @@
         <div class="container-fluid bg-light p-5">
             <div class="row gx-4 gx-lg-5 h-100 d-flex align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-dark font-weight-bold">List Pesulap Terbaik Kami</h1>
+                    <h1 class="text-dark font-weight-bold"><strong>List Pesulap Terbaik Kami</strong></h1>
                 </div>
                 <div class="col-lg-10 align-self-baseline">
                     <p class="text-white-75 mb-1">

@@ -5,9 +5,9 @@
     <div class="bg-image">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
-                <h1 class="text-white mb-0">Hi {{ users.name }}, Silahkan cari Band, Komika dan Pesulap Untuk Event
+                <h1 class="text-white mb-0"><strong>Hi {{ users.name }}, Silahkan cari Band, Komika dan Pesulap Untuk Event
                     Anda!
-                </h1>
+                </strong></h1>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
     <div class="container-fluid bg-white p-5">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
-                <h1 class="text-dark font-weight-bold">Biografi</h1>
+                <h1 class="text-dark font-weight-bold"><strong>Biografi</strong></h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <p class="text-white-75 mb-5">
@@ -25,9 +25,9 @@
                     serta pertunjukan sulap yang siap menghibur anda. Kami memastikan talenta yang dipilih 
                     merupakan yang terbaik dibidangnya agar dapat memeriahkan event anda.</p>
                 <router-link :to="{ name: 'tentangKami' }" class="nav-link">
-                    <button class="btn btn-success">
+                    <button class="btn-more"><strong>
                         Find Out More
-                    </button>
+                    </strong></button>
                 </router-link>
             </div>
         </div>
@@ -38,7 +38,7 @@
     <div class="container-fluid bg-light p-5">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
-                <h1 class="text-dark font-weight-bold">List Event Terbaik Kami</h1>
+                <h1 class="text-dark font-weight-bold"><strong> List Event Terbaik Kami</strong></h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <p class="text-white-75 mb-1">
@@ -63,7 +63,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                     <router-link :to="{ name: 'band' }" class="nav-link">
-                                        <a class="btn btn-outline-success mt-auto" href="#">More</a>
+                                        <a class="btn btn-outline-success mt-auto" href="#"><strong>More</strong></a>
                                     </router-link>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                     <router-link :to="{ name: 'standUp' }" class="nav-link">
-                                        <a class="btn btn-outline-success mt-auto" href="#">More</a>
+                                        <a class="btn btn-outline-success mt-auto"><strong>More</strong></a>
                                     </router-link>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                     <router-link :to="{ name: 'pesulapIndex' }" class="nav-link">
-                                        <a class="btn btn-outline-success mt-auto" href="#">More</a>
+                                        <a class="btn btn-outline-success mt-auto" href="#"><strong>More</strong></a>
                                     </router-link>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
     <div class="container-fluid bg-white p-5">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
-                <h1 class="text-dark font-weight-bold">Kontak</h1>
+                <h1 class="text-dark font-weight-bold"><strong>Kontak</strong></h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <p class="text-white-75 mb-5">
@@ -129,9 +129,9 @@
                     menjadi agensi yang lebih baik untu kedepannya. Maka dari itu, jangan ragu
                     untuk terhubung dengan kami</p>
                 <router-link :to="{ name: 'kontak' }" class="nav-link">
-                    <button class="btn btn-success">
+                    <button class="btn-more"><strong>
                         Hubungi Kami
-                    </button>
+                    </strong></button>
                 </router-link>
             </div>
         </div>
@@ -141,7 +141,7 @@
     <div class="container-fluid bg-light p-5">
         <div class="container bg-light">
             <div class="col-lg-12 align-self-end">
-                <h1 class="text-dark font-weight-bold">Kenapa Harus Layanan Kami?</h1>
+                <h1 class="text-dark font-weight-bold"><strong>Kenapa Harus Layanan Kami?</strong></h1>
             </div>
             <div class="col-lg-10 align-self-baseline">
                 <div class="d-flex">
@@ -169,9 +169,9 @@
                     </p>
                 </div>
                 <router-link :to="{ name: 'tentangKami' }" class="nav-link">
-                    <button class="btn btn-success">
+                    <button class="btn-more"><strong>
                         Kenali Kami
-                    </button>
+                    </strong></button>
                 </router-link>
                 <p></p>
             </div>
@@ -218,6 +218,14 @@ export default {
 .bg-image {
     background-image: url('../assets/event.png');
     background-size: cover;
+}
+
+.btn-more{
+    background-color: #157347;
+    color: white;
+    border-radius: 10rem; 
+    width: 4.5cm; 
+    height: 1.5cm;
 }
 
 </style>

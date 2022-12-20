@@ -6,7 +6,7 @@
                 <div class="text-center text-white">
                     <img src="../assets/logo.png" class="logo" style="max-width: 300px;max-height: 300px;" alt="">
 
-                    <h2>AMP</h2>
+                    <h2><strong>AMP</strong></h2>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                 <div class="m-2 mb-4">
                     <div class="card" style="max-width:30rem;height: 20rem;background-color: #76F45A;">
                         <div class="card-header">
-                            <h3 class="card-title">Hubungi Kami</h3>
+                            <h3 class="card-title"><strong>Hubungi Kami</strong></h3>
                         </div>
                         <div class="card-body row">
                             <p class="card-text">
@@ -34,9 +34,9 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <h5 class="card-title">
+                            <h5 class="card-title"><strong>
                                 Jam Kerja
-                            </h5>
+                            </strong></h5>
                             <p class="card-text">
                                 Setiap Hari, 09.00 - 17.00 WITA
                             </p>
@@ -53,5 +53,9 @@
 .bg-image3 {
     background-image: url('../assets/bgpesulap.jpg');
     background-size: cover;
+}
+
+body {
+  font-family: 'Poppins' !important;
 }
 </style>

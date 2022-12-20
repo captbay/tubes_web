@@ -246,7 +246,14 @@ export default {
 </script>
 
 <style>
+@import url("http://fonts.googleapis.com/css?family=Poppins:400,300,700");
+
 h:hover {
   color: #115C39;
 }
+
+body {
+  font-family: 'Poppins' !important;
+}
+
 </style>

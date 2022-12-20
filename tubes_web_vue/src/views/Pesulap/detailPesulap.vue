@@ -19,7 +19,7 @@
                                 </p>
                                 <div class="button">
                                     <a class="btn btn-success mt-auto"><router-link :to="{ name: 'detailPesulap' }"
-                                            class="dropdown-item">Book Now</router-link></a>
+                                        class="dropdown-item"><strong>Book Now</strong></router-link></a>
                                 </div>
                             </div>
                         </div>
@@ -33,9 +33,9 @@
     <div class="container-fluid">
         <div class="row about-section justify-content-center">
             <div class="col-md-8 mt-5 mb-5 pt-md-5 pb-md-5">
-                <p class="h1 text-center">
+                <p class="h1 text-center"><strong>
                     Biografi
-                </p>
+                </strong></p>
                 <p class="body1 text-center mt-5 mb-md-5">
                     {{ pesulaps.Nama }} mulai menggeluti dunia sulap semenjak umur 10 tahun secara otodidak. Awal
                     kariernya pada tahun 2002 adalah dengan mengikuti sebuah kompetisi pemilihan Abang
