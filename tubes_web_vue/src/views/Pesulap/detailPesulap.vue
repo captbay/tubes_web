@@ -6,15 +6,15 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img class="img-fluid rounded-start" src="../../assets/contohPesulap.jpg" style="height: 95mm;"
-                                alt="...">
+                            <img class="img-fluid rounded-start" :src="url + bandsurl + pesulaps.Image"
+                                style="height: 95mm;" alt="...">
                         </div>
                         <div class="col-md-7 align-self-center">
                             <div class="card-body p-5">
-                                <p class="card-title h1">Demian Aditya</p>
-                                <p class="card-title h3">Rp 2.000.000,-</p>
+                                <p class="card-title h1">{{ pesulaps.Nama }}</p>
+                                <p class="card-title h3">Rp {{ formatPrice(pesulaps.Harga) }}</p>
                                 <p class="card-text body1">
-                                    Pertunjukan dari pesulap ini pasti akan
+                                    Pertunjukan dari pesulap {{ pesulaps.Nama }} ini pasti akan
                                     membuat acara kalian semakin seru dan menegangkan tentunya.
                                 </p>
                                 <div class="button">
@@ -37,36 +37,50 @@
                     Biografi
                 </p>
                 <p class="body1 text-center mt-5 mb-md-5">
-                    Demian mulai menggeluti dunia sulap semenjak umur 10 tahun secara otodidak. Awal 
-                    kariernya pada tahun 2002 adalah dengan mengikuti sebuah kompetisi pemilihan Abang 
-                    dan None Kep. Seribu & Jakarta dan berhasil memenangi dua gelar yaitu sebagai Abang 
-                    Persahabatan 2002 dan Abang Favorit 2002. Pada awal 2007 Demian membintangi acara tv 
-                    pertamanya yang menggunakan namanya sendiri berjudul Demian Sang Illusionist, tayang selama 
-                    hampir dua tahun di ANTV. Di Tahun 2017 Demian mengikuti salah satu acara terbaik di America 
-                    yaitu America’s Got Talent dan memainkan ilusi-ilusi terbaiknya. 
+                    {{ pesulaps.Nama }} mulai menggeluti dunia sulap semenjak umur 10 tahun secara otodidak. Awal
+                    kariernya pada tahun 2002 adalah dengan mengikuti sebuah kompetisi pemilihan Abang
+                    dan None Kep. Seribu & Jakarta dan berhasil memenangi dua gelar yaitu sebagai Abang
+                    Persahabatan 2002 dan Abang Favorit 2002. Pada awal 2007 Demian membintangi acara tv
+                    pertamanya yang menggunakan namanya sendiri berjudul Demian Sang Illusionist, tayang selama
+                    hampir dua tahun di ANTV. Di Tahun 2017 Demian mengikuti salah satu acara terbaik di America
+                    yaitu America’s Got Talent dan memainkan ilusi-ilusi terbaiknya.
                 </p>
             </div>
         </div>
     </div>
 </template>
+
 <script>
 import axios from "axios";
 import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
+
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
+    methods: {
+        formatPrice(value) {
+            let val = (value / 1).toFixed(2).replace('.', ',')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
+    },
     setup() {
-        axios.defaults.headers.common["Authorization"] =
-            localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         // const toaster = createToaster({ /* options */ });
         //reactive state
+        axios.defaults.headers.common["Authorization"] =
+            localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         let pesulaps = ref([]);
-        // let index = null
+
+        let url = "http://localhost:8000/storage/";
+        let bandsurl = "pesulaps/";
+        //vue route
+        // const router = useRouter();
+        const route = useRoute();
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("pesulaps")
+                .get("pesulaps/" + route.params.id + "")
                 .then((response) => {
                     //assign state posts with response data
                     pesulaps.value = response.data.data;
@@ -77,9 +91,12 @@ export default {
 
         })
 
+
         //return
         return {
-            pesulaps
+            pesulaps,
+            url,
+            bandsurl,
         }
     },
 };

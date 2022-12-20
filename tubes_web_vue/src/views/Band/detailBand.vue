@@ -6,15 +6,16 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img class="img-fluid rounded-start" src="../../assets/contohBand.jpg" style="height: 95mm;" 
-                            alt="...">
+                            <img class="img-fluid rounded-start" :src="url + bandsurl + bands.Image"
+                                style="height: 95mm;" alt="...">
                         </div>
                         <div class="col-md-7 align-self-center">
                             <div class="card-body p-5">
-                                <p class="card-title h1">Kotak</p>
-                                <p class="card-title h3">Rp 2.000.000,-</p>
+                                <p class="card-title h1">{{ bands.Nama }}</p>
+                                <p class="card-title h3">Rp {{ formatPrice(bands.Harga) }}</p>
                                 <p class="card-text body1">
-                                    Untuk kamu yang menyukai musik Hard Rock, Pop, Rock Kotak adalah pilihannya.
+                                    Untuk kamu yang menyukai musik Hard Rock, Pop, Rock {{ bands.Nama }} adalah
+                                    pilihannya.
                                     Lagu-lagu meraka siap mengguncang acara kamu.
                                 </p>
                                 <div class="button">
@@ -37,33 +38,48 @@
                     Biografi
                 </p>
                 <p class="body1 text-center mt-5 mb-md-5">
-                    Kotak adalah grup musik Rock yang terbentuk dari ajang The Dream Band pada tahun 2004 dan sampai
-                    sekarang masih aktif dengan beranggotakan Tantri (Tantri Syalindri Ichlasari), 
-                    Chua (Swasti Sabdastantri) dan Cella (Marion Marcella). Band ini sudah meraih berbagai 
+                    {{ bands.Nama }} adalah grup musik Rock yang terbentuk dari ajang The Dream Band pada tahun 2004 dan
+                    sampai
+                    sekarang masih aktif dengan beranggotakan Tantri (Tantri Syalindri Ichlasari),
+                    Chua (Swasti Sabdastantri) dan Cella (Marion Marcella). Band ini sudah meraih berbagai
                     penghargaan dibidangnya, jadi tidak perlu diragukan lagi kualitas dari band satu ini.
                 </p>
             </div>
         </div>
     </div>
 </template>
+
 <script>
 import axios from "axios";
 import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
+
 // import { createToaster } from "@meforma/vue-toaster";
 
 export default {
+    methods: {
+        formatPrice(value) {
+            let val = (value / 1).toFixed(2).replace('.', ',')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
+    },
     setup() {
         // const toaster = createToaster({ /* options */ });
         //reactive state
         axios.defaults.headers.common["Authorization"] =
             localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         let bands = ref([]);
-        // let index = null
+
+        let url = "http://localhost:8000/storage/";
+        let bandsurl = "bands/";
+        //vue route
+        // const router = useRouter();
+        const route = useRoute();
         //mounted
         onMounted(() => {
             //get API from Laravel Backend
             axios
-                .get("bands")
+                .get("bands/" + route.params.id + "")
                 .then((response) => {
                     //assign state posts with response data
                     bands.value = response.data.data;
@@ -74,9 +90,12 @@ export default {
 
         })
 
+
         //return
         return {
-            bands
+            bands,
+            url,
+            bandsurl,
         }
     },
 };

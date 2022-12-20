@@ -3,7 +3,7 @@
     <body>
         <!-- List Event -->
         <div class="container-fluid bg-light p-5">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <div class="row gx-4 gx-lg-5 h-100 d-flex align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-dark font-weight-bold">List Band Terbaik Kami</h1>
                 </div>
@@ -13,15 +13,16 @@
                         sesuai dengan selera dan kebutuhan kalian. Sesuaikan genre dan musik
                         yang kalian mau untuk memeriahkan acara kalian.</p>
                 </div>
-                <div v-for="(band, index) in bands" :key="index">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src={{ band.Image }} alt="...">
+                <div>
+                    <div class="container ps-5">
+                        <div class="row h-100 d-flex align-items-center justify-content-center text-center">
+                            <div class="col-md-4" v-for="(band, index) in bands" :key="index">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" :src="url + bandsurl + band.Image" alt="..."
+                                        style="max-height: 200px;">
                                     <div class="card-body p-4">
                                         <div class="text-center">
-                                            <h5 class="fw-bolder">{{ band.Nama }}</h5>
+                                            <h3 class="fw-bolder">{{ band.Nama }}</h3>
                                         </div>
                                     </div>
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -53,6 +54,9 @@ export default {
         axios.defaults.headers.common["Authorization"] =
             localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         let bands = ref([]);
+
+        let url = "http://localhost:8000/storage/";
+        let bandsurl = "bands/";
         // let index = null
         //mounted
         onMounted(() => {
@@ -71,7 +75,9 @@ export default {
 
         //return
         return {
-            bands
+            bands,
+            url,
+            bandsurl,
         }
     },
 };
