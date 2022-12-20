@@ -95,6 +95,11 @@ const routes = [
         name: "keranjang",
         component: () => import("@/views/keranjangPage.vue"),
       },
+      {
+        path: "/pembayaran",
+        name: "pembayaran",
+        component: () => import("@/views/pembayaranPage.vue"),
+      },
     ],
   },
 ];

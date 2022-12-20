@@ -31,13 +31,15 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>
-                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
                             <i class="bi bi-pencil-fill"></i>
                             Edit
                         </button>
-                        <button class="btn btn-primary btn-sm text-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                            <i class="bi bi-bag-dash-fill"></i>
-                            CheckOut
+                        <button class="btn btn-danger btn-sm text-light" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2">
+                            <i class="bi bi-trash-fill"></i>
+                            Delete
                         </button>
                     </td>
                 </tr>
@@ -75,13 +77,15 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>
-                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
                             <i class="bi bi-pencil-fill"></i>
                             Edit
                         </button>
-                        <button class="btn btn-primary btn-sm text-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                            <i class="bi bi-bag-dash-fill"></i>
-                            CheckOut
+                        <button class="btn btn-danger btn-sm text-light" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2">
+                            <i class="bi bi-trash-fill"></i>
+                            Delete
                         </button>
                     </td>
                 </tr>
@@ -119,13 +123,15 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>
-                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
                             <i class="bi bi-pencil-fill"></i>
                             Edit
                         </button>
-                        <button class="btn btn-primary btn-sm text-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                            <i class="bi bi-bag-dash-fill"></i>
-                            CheckOut
+                        <button class="btn btn-danger btn-sm text-light" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2">
+                            <i class="bi bi-trash-fill"></i>
+                            Delete
                         </button>
                     </td>
                 </tr>
@@ -133,6 +139,16 @@
         </table>
     </div>
 
+    <div class="container text-center bg-white">
+        <p class="h1 mt-4">Ingin melakukan pembayaran?</p>
+        <router-link :to="{ name: 'pembayaran' }" class="nav-link">
+            <button class="btn btn-primary btn-lg text-light mt-4">
+                <i class="bi bi-bag-dash-fill"></i>
+                CheckOut
+            </button>
+        </router-link>
+    </div>
+    
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -186,7 +202,7 @@
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Anda yakin ingin men-Checkout event ini?
+                    Anda yakin ingin menghapus event dari keranjang?
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>

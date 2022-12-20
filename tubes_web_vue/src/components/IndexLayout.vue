@@ -44,11 +44,11 @@
             <div class="navbar-collapse collapse ms-5" id="navbarResponsive" style="">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 ">
                     <li class=" nav-item">
-                        <router-link :to="{ name: 'beranda' }" class="nav-link text-light">Beranda</router-link>
+                        <router-link :to="{ name: 'beranda' }" class="nav-link text-light"><h>Beranda</h></router-link>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Daftar Event</a>
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false"><h>Daftar Event</h></a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li>
                                 <router-link :to="{ name: 'band' }" class="dropdown-item text-light">Band</router-link>
@@ -58,20 +58,18 @@
                                     Up</router-link>
                             </li>
                             <li>
-                                <router-link :to="{ name: 'pesulapIndex' }"
-                                    class="dropdown-item text-light">Pesulap</router-link>
+                                <router-link :to="{ name: 'pesulapIndex' }" class="dropdown-item text-light">Pesulap</router-link>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">Tentang
-                            Kami</router-link>
+                        <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light"><h>Tentang Kami</h></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'bantuan' }" class="nav-link text-light">Bantuan</router-link>
+                        <router-link :to="{ name: 'bantuan' }" class="nav-link text-light"><h>Bantuan</h></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'kontak' }" class="nav-link text-light">Kontak</router-link>
+                        <router-link :to="{ name: 'kontak' }" class="nav-link text-light"><h>Kontak</h></router-link>
                     </li>
                 </ul>
                 <div class="d-flex my-2 my-lg-0 ">
@@ -157,14 +155,13 @@
                             Layanan kami
                         </h6>
                         <p>
-                            <router-link :to="{ name: 'band' }" class="nav-link text-light">Band</router-link>
+                            <router-link :to="{ name: 'band' }" class="nav-link text-light"><h>Band</h></router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'standUp' }" class="nav-link text-light">Stand Up</router-link>
+                            <router-link :to="{ name: 'standUp' }" class="nav-link text-light"><h>Stand Up</h></router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'pesulapIndex' }"
-                                class="nav-link text-light">Pesulap</router-link>
+                            <router-link :to="{ name: 'pesulapIndex' }" class="nav-link text-light"><h>Pesulap</h></router-link>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -176,14 +173,13 @@
                             Link
                         </h6>
                         <p>
-                            <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">Tentang
-                                Kami</router-link>
+                            <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light"><h>Tentang Kami</h></router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'bantuan' }" class="nav-link text-light">Bantuan</router-link>
+                            <router-link :to="{ name: 'bantuan' }" class="nav-link text-light"><h>Bantuan</h></router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'kontak' }" class="nav-link text-light">Kontak</router-link>
+                            <router-link :to="{ name: 'kontak' }" class="nav-link text-light"><h>Kontak</h></router-link>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -250,5 +246,7 @@ export default {
 </script>
 
 <style>
-
+h:hover {
+  color: #115C39;
+}
 </style>
