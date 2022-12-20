@@ -1,6 +1,4 @@
 <template>
-    <div class="p-5"></div>
-
     <div class="container text-center bg-white">
         <p class="h1">Band</p>
         <table class="table table-striped table-bordered mt-4">
@@ -140,9 +138,9 @@
     </div>
 
     <div class="container text-center bg-white">
-        <p class="h1 mt-4">Ingin melakukan pembayaran?</p>
+        <p class="h1">Ingin melakukan pembayaran?</p>
         <router-link :to="{ name: 'pembayaran' }" class="nav-link">
-            <button class="btn btn-primary btn-lg text-light mt-4">
+            <button class="btn btn-primary btn-lg text-light mt-4 mb-4">
                 <i class="bi bi-bag-dash-fill"></i>
                 CheckOut
             </button>

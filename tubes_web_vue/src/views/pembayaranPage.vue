@@ -41,9 +41,9 @@
     </div>
 
     <div class="container text-center bg-white">
-        <p class="h1 mt-4">Ingin melakukan pembayaran?</p>
+        <p class="h1">Yakin membayar?</p>
         <router-link :to="{ name: 'pembayaran' }" class="nav-link">
-            <button class="btn btn-info btn-lg text-light mt-4">
+            <button class="btn btn-info btn-lg text-light mt-4 mb-4">
                 <i class="bi bi-cash"></i>
                 Bayar
             </button>
