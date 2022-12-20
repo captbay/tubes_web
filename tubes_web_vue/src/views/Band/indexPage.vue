@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src="" alt="...">
+                                    <img class="card-img-top" src={{ band.Image }} alt="...">
                                     <div class="card-body p-4">
                                         <div class="text-center">
                                             <h5 class="fw-bolder">{{ band.Nama }}</h5>

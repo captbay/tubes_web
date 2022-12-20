@@ -78,7 +78,8 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <router-link :to="{ name: 'profile' }" class="nav-link">
-                                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <button class="btn btn-success" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
                                                     <i class="bi bi-pencil-fill"></i>
                                                     Edit
                                                 </button>
@@ -97,7 +98,8 @@
                             </router-link>
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -106,50 +108,50 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Full Name</h6>
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Full Name</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">Kenneth Valdez</div>
                                         </div>
-                                        <div class="col-sm-9 text-secondary">Kenneth Valdez</div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Email</h6>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Email</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">fip@jukmuh.al</div>
                                         </div>
-                                        <div class="col-sm-9 text-secondary">fip@jukmuh.al</div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Date Birth</h6>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Date Birth</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">(239) 816-9029</div>
                                         </div>
-                                        <div class="col-sm-9 text-secondary">(239) 816-9029</div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Gender</h6>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Gender</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">(320) 380-4539</div>
                                         </div>
-                                        <div class="col-sm-9 text-secondary">(320) 380-4539</div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Mobile</h6>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Mobile</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                Bay Area, San Francisco, CA
+                                            </div>
                                         </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            Bay Area, San Francisco, CA
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Address</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                Bay Area, San Francisco, CA
+                                            </div>
                                         </div>
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Address</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            Bay Area, San Francisco, CA
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -159,7 +161,8 @@
                             </div>
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -184,37 +187,37 @@
 </template>
 
 <script>
-import axios from "../axios";
-import { onMounted, ref } from "vue";
-// import { createToaster } from "@meforma/vue-toaster";
+// import axios from "../axios";
+// import { onMounted, ref } from "vue";
+// // import { createToaster } from "@meforma/vue-toaster";
 
-export default {
-    async created() { },
-    setup() {
-        // const toaster = createToaster({ /* options */ });
-        //reactive state
-        let bands = ref([]);
-        // let index = null
-        //mounted
-        onMounted(() => {
-            //get API from Laravel Backend
-            axios
-                .get("bands")
-                .then((response) => {
-                    //assign state posts with response data
-                    bands.value = response.data.data;
-                })
-                .catch((error) => {
-                    console.log(error.response.data);
-                });
-        });
+// export default {
+//     async created() { },
+//     setup() {
+//         // const toaster = createToaster({ /* options */ });
+//         //reactive state
+//         let bands = ref([]);
+//         // let index = null
+//         //mounted
+//         onMounted(() => {
+//             //get API from Laravel Backend
+//             axios
+//                 .get("bands")
+//                 .then((response) => {
+//                     //assign state posts with response data
+//                     bands.value = response.data.data;
+//                 })
+//                 .catch((error) => {
+//                     console.log(error.response.data);
+//                 });
+//         });
 
-        //return
-        return {
-            bands,
-        };
-    },
-};
+//         //return
+//         return {
+//             bands,
+//         };
+//     },
+// };
 </script>
 
 <style>
