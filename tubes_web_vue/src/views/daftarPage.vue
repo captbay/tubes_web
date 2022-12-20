@@ -81,12 +81,7 @@
                                             Batal
                                         </button>
                                     </router-link>
-                                    <router-link :to="{ name: 'beranda' }" class="nav-link px-2">
-                                        <button class="btn btn-success text-light">
-                                            <i class="bi bi-bag-plus-fill"></i>
-                                            Daftar
-                                        </button>
-                                    </router-link>
+                                    <button type="submit" class="btn btn-success text-light">Daftar</button>
                                 </div>
                             </form>
                         </div>
@@ -145,7 +140,7 @@ export default {
                     alamat: alamat,
                 })
                 .then(() => {
-                    toaster.show(`Berhasil di Buat`, {
+                    toaster.show(`Akun Berhasil di Buat, Silahkan Verifikasi Email Anda :)`, {
                         type: "success",
                         position: "bottom-right",
                         duration: 3000,

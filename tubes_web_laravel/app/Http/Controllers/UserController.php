@@ -78,12 +78,14 @@ class UserController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
             'tgl_lahir' => 'required',
             'gender' => 'required',
             'telepon' => 'required|regex:/^(08)[0-9]{4,5}$/',
             'alamat' => 'required',
+            'image_user' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
         if ($validator->fails()) {
@@ -165,7 +167,7 @@ class UserController extends Controller
         //Validasi Formulir
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
             'tgl_lahir' => 'required',
             'gender' => 'required',
