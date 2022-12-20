@@ -66,7 +66,7 @@ const routes = [
         component: () => import("@/views/Pesulap/indexPage.vue"),
       },
       {
-        path: "/pesulap/detailpesulap",
+        path: "/pesulap/detailpesulap/:id",
         name: "detailPesulap",
         component: () => import("@/views/Pesulap/detailPesulap.vue"),
       },
@@ -76,7 +76,7 @@ const routes = [
         component: () => import("@/views/Band/indexPage.vue"),
       },
       {
-        path: "/band/detailBand",
+        path: "/band/detailBand/:id",
         name: "detailBand",
         component: () => import("@/views/Band/detailBand.vue"),
       },
@@ -86,7 +86,7 @@ const routes = [
         component: () => import("@/views/StandUp/indexPage.vue"),
       },
       {
-        path: "/standUp/detailStandUp",
+        path: "/standUp/detailStandUp/:id",
         name: "detailStandUp",
         component: () => import("@/views/StandUp/detailStandUp.vue"),
       },
