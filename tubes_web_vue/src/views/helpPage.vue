@@ -5,12 +5,12 @@
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-center text-white">
                     <h2><strong>Temui Event-Event Keren Kami!</strong></h2>
-                    <h4 class="p-3"><strong>
+                    <h4 class="p-3 fw-bold">
                         Kami selalu memastikan event dengan kualitas
                         terjamin dan anda pasti mendapatkan kualitas event terbaik di
                         Indonesia. Kita juga memiliki banyak pilihan event yang tersedia
                         sesuai kebutuhan anda. Jadi, anda bisa memilih event dengan kebutuhan yang Anda inginkan.
-                    </strong></h4>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -19,14 +19,14 @@
     <!-- FAQ -->
     <div class="container">
         <div class="row my-5 pt-5">
-            <h1 class="header1 text-center"><strong>FAQ</strong></h1>
+            <h1 class="header1 text-center fw-bold">FAQ</h1>
             <p class="body1 text-center">
                 Beberapa pertanyaan yang sering ditanya oleh para customer tercinta kita
             </p>
         </div>
 
         <div class="row mb-5">
-            <h3 class="text-center header3"><strong>Penampilan</strong></h3>
+            <h2 class="text-center header3 fw-bold">Penampilan</h2>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -89,7 +89,7 @@
         </div>
 
         <div class="row mb-5">
-            <h3 class="text-center header3"><strong>Booking Band atau Artist</strong></h3>
+            <h2 class="text-center header3 fw-bold">Booking Band atau Artist</h2>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTen">
@@ -155,7 +155,7 @@
         </div>
 
         <div class="row mb-5 pb-5">
-            <h3 class="text-center header3"><strong>The Venue</strong></h3>
+            <h2 class="text-center header3 fw-bold">The Venue</h2>
             <div class="accordion mb-3" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading13">

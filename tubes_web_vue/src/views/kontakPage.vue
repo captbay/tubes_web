@@ -19,7 +19,7 @@
                 <div class="m-2 mb-4">
                     <div class="card" style="max-width:30rem;height: 20rem;background-color: #76F45A;">
                         <div class="card-header">
-                            <h3 class="card-title"><strong>Hubungi Kami</strong></h3>
+                            <h3 class="card-title fw-bold">Hubungi Kami</h3>
                         </div>
                         <div class="card-body row">
                             <p class="card-text">
@@ -34,11 +34,11 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <h5 class="card-title"><strong>
+                            <h5 class="card-title fw-bold">
                                 Jam Kerja
-                            </strong></h5>
+                            </h5>
                             <p class="card-text">
-                                Setiap Hari, 09.00 - 17.00 WITA
+                                Setiap Hari, 09.00 - 17.00 WIB
                             </p>
                         </div>
                     </div>

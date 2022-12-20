@@ -44,37 +44,37 @@
             <div class="navbar-collapse collapse ms-5" id="navbarResponsive" style="">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 ">
                     <li class=" nav-item">
-                        <router-link :to="{ name: 'beranda' }" class="nav-link text-light">
-                            <h><strong>Beranda</strong></h></router-link>
+                        <router-link :to="{ name: 'beranda' }" class="nav-link text-light fw-bold">
+                            <h>Beranda</h></router-link>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
+                        <a class="nav-link dropdown-toggle text-light fw-bold" href="#" id="navbarDarkDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <h><strong>Daftar Event</strong></h></a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li>
-                                <router-link :to="{ name: 'band' }" class="dropdown-item text-light">Band</router-link>
+                                <router-link :to="{ name: 'band' }" class="dropdown-item text-light fw-bold">Band</router-link>
                             </li>
                             <li>
-                                <router-link :to="{ name: 'standUp' }" class="dropdown-item text-light">Stand
+                                <router-link :to="{ name: 'standUp' }" class="dropdown-item text-light fw-bold">Stand
                                     Up</router-link>
                             </li>
                             <li>
-                                <router-link :to="{ name: 'pesulapIndex' }" class="dropdown-item text-light">Pesulap</router-link>
+                                <router-link :to="{ name: 'pesulapIndex' }" class="dropdown-item text-light fw-bold">Pesulap</router-link>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">
-                            <h><strong>Tentang Kami</strong></h></router-link>
+                        <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light fw-bold">
+                            <h>Tentang Kami</h></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'bantuan' }" class="nav-link text-light">
-                            <h><strong>Bantuan</strong></h></router-link>
+                        <router-link :to="{ name: 'bantuan' }" class="nav-link text-light fw-bold">
+                            <h>Bantuan</h></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'kontak' }" class="nav-link text-light">
-                            <h><strong>Kontak</strong></h></router-link>
+                        <router-link :to="{ name: 'kontak' }" class="nav-link text-light fw-bold">
+                            <h>Kontak</h></router-link>
                     </li>
                 </ul>
                 <div class="d-flex my-2 my-lg-0 ">
@@ -86,9 +86,9 @@
                     </router-link>
                     <router-link :to="{ name: 'keranjang' }" class="nav-link px-2">
                         <button class="btn btn-success">
-                            <i class="bi bi-bag-plus-fill text-light"></i>
+                            <i class="bi bi-bag-plus-fill text-light"></i><strong>
                             Keranjang
-                        </button>
+                        </strong></button>
                     </router-link>
                 </div>
             </div>
@@ -102,8 +102,8 @@
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Get connected with us on social networks:</span>
+            <div class="me-5 d-none d-lg-block fw-bold">
+                <span>Terhubung dengan kami di Sosial Media :</span>
             </div>
             <!-- Left -->
 
