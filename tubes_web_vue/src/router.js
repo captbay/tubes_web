@@ -109,29 +109,29 @@ const router = createRouter({
 //   // tambahkan meta ini
 //   requiresAuth: true,
 // },
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some((record) => record.meta.requiresAuth)) {
-//     var token = localStorage.getItem("token");
-//     if (!token) {
-//       next({
-//         path: "/masuk",
-//       });
-//     } else {
-//       next();
-//     }
-//   } else if (to.matched.some((record) => record.meta.requiresVisitor)) {
-//     // if (to.currentRoute.meta.reload == true) {
-//     //   window.location.reload();
-//     // }
-//     if (token) {
-//       next({
-//         path: "/",
-//       });
-//     } else {
-//       next();
-//     }
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    var token = localStorage.getItem("token");
+    if (!token) {
+      next({
+        path: "/masuk",
+      });
+    } else {
+      next();
+    }
+  } else if (to.matched.some((record) => record.meta.requiresVisitor)) {
+    // if (to.currentRoute.meta.reload == true) {
+    //   window.location.reload();
+    // }
+    if (token) {
+      next({
+        path: "/",
+      });
+    } else {
+      next();
+    }
+  }
+});
 // router.beforeEach((to, from, next) => {
 //   if (to.matched.some((record) => record.meta.requiresAuth)) {
 //     if (store.getters.isLoggedIn) {
