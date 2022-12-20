@@ -4,7 +4,7 @@
             <div class="row justify-content-center">
                 <div class="row justify-content-center mt-5">
                     <div class="col-md-6 col-lg-4 mt-5">
-                        <h3 class="mb-4 text-center text-light">Punya akun?</h3>
+                        <h3 class="mb-4 text-center text-light fw-bold">Punya akun ?</h3>
                         <form @submit.prevent="store">
                             <!-- Email input -->
                             <div class="form-outline mb-4">
@@ -28,17 +28,17 @@
 
                             <!-- Submit button -->
                             <div class="form-group">
-                                <button type="submit" class="form-control btn btn-success submit px-3">
+                                <button type="submit" class="form-control btn btn-success submit px-3 fw-bold">
                                     Masuk
                                 </button>
                             </div>
                             <p></p>
                             <p></p>
 
-                            <p class="w-100 text-center text-light">&mdash; Atau Mendaftar &mdash;</p>
+                            <p class="w-100 text-center text-light fw-bold">&mdash; Atau Mendaftar &mdash;</p>
                             <div class="form-group">
                                 <router-link :to="{ name: 'daftar' }" class="nav-link text-light">
-                                    <button type="submit" class="form-control btn btn-success submit px-3">
+                                    <button type="submit" class="form-control btn btn-success submit px-3 fw-bold">
                                         Daftar
                                     </button>
                                 </router-link>
