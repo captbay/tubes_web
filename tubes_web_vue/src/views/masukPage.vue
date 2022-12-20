@@ -126,7 +126,7 @@ export default {
 .masthead {
     background-image: url('../assets/event.png');
     background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     color: white;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
