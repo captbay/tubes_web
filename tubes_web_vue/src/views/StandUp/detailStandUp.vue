@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img class="img-fluid rounded-start" src="../../assets/contohKomika.jpg" alt="...">
+                            <img class="img-fluid rounded-start" src="../../assets/contohKomika.jpg" style="height: 95mm;" alt="...">
                         </div>
                         <div class="col-md-7 align-self-center">
                             <div class="card-body p-5">

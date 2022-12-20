@@ -18,7 +18,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
-                                src="../../assets/contohKomika.jpg" alt="...">
+                                src="../../assets/contohKomika.jpg" style="height: 75mm;" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Pandji Pragiwaksono</h5>
@@ -56,7 +56,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
-                                src="../../assets/contohKomika2.jpg" alt="...">
+                                src="../../assets/contohKomika2.jpg" style="height: 75mm;" alt="...">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">Raditya Dika</h5>
