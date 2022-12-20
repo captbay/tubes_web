@@ -70,6 +70,59 @@
             </div>
         </div>
     </section>
+
+    <!-- <div class="container bg-light">
+        <h1 class="text-center p-5"><strong>Developer</strong></h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="">
+                    <img class="img-dev" src="../assets/contohBand.jpg" alt="...">
+                    <h5 class="text-center">Sarah W.</h5>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="">
+                    <img class="img-dev" src="../assets/contohBand.jpg" alt="...">
+                    <h5 class="text-center">Sarah W.</h5>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container px-5 p-5 bg-light">
+        <h1 class="text-center p-5"><strong>Developer</strong></h1>
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-0">                        
+                        <div class="img-dev"></div>
+                        <h2 class="text-center"><strong>Developer</strong></h2>
+                        <h4 class="text-center text-muted">Full Stack</h4>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-0">                        
+                        <div class="img-dev"></div>
+                        <h2 class="text-center"><strong>Developer</strong></h2>
+                        <h4 class="text-center text-muted">Full Stack</h4>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-0">                        
+                        <div class="img-dev"></div>
+                        <h2 class="text-center"><strong>Developer</strong></h2>
+                        <h4 class="text-center text-muted">Backend</h4>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-0">                        
+                        <div class="img-dev">
+                            <h2 class="text-center"><strong>Developer</strong></h2>
+                            <h4 class="text-center text-muted">Frontend</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="p-5"></div>
 </template>
 
@@ -77,6 +130,11 @@
 .bg-image1 {
     background-image: url('../assets/bgband.jpg');
     background-size: cover;
+}
+
+.img-dev {
+    background-image: url('../assets/event.png');
+    height: 100%;
 }
 
 body {

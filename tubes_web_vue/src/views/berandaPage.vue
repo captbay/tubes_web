@@ -5,8 +5,8 @@
     <div class="bg-image">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 85vh;">
             <div class="d-flex justify-content-center align-items-center h-100">
-                <h1 class="text-white mb-0"><strong>Hi {{ users.name }}, Silahkan cari Band, Komika dan Pesulap Untuk Event
-                    Anda!
+                <h1 class="text-white mb-0 text-center"><strong>Hi {{ users.name }}
+                <h1><strong>cari Band, Komika dan Pesulap Untuk Event Anda!</strong></h1>
                 </strong></h1>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     merupakan yang terbaik dibidangnya agar dapat memeriahkan event anda.</p>
                 <router-link :to="{ name: 'tentangKami' }" class="nav-link">
                     <button class="btn-more"><strong>
-                        Find Out More
+                        Lebih Banyak
                     </strong></button>
                 </router-link>
             </div>
@@ -63,7 +63,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                     <router-link :to="{ name: 'band' }" class="nav-link">
-                                        <a class="btn btn-outline-success mt-auto" href="#"><strong>More</strong></a>
+                                        <a class="btn btn-outline-success mt-auto" href="#"><strong>Lebih</strong></a>
                                     </router-link>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                     <router-link :to="{ name: 'standUp' }" class="nav-link">
-                                        <a class="btn btn-outline-success mt-auto"><strong>More</strong></a>
+                                        <a class="btn btn-outline-success mt-auto"><strong>Lebih</strong></a>
                                     </router-link>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                     <router-link :to="{ name: 'pesulapIndex' }" class="nav-link">
-                                        <a class="btn btn-outline-success mt-auto" href="#"><strong>More</strong></a>
+                                        <a class="btn btn-outline-success mt-auto" href="#"><strong>Lebih</strong></a>
                                     </router-link>
                                 </div>
                             </div>

@@ -44,11 +44,13 @@
             <div class="navbar-collapse collapse ms-5" id="navbarResponsive" style="">
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 ">
                     <li class=" nav-item">
-                        <router-link :to="{ name: 'beranda' }" class="nav-link text-light"><h>Beranda</h></router-link>
+                        <router-link :to="{ name: 'beranda' }" class="nav-link text-light">
+                            <h><strong>Beranda</strong></h></router-link>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false"><h>Daftar Event</h></a>
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <h><strong>Daftar Event</strong></h></a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li>
                                 <router-link :to="{ name: 'band' }" class="dropdown-item text-light">Band</router-link>
@@ -63,13 +65,16 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light"><h>Tentang Kami</h></router-link>
+                        <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">
+                            <h><strong>Tentang Kami</strong></h></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'bantuan' }" class="nav-link text-light"><h>Bantuan</h></router-link>
+                        <router-link :to="{ name: 'bantuan' }" class="nav-link text-light">
+                            <h><strong>Bantuan</strong></h></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="{ name: 'kontak' }" class="nav-link text-light"><h>Kontak</h></router-link>
+                        <router-link :to="{ name: 'kontak' }" class="nav-link text-light">
+                            <h><strong>Kontak</strong></h></router-link>
                     </li>
                 </ul>
                 <div class="d-flex my-2 my-lg-0 ">
