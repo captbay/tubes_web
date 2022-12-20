@@ -1,15 +1,9 @@
 <template>
-        <div class="img">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section"></h2>
-                    </div>
-                </div>
-                <!-- <div class="card card-form mt-2 mb-4 bg-opacity-50"> -->
-                    <div class="row justify-content-center mt-5">
+    <div class="masthead">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="row justify-content-center mt-5">
                     <div class="col-md-6 col-lg-4 mt-5">
-                        <div class="login-wrap p-0">
                             <h3 class="mb-4 text-center text-light">Punya akun?</h3>
                             <form @submit.prevent="store">
                                 <!-- Email input -->
@@ -24,10 +18,8 @@
                                 <div class="form-outline mb-4">
                                     <input type="password" class="form-control" placeholder="Password" id="inputpass"
                                         v-model="user.password">
-                                        <span
-                                            toggle="#password-field"
-                                            class="fa fa-fw fa-eye field-icon toggle-password"
-                                        ></span>
+                                    <span toggle="#password-field"
+                                        class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                     <!-- validation -->
                                     <div v-if="validation.password" class="mt-2 alert alert-danger">
                                         {{ validation.password[0] }}
@@ -52,13 +44,11 @@
                                     </router-link>
                                 </div>
                             </form>
-                        </div>
                     </div>
-                <!-- </div> -->
                 </div>
-                
             </div>
         </div>
+    </div>
 </template>
 <script>
 import { reactive, ref } from "vue";
@@ -123,9 +113,25 @@ export default {
 </script>
 
 <style>
-.img {
+.masthead {
     background-image: url('../assets/event.png');
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+    .masthead {
+        min-height: 30vh;
+    }
+    h3 {
+        font-size: calc(1.525rem + 3.3vw);
+    }
 }
 </style>

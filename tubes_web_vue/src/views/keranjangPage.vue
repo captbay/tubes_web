@@ -31,8 +31,14 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>
-                        <button class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-fill"></i></button>
-                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>
+                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-pencil-fill"></i>
+                            Edit
+                        </button>
+                        <button class="btn btn-primary btn-sm text-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            <i class="bi bi-bag-dash-fill"></i>
+                            CheckOut
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -69,8 +75,14 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>
-                        <button class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-fill"></i></button>
-                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>
+                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-pencil-fill"></i>
+                            Edit
+                        </button>
+                        <button class="btn btn-primary btn-sm text-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            <i class="bi bi-bag-dash-fill"></i>
+                            CheckOut
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -107,11 +119,80 @@
                     <td>nama</td>
                     <td>nama</td>
                     <td>
-                        <button class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-fill"></i></button>
-                        <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>
+                        <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-pencil-fill"></i>
+                            Edit
+                        </button>
+                        <button class="btn btn-primary btn-sm text-light" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            <i class="bi bi-bag-dash-fill"></i>
+                            CheckOut
+                        </button>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Pesanan</h1>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Nama</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">Kenneth Valdez</div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Harga</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">fip@jukmuh.al</div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Gambar</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">(239) 816-9029</div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Deskripsi</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">(320) 380-4539</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-success">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Check Out</h1>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Anda yakin ingin men-Checkout event ini?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-success">Yes</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
