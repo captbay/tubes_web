@@ -54,7 +54,8 @@
                                 <router-link :to="{ name: 'band' }" class="dropdown-item text-light">Band</router-link>
                             </li>
                             <li>
-                                <router-link :to="{ name: 'standUp' }" class="dropdown-item text-light">Stand Up</router-link>
+                                <router-link :to="{ name: 'standUp' }" class="dropdown-item text-light">Stand
+                                    Up</router-link>
                             </li>
                             <li>
                                 <router-link :to="{ name: 'pesulapIndex' }"
@@ -140,7 +141,7 @@
                             <i class="fas fa-gem me-3"></i>AMP Group
                         </h6>
                         <p>
-                            Akordmusic Production Group adalah penyelenggara acara yang menyediakan 
+                            Akordmusic Production Group adalah penyelenggara acara yang menyediakan
                             berbagai macam event yang anda butuhkan. Dari event band, pertunjukan stand up comedy,
                             serta pertunjukan sulap yang siap menghibur anda. Kami memastikan
                             talenta yang dipilih merupakan yang terbaik dibidangnya agar dapat memeriahkan

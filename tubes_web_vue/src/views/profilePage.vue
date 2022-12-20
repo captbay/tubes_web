@@ -33,7 +33,7 @@
                                         <div class="col-sm-3">
                                             <h6 class="mb-0">Full Name</h6>
                                         </div>
-                                        <div class="col-sm-9 text-secondary">Kenneth Valdez</div>
+                                        <div class="col-sm-9 text-secondary">{{ users.name }}</div>
                                     </div>
                                     <hr />
                                     <div class="row">
@@ -111,7 +111,7 @@
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Full Name</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">Kenneth Valdez</div>
+                                            <div class="col-sm-9 text-secondary"></div>
                                         </div>
                                         <hr />
                                         <div class="row">
@@ -187,37 +187,38 @@
 </template>
 
 <script>
-// import axios from "../axios";
-// import { onMounted, ref } from "vue";
-// // import { createToaster } from "@meforma/vue-toaster";
+import axios from "axios";
+import { onMounted, ref } from "vue";
+// import { createToaster } from "@meforma/vue-toaster";
 
-// export default {
-//     async created() { },
-//     setup() {
-//         // const toaster = createToaster({ /* options */ });
-//         //reactive state
-//         let bands = ref([]);
-//         // let index = null
-//         //mounted
-//         onMounted(() => {
-//             //get API from Laravel Backend
-//             axios
-//                 .get("bands")
-//                 .then((response) => {
-//                     //assign state posts with response data
-//                     bands.value = response.data.data;
-//                 })
-//                 .catch((error) => {
-//                     console.log(error.response.data);
-//                 });
-//         });
+export default {
+    setup() {
+        // const toaster = createToaster({ /* options */ });
+        //reactive state
+        let users = ref([]);
+        let id_user_temp = localStorage.getItem("id_user");
+        // let index = null
+        //mounted
+        onMounted(() => {
+            //get API from Laravel Backend
+            axios
+                .get("users/" + id_user_temp + "")
+                .then((response) => {
+                    //assign state posts with response data
+                    users.value = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+        });
 
-//         //return
-//         return {
-//             bands,
-//         };
-//     },
-// };
+        //return
+        return {
+            users,
+            id_user_temp
+        };
+    },
+};
 </script>
 
 <style>
