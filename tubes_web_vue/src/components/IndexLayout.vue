@@ -45,50 +45,57 @@
                 <ul class="navbar-nav mx-auto my-2 my-lg-0 ">
                     <li class=" nav-item">
                         <router-link :to="{ name: 'beranda' }" class="nav-link text-light fw-bold">
-                            <h>Beranda</h></router-link>
+                            <h>Beranda</h>
+                        </router-link>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light fw-bold" href="#" id="navbarDarkDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <h><strong>Daftar Event</strong></h></a>
+                            <h><strong>Daftar Event</strong></h>
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li>
-                                <router-link :to="{ name: 'band' }" class="dropdown-item text-light fw-bold">Band</router-link>
+                                <router-link :to="{ name: 'band' }"
+                                    class="dropdown-item text-light fw-bold">Band</router-link>
                             </li>
                             <li>
                                 <router-link :to="{ name: 'standUp' }" class="dropdown-item text-light fw-bold">Stand
                                     Up</router-link>
                             </li>
                             <li>
-                                <router-link :to="{ name: 'pesulapIndex' }" class="dropdown-item text-light fw-bold">Pesulap</router-link>
+                                <router-link :to="{ name: 'pesulapIndex' }"
+                                    class="dropdown-item text-light fw-bold">Pesulap</router-link>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light fw-bold">
-                            <h>Tentang Kami</h></router-link>
+                            <h>Tentang Kami</h>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link :to="{ name: 'bantuan' }" class="nav-link text-light fw-bold">
-                            <h>Bantuan</h></router-link>
+                            <h>Bantuan</h>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link :to="{ name: 'kontak' }" class="nav-link text-light fw-bold">
-                            <h>Kontak</h></router-link>
+                            <h>Kontak</h>
+                        </router-link>
                     </li>
                 </ul>
                 <div class="d-flex my-2 my-lg-0 ">
-                    <router-link :to="{ name: 'profile' }" class="nav-link">
+                    <router-link :to="{ name: 'profile' }" class="nav-link px-2">
                         <button class="btn btn-success">
-                            <i class="bi bi-person-fill text-light"></i>
-                            {{ users.name }}
-                        </button>
+                            <i class="bi bi-person-fill text-light"></i><strong>
+                                {{ users.name }}
+                            </strong></button>
                     </router-link>
                     <router-link :to="{ name: 'keranjang' }" class="nav-link px-2">
                         <button class="btn btn-success">
                             <i class="bi bi-bag-plus-fill text-light"></i><strong>
-                            Keranjang
-                        </strong></button>
+                                Keranjang
+                            </strong></button>
                     </router-link>
                 </div>
             </div>
@@ -160,13 +167,19 @@
                             Layanan kami
                         </h6>
                         <p>
-                            <router-link :to="{ name: 'band' }" class="nav-link text-light"><h>Band</h></router-link>
+                            <router-link :to="{ name: 'band' }" class="nav-link text-light">
+                                <h>Band</h>
+                            </router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'standUp' }" class="nav-link text-light"><h>Stand Up</h></router-link>
+                            <router-link :to="{ name: 'standUp' }" class="nav-link text-light">
+                                <h>Stand Up</h>
+                            </router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'pesulapIndex' }" class="nav-link text-light"><h>Pesulap</h></router-link>
+                            <router-link :to="{ name: 'pesulapIndex' }" class="nav-link text-light">
+                                <h>Pesulap</h>
+                            </router-link>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -178,13 +191,19 @@
                             Link
                         </h6>
                         <p>
-                            <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light"><h>Tentang Kami</h></router-link>
+                            <router-link :to="{ name: 'tentangKami' }" class="nav-link text-light">
+                                <h>Tentang Kami</h>
+                            </router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'bantuan' }" class="nav-link text-light"><h>Bantuan</h></router-link>
+                            <router-link :to="{ name: 'bantuan' }" class="nav-link text-light">
+                                <h>Bantuan</h>
+                            </router-link>
                         </p>
                         <p>
-                            <router-link :to="{ name: 'kontak' }" class="nav-link text-light"><h>Kontak</h></router-link>
+                            <router-link :to="{ name: 'kontak' }" class="nav-link text-light">
+                                <h>Kontak</h>
+                            </router-link>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -254,11 +273,10 @@ export default {
 @import url("http://fonts.googleapis.com/css?family=Poppins:400,300,700");
 
 h:hover {
-  color: #115C39;
+    color: #115C39;
 }
 
 body {
-  font-family: 'Poppins' !important;
+    font-family: 'Poppins' !important;
 }
-
 </style>
