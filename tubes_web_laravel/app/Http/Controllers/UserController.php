@@ -77,7 +77,7 @@ class UserController extends Controller
             'password' => 'required',
             'tgl_lahir' => 'required',
             'gender' => 'required',
-            'telepon' => 'required|regex:/^(08)[0-9]{4,5}$/',
+            'telepon' => 'required|regex:/^(0)8[1-9][0-9]{6,9}$/',
             'alamat' => 'required',
             'image_user' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
@@ -95,7 +95,9 @@ class UserController extends Controller
             $image_user->storeAs('public/users', $image_user->hashName());
 
             //delete old image
-            Storage::delete('public/users/' . $user->image_user);
+            if ($image_user != "default.png") {
+                Storage::delete('public/users/' . $user->image_user);
+            }
             $password = bcrypt($request->password);
 
             $user->update([
@@ -186,7 +188,7 @@ class UserController extends Controller
             'gender' => $request->gender,
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
-            'image_user' => "",
+            'image_user' => "default.png",
 
         ]);
         event(new Registered($user));
