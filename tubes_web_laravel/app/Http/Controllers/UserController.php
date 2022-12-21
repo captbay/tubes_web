@@ -7,10 +7,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Http\Requests\UserLoginRequest;
-use App\Http\Requests\UserRegisterRequest;
 use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
@@ -78,7 +74,6 @@ class UserController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email|unique:users',
             'password' => 'required',
             'tgl_lahir' => 'required',
             'gender' => 'required',
@@ -101,16 +96,16 @@ class UserController extends Controller
 
             //delete old image
             Storage::delete('public/users/' . $user->image_user);
+            $password = bcrypt($request->password);
 
             $user->update([
                 'name' => $request->name,
-                'email' => $request->email,
-                'password' => $request->password,
+                'password' => $password,
                 'tgl_lahir' => $request->tgl_lahir,
                 'gender' => $request->gender,
                 'telepon' => $request->telepon,
                 'alamat' => $request->alamat,
-                'image_user' => $request->image_user,
+                'image_user' => $image_user->hashName(),
             ]);
 
             return response()->json([
