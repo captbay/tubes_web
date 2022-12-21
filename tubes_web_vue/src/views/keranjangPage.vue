@@ -446,13 +446,13 @@ export default {
         // pembayaran store
         function storePembayaran() {
             bands.value.forEach((item) => {
-                pembayaran.total_bayar = pembayaran.total_bayar + item.bands.Harga;
+                pembayaran.total_bayar += parseInt(item.bands.Harga);
             })
             komikas.value.forEach((item) => {
-                pembayaran.total_bayar = pembayaran.total_bayar + item.komikas.Harga;
+                pembayaran.total_bayar += parseInt(item.komikas.Harga);
             })
             pesulaps.value.forEach((item) => {
-                pembayaran.total_bayar = pembayaran.total_bayar + item.pesulaps.Harga;
+                pembayaran.total_bayar += parseInt(item.pesulaps.Harga);
             })
 
             let metode_pembayaran = pembayaran.metode_pembayaran;

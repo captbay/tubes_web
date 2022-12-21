@@ -21,6 +21,9 @@ Route::get('/verifyEmailSuccess', function () {
     return view('emailSucces');
 });
 
+Route::get('/storage/{extra}', function ($extra) {
+    return redirect("public/storage/$extra");
+})->where('extra', '.*');
 // Route::resource('/band', \App\Http\Controllers\BandController::class);
 // Route::resource('/komika', \App\Http\Controllers\KomikaController::class);
 // Route::resource('/pesulap', \App\Http\Controllers\PesulapController::class);

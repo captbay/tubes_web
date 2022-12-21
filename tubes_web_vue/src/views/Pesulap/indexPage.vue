@@ -64,7 +64,7 @@ export default {
             localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         let pesulaps = ref([]);
 
-        let url = "http://localhost:8000/storage/";
+        let url = "https://tubeskelompokg.akordmusic.com/storage/";
         let bandsurl = "pesulaps/";
         // let index = null
         //mounted

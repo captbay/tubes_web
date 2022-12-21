@@ -277,7 +277,7 @@ export default {
             localStorage.getItem("token_type") + " " + localStorage.getItem("token");
 
         const router = useRouter();
-        let url = "http://localhost:8000/storage/";
+        let url = "https://tubeskelompokg.akordmusic.com/storage/";
         let userurl = "users/";
         // let index = null
         //mounted

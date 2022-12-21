@@ -63,7 +63,7 @@ export default {
             localStorage.getItem("token_type") + " " + localStorage.getItem("token");
         let komikas = ref([]);
 
-        let url = "http://localhost:8000/storage/";
+        let url = "https://tubeskelompokg.akordmusic.com/storage/";
         let bandsurl = "komikas/";
         // let index = null
         //mounted
