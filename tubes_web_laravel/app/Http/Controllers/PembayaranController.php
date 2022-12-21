@@ -17,7 +17,7 @@ class PembayaranController extends Controller
     public function index()
     {
         //get posts
-        $pembayaran = Pembayaran::latest()->get();
+        $pembayaran = Pembayaran::with(['users'])->get();
         //render view with posts
         return response()->json([
             'success' => true,
@@ -72,9 +72,9 @@ class PembayaranController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'id_user' => 'required',
+            // 'id_user' => 'required',
             'metode_pembayaran' => 'required',
-            'total_bayar' => 'required',
+            // 'total_bayar' => 'required',
         ]);
 
 
@@ -82,13 +82,13 @@ class PembayaranController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $pembayaran = Pembayaran::find($id);
-        $user = User::where('id', $request->id_user)->first();
+        // $pembayaran = Pembayaran::find($id);
+        // $user = User::where('id', $request->id_user)->first();
 
         $pembayaran->update([
-            'id_user' => $user->id,
+            // 'id_user' => $user->id,
             'metode_pembayaran' => $request->metode_pembayaran,
-            'total_bayar' => $request->total_bayar,
+            // 'total_bayar' => $request->total_bayar,
         ]);
 
         return response()->json([
@@ -117,21 +117,44 @@ class PembayaranController extends Controller
     }
 
     /**
+     * destroy
+     *
+     * @param  Request $request
+     * @return void
+     */
+    public function deleteAll()
+    {
+        $pembayaran = Pembayaran::with(['users'])->get();
+        //delete post
+        foreach ($pembayaran as $pembayaran) {
+            Pembayaran::where('id', $pembayaran->id)->delete();
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Pembayaran Semua gasken Deleted',
+        ], 200);
+    }
+
+    /**
      * store
      *
      * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(Request $request, $id_user)
     {
         //Validasi Formulir
         $validator = Validator::make($request->all(), [
-            'id_user' => 'required',
             'metode_pembayaran' => 'required',
             'total_bayar' => 'required',
         ]);
 
-        $user = User::find($request->id_user);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
+        $user = User::find($id_user);
         //Fungsi Simpan Data ke dalam Database
         $pembayaran = Pembayaran::create([
             'id_user' => $user->id,

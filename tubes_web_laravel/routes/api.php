@@ -99,5 +99,6 @@ Route::group(['middleware' => 'auth:api'], function () {
         '/pembayarans',
         \App\Http\Controllers\PembayaranController::class
     );
-    // Route::post('pembayarans/update/{id}', [PembayaranController::class, 'update']);
+    Route::post('pembayarans/store/{id}', [PembayaranController::class, 'store']);
+    Route::post('pembayarans/deleteAll', [PembayaranController::class, 'deleteAll']);
 });
