@@ -38,11 +38,7 @@
                     Biografi
                 </p>
                 <p class="body1 text-center mt-5 mb-md-5">
-                    {{ bands.Nama }} adalah grup musik Rock yang terbentuk dari ajang The Dream Band pada tahun 2004 dan
-                    sampai
-                    sekarang masih aktif dengan beranggotakan Tantri (Tantri Syalindri Ichlasari),
-                    Chua (Swasti Sabdastantri) dan Cella (Marion Marcella). Band ini sudah meraih berbagai
-                    penghargaan dibidangnya, jadi tidak perlu diragukan lagi kualitas dari band satu ini.
+                    {{ bands.Deskripsi }}
                 </p>
             </div>
         </div>
@@ -111,9 +107,11 @@ export default {
         // const router = useRouter();
         const route = useRoute();
 
+        let today = new Date()
+        let now_date = (today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
         //pembelian
         const pembelian = reactive({
-            tgl_pembelian_passing: "",
+            tgl_pembelian_passing: now_date,
         });
         const validation = ref([]);
         const toaster = createToaster({ /* options */ });
@@ -158,6 +156,8 @@ export default {
 
         //return
         return {
+            today,
+            now_date,
             bands,
             url,
             validation,

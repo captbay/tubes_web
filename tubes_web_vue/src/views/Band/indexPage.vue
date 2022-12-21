@@ -15,11 +15,11 @@
                 </div>
                 <div>
                     <div class="container ps-5">
-                        <div class="row h-100 d-flex align-items-center justify-content-center text-center">
+                        <div class="row h-100 d-flex justify-content-center text-center">
                             <div class="col-md-4" v-for="(band, index) in bands" :key="index">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card" style="width: 20rem;">
                                     <img class="card-img-top" :src="url + bandsurl + band.Image" alt="..."
-                                        style="max-height: 200px;">
+                                        style="height: 200px;">
                                     <div class="card-body p-4">
                                         <div class="text-center">
                                             <h2 class="fw-bolder">{{ band.Nama }}</h2>

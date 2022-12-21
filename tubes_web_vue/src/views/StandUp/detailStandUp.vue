@@ -39,11 +39,7 @@
                     Biografi
                 </p>
                 <p class="body1 text-center mt-5 mb-md-5">
-                    {{ komikas.Nama }} memulai karirnya sebagai seorang pelawak tunggal pada tahun 2010. Diawali dari
-                    Twivate Concert pertama yang ia lakukan di bulan April, {{ komikas.Nama }} memantapkan
-                    niatnya untuk membangun awareness masyarakat tentang pelawak tunggal ini sendiri. Sampai
-                    sekarang Pandji sudah melaksanakan berbagai tour yang mulai dari lokal bahkan sampai dunia
-                    membuat kualitasnya sudah tidak perlu diragukan lagi dalam dunia stand up comedy.
+                    {{ komikas.Deskripsi }}
                 </p>
             </div>
         </div>
@@ -109,9 +105,11 @@ export default {
         // const router = useRouter();
         const route = useRoute();
 
+        let today = new Date()
+        let now_date = (today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
         //pembelian
         const pembelian = reactive({
-            tgl_pembelian_passing: "",
+            tgl_pembelian_passing: now_date,
         });
         const validation = ref([]);
 
@@ -156,6 +154,8 @@ export default {
 
         //return
         return {
+            today,
+            now_date,
             komikas,
             url,
             bandsurl,

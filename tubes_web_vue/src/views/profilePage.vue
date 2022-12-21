@@ -173,12 +173,16 @@
                                             <label>Gambar</label>
                                             <input type="file" class="form-control" @change="onFileChange"
                                                 accept="image/*" />
+                                            <!-- validation -->
+                                            <div v-if="validation.image_user" class="mt-2 alert alert-danger">
+                                                {{ validation.image_user[0] }}
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn btn-danger" data-bs-dismiss="modal">
                                                 Close
                                             </button>
-                                            <button class="btn btn-success" type="submit" data-bs-dismiss="modal">
+                                            <button class="btn btn-success" type="submit">
                                                 Save changes
                                             </button>
                                         </div>
@@ -354,7 +358,7 @@ export default {
                     // });
                 })
                 .catch((error) => {
-                    console.log(error.response.data);
+                    validation.value = error.response.data
                 });
         }
         //logout

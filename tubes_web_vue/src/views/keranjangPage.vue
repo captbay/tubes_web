@@ -14,7 +14,7 @@
                 <tr v-for="(band, id) in bands" :key="id">
                     <td>{{ band.bands.Nama }}</td>
                     <td>Rp {{ formatPrice(band.bands.Harga) }}</td>
-                    <td>{{ band.tgl_pembelian }}</td>
+                    <td>{{ format_date(band.tgl_pembelian) }}</td>
                     <td>
                         <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
                             data-bs-target="#exampleModal1" @click.prevent="sendId(band)">
@@ -44,7 +44,7 @@
                 <tr v-for="(komika, id) in komikas" :key="id">
                     <td>{{ komika.komikas.Nama }}</td>
                     <td>Rp {{ formatPrice(komika.komikas.Harga) }}</td>
-                    <td>{{ komika.tgl_pembelian }}</td>
+                    <td>{{ format_date(komika.tgl_pembelian) }}</td>
                     <td>
                         <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
                             data-bs-target="#exampleModal2" @click.prevent="sendId(komika)">
@@ -74,7 +74,7 @@
                 <tr v-for="(pesulap, id) in pesulaps" :key="id">
                     <td>{{ pesulap.pesulaps.Nama }}</td>
                     <td>Rp {{ formatPrice(pesulap.pesulaps.Harga) }}</td>
-                    <td>{{ pesulap.tgl_pembelian }}</td>
+                    <td>{{ format_date(pesulap.tgl_pembelian) }}</td>
                     <td>
                         <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
                             data-bs-target="#exampleModal3" @click.prevent="sendId(pesulap)">
@@ -118,7 +118,7 @@
                         <div class="form-outline mb-4">
                             <label for="inputTanggalLahir" class="form-label">Metode Bayar</label>
                             <select class="form-control" id="inputMetodeBayar" v-model="pembayaran.metode_pembayaran">
-                                <option value="Tunai">Tunai</option>
+                                <option selected value="Tunai">Tunai</option>
                                 <option value="Debit">Debit</option>
                                 <option value="Kredit">Kredit</option>
                                 <option value="E-money">e-money</option>
@@ -231,6 +231,7 @@ import { onMounted, ref } from "vue";
 import { reactive } from "vue";
 import { createToaster } from "@meforma/vue-toaster";
 import { useRouter } from "vue-router";
+import moment from "moment";
 
 
 export default {
@@ -244,6 +245,11 @@ export default {
         formatPrice(value) {
             let val = (value / 1).toFixed(2).replace('.', ',')
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
+        format_date(value) {
+            if (value) {
+                return moment(String(value)).format('DD MMMM YYYY')
+            }
         },
     },
     setup() {
@@ -279,7 +285,7 @@ export default {
         });
         // pembayaran
         const pembayaran = reactive({
-            metode_pembayaran: "",
+            metode_pembayaran: "Tunai",
             total_bayar: 0,
         });
 
@@ -465,6 +471,7 @@ export default {
                 router.push({
                     path: "/pembayaran",
                 });
+
 
             }).catch((error) => {
                 //assign state validation with error

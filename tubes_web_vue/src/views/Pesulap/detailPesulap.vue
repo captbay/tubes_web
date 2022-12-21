@@ -34,16 +34,10 @@
         <div class="row about-section justify-content-center">
             <div class="col-md-8 mt-5 mb-5 pt-md-5 pb-md-5">
                 <p class="h1 text-center"><strong>
-                    Biografi
-                </strong></p>
+                        Biografi
+                    </strong></p>
                 <p class="body1 text-center mt-5 mb-md-5">
-                    {{ pesulaps.Nama }} mulai menggeluti dunia sulap semenjak umur 10 tahun secara otodidak. Awal
-                    kariernya pada tahun 2002 adalah dengan mengikuti sebuah kompetisi pemilihan Abang
-                    dan None Kep. Seribu & Jakarta dan berhasil memenangi dua gelar yaitu sebagai Abang
-                    Persahabatan 2002 dan Abang Favorit 2002. Pada awal 2007 Demian membintangi acara tv
-                    pertamanya yang menggunakan namanya sendiri berjudul Demian Sang Illusionist, tayang selama
-                    hampir dua tahun di ANTV. Di Tahun 2017 Demian mengikuti salah satu acara terbaik di America
-                    yaitu America’s Got Talent dan memainkan ilusi-ilusi terbaiknya.
+                    {{ pesulaps.Deskripsi }}
                 </p>
             </div>
         </div>
@@ -111,9 +105,11 @@ export default {
         // const router = useRouter();
         const route = useRoute();
 
+        let today = new Date()
+        let now_date = (today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
         //pembelian
         const pembelian = reactive({
-            tgl_pembelian_passing: "",
+            tgl_pembelian_passing: now_date,
         });
         const validation = ref([]);
         const toaster = createToaster({ /* options */ });
@@ -155,6 +151,8 @@ export default {
 
         //return
         return {
+            today,
+            now_date,
             pesulaps,
             url,
             bandsurl,

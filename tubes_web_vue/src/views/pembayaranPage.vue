@@ -24,6 +24,8 @@
                         <button @click.prevent="DeletePembayaran(pembayaran.id)" class="btn btn-sm btn-success ms-1"><i
                                 class="bi bi-cash-coin"></i> Bayar</button>
                     </td>
+                    <div class="alert alert-danger" v-if="pembayarans == []">Data Pembayaran belum tersedia
+                    </div>
                 </tr>
             </tbody>
         </table>
@@ -122,6 +124,7 @@ export default {
                 .then((response) => {
                     //assign state posts with response data
                     pembayarans.value = response.data.data;
+
                 })
                 .catch((error) => {
                     console.log(error.response.data);
