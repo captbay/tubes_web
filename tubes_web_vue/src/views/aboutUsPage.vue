@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col">
                     <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <img class="card-img-top" src='../assets/ages.jpg' alt="..." style="max-height: 300px;">
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <d1 class="fw-bolder">I PUTU AGESTYA PRAMANA</d1>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="col">
                     <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <img class="card-img-top" src='../assets/theo.jpg' alt="..." style="max-height: 300px;">
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <d1 class="fw-bolder">THEODORUS ADIYATMA SUHARGO</d1>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="col">
                     <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <img class="card-img-top" src='../assets/mik.jpg' alt="..." style="max-height: 300px;">
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <d1 class="fw-bolder">REYNALD MICHAEL HENA</d1>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="col">
                     <div class="card" style="width: 15rem;">
-                        <img class="card-img-top" src='../assets/bgband.jpg' alt="..." style="max-height: 200px;">
+                        <img class="card-img-top" src='../assets/arvel.jpg' alt="..." style="max-height: 300px;">
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <d1 class="fw-bolder">IMMANUEL ARVELLIAN PUTRA</d1>
