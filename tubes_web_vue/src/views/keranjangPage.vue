@@ -11,20 +11,9 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr v-for="(departemen, id) in departemens" :key="id">
-                    <td>{{ departemen.nama_departemen }}</td>
-                    <td>{{ departemen.nama_manager }}</td>
-                    <td>{{ departemen.jumlah_pegawai }}</td>
-                    <td class="text-center">
-                        <router-link :to="{ name: 'departemen.edit', params: { id: departemen.id } }"
-                            class="btn btn-sm btn-primary mr-1">EDIT</router-link>
-                        <button @click.prevent="departemenDelete(departemen.id)"
-                            class="btn btn-sm btn-danger ml-1">DELETE</button>
-                    </td>
-                </tr> -->
                 <tr v-for="(band, id) in bands" :key="id">
                     <td>{{ band.bands.Nama }}</td>
-                    <td>{{ band.bands.Harga }}</td>
+                    <td>Rp {{ formatPrice(band.bands.Harga) }}</td>
                     <td>{{ band.tgl_pembelian }}</td>
                     <td>
                         <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
@@ -52,20 +41,9 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr v-for="(departemen, id) in departemens" :key="id">
-                    <td>{{ departemen.nama_departemen }}</td>
-                    <td>{{ departemen.nama_manager }}</td>
-                    <td>{{ departemen.jumlah_pegawai }}</td>
-                    <td class="text-center">
-                        <router-link :to="{ name: 'departemen.edit', params: { id: departemen.id } }"
-                            class="btn btn-sm btn-primary mr-1">EDIT</router-link>
-                        <button @click.prevent="departemenDelete(departemen.id)"
-                            class="btn btn-sm btn-danger ml-1">DELETE</button>
-                    </td>
-                </tr> -->
                 <tr v-for="(komika, id) in komikas" :key="id">
                     <td>{{ komika.komikas.Nama }}</td>
-                    <td>{{ komika.komikas.Harga }}</td>
+                    <td>Rp {{ formatPrice(komika.komikas.Harga) }}</td>
                     <td>{{ komika.tgl_pembelian }}</td>
                     <td>
                         <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
@@ -93,20 +71,9 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr v-for="(departemen, id) in departemens" :key="id">
-                    <td>{{ departemen.nama_departemen }}</td>
-                    <td>{{ departemen.nama_manager }}</td>
-                    <td>{{ departemen.jumlah_pegawai }}</td>
-                    <td class="text-center">
-                        <router-link :to="{ name: 'departemen.edit', params: { id: departemen.id } }"
-                            class="btn btn-sm btn-primary mr-1">EDIT</router-link>
-                        <button @click.prevent="departemenDelete(departemen.id)"
-                            class="btn btn-sm btn-danger ml-1">DELETE</button>
-                    </td>
-                </tr> -->
                 <tr v-for="(pesulap, id) in pesulaps" :key="id">
                     <td>{{ pesulap.pesulaps.Nama }}</td>
-                    <td>{{ pesulap.pesulaps.Harga }}</td>
+                    <td>Rp {{ formatPrice(pesulap.pesulaps.Harga) }}</td>
                     <td>{{ pesulap.tgl_pembelian }}</td>
                     <td>
                         <button class="btn btn-success btn-sm me-2" data-bs-toggle="modal"
@@ -217,24 +184,6 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Check Out</h1>
-                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Anda yakin ingin menghapus event dari keranjang?
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                    <button class="btn btn-success">Yes</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </template>
 
 <script>
@@ -252,7 +201,11 @@ export default {
             this.pembelianBand.tgl_pembelian_band = item.tgl_pembelian;
             this.pembelianKomika.tgl_pembelian_komika = item.tgl_pembelian;
             this.pembelianPesulap.tgl_pembelian_pesulap = item.tgl_pembelian;
-        }
+        },
+        formatPrice(value) {
+            let val = (value / 1).toFixed(2).replace('.', ',')
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
     },
     setup() {
         const toaster = createToaster({ /* options */ });
