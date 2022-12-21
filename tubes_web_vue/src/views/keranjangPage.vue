@@ -383,6 +383,11 @@ export default {
             axios.put(`pembelianbands/${id}`, {
                 tgl_pembelian: tgl_pembelian,
             }).then(() => {
+                index = bands.value.findIndex((band) => band.id == id)
+                //splice posts 
+                this.bands[index].tgl_pembelian = tgl_pembelian;
+                // console.log(this.bands[index].tgl_pembelian);
+                // console.log(index);
                 toaster.show(`Berhasil di Edit`, {
                     type: "success",
                     position: "bottom-right",
@@ -401,6 +406,9 @@ export default {
             axios.put(`pembeliankomikas/${id}`, {
                 tgl_pembelian: tgl_pembelian,
             }).then(() => {
+                index = komikas.value.findIndex((komika) => komika.id == id)
+                //splice posts 
+                this.komikas[index].tgl_pembelian = tgl_pembelian;
                 toaster.show(`Berhasil di Edit`, {
                     type: "success",
                     position: "bottom-right",
@@ -416,6 +424,9 @@ export default {
             axios.put(`pembelianpesulaps/${id}`, {
                 tgl_pembelian: tgl_pembelian,
             }).then(() => {
+                index = pesulaps.value.findIndex((pesulap) => pesulap.id == id)
+                //splice posts 
+                this.pesulaps[index].tgl_pembelian = tgl_pembelian;
                 toaster.show(`Berhasil di Edit`, {
                     type: "success",
                     position: "bottom-right",
